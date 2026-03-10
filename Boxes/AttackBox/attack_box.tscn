@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dmtpa8fpy5ex6" path="res://Art/Placeholder/AbilityIcons.png" id="2_wadgx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wadgx"]
-size = Vector2(64, 64)
+size = Vector2(68, 64)
 
 [node name="attack_box" type="Area2D" unique_id=192665163]
 script = ExtResource("1_xqyld")
