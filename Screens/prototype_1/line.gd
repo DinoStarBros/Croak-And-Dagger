@@ -1,28 +1,35 @@
 extends Line2D
 
-@onready var cursor: Sprite2D = %cursor
+@onready var cursor: Area2D = %cursor
 
 var endpoints_x : Vector2 ## X is neg/left, Y is pos/right
-var cursor_move_mode : bool = true ## True = right, False = left
-var cursor_speed : float = 400
+
+var boxes_scns : Array[PackedScene] = [
+	load("res://Boxes/AttackBox/attack_box.tscn"),
+	
+]
 
 func _ready() -> void:
 	endpoints_x.x = points[0].x + global_position.x
 	endpoints_x.y = points[1].x + global_position.x
+	%cursor.endpoints_x = endpoints_x
 	
-	print(endpoints_x)
+	for n in 10:
+		_spawn_box(randf_range(endpoints_x.x, endpoints_x.y), 0)
 
 func _process(delta: float) -> void:
-	if cursor_move_mode:
-		cursor.global_position.x += cursor_speed * delta
-		
-		if cursor.global_position.x >= endpoints_x.y:
-			cursor_move_mode = false
-	else:
-		cursor.global_position.x += -cursor_speed * delta
+	pass
+
+func _spawn_box(
+	pos_x: float, 
+	box_type: int ## 0=attack box
+	) -> void:
 	
-		if cursor.global_position.x <= endpoints_x.x:
-			cursor_move_mode = true
-	
-	cursor.global_position.x = clamp(cursor.global_position.x, endpoints_x.x, endpoints_x.y)
-	%Label.text = str(cursor.global_position.x)
+	var box : Box = boxes_scns[box_type].instantiate()
+	%box_parent.add_child(box)
+	box.global_position.x = pos_x
+
+func _on_spawn_timer_timeout() -> void:
+	for n in randi_range(1, 4):
+		_spawn_box(randf_range(endpoints_x.x, endpoints_x.y), 0)
+		%spawnTimer.start(randf_range(1, 3))

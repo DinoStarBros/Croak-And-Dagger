@@ -25,6 +25,10 @@ SaveLoad="*uid://bqgw3uq8245gu"
 Global="*uid://dllo8yym6pqkb"
 SceneManager="*uid://j20v4cg7v8m1"
 
+[debug]
+
+gdscript/warnings/unused_parameter=0
+
 [display]
 
 window/size/viewport_width=1280
@@ -97,6 +101,10 @@ click={
 , Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
 ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="Cursor - Box"
 
 [rendering]
 

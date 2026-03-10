@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://w75rgmrfntkc"]
+
+[ext_resource type="Script" uid="uid://cks46kh8wtfo2" path="res://Boxes/AttackBox/attack_box.gd" id="1_xqyld"]
+[ext_resource type="Texture2D" uid="uid://dmtpa8fpy5ex6" path="res://Art/Placeholder/AbilityIcons.png" id="2_wadgx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wadgx"]
+size = Vector2(64, 64)
+
+[node name="attack_box" type="Area2D" unique_id=192665163]
+script = ExtResource("1_xqyld")
+
+[node name="cs" type="CollisionShape2D" parent="." unique_id=1870801512]
+shape = SubResource("RectangleShape2D_wadgx")
+
+[node name="AbilityIcons" type="Sprite2D" parent="." unique_id=1627635441]
+unique_name_in_owner = true
+scale = Vector2(2, 2)
+texture = ExtResource("2_wadgx")
+hframes = 6
+frame = 3
+
+[node name="LifeTimer" type="Timer" parent="." unique_id=1235873452]
+unique_name_in_owner = true
+
+[node name="Label" type="Label" parent="." unique_id=1678325107]
+unique_name_in_owner = true
+visible = false
+offset_left = -32.0
+offset_top = -61.0
+offset_right = 8.0
+offset_bottom = -38.0
+text = "bla"
