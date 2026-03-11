@@ -13,3 +13,7 @@ func _process(delta: float) -> void:
 
 func _exit_tree() -> void:
 	boxes_amount -= 1
+
+func slice() -> void:
+	%cs.disabled = true
+	%anim.play("break")

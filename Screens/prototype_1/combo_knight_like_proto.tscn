@@ -8,7 +8,17 @@
 [ext_resource type="AudioStream" uid="uid://cspd72htqero" path="res://Audio/jetslash sfx/SFX/hit.mp3" id="6_vqkvo"]
 [ext_resource type="AudioStream" uid="uid://crwvnwtgketcd" path="res://Audio/cardtowersfx/enemy_hit.wav" id="7_sm7c2"]
 [ext_resource type="AudioStream" uid="uid://e7fgtf2ti3ki" path="res://Audio/41randsfx/15.wav" id="8_d8r5s"]
-[ext_resource type="AudioStream" uid="uid://dm8hfjkxsi624" path="res://Audio/whip_hit.wav" id="9_d8r5s"]
+[ext_resource type="AudioStream" uid="uid://c05eac572q51" path="res://Audio/amalgun/MissileExplode.wav" id="9_d8r5s"]
+
+[sub_resource type="Curve" id="Curve_d8r5s"]
+_limits = [0.0, 5.0, 0.0, 50.0]
+_data = [Vector2(0, 0), 0.0, 0.48300418, 0, 0, Vector2(21.863117, 5), 0.0, 0.0, 0, 0, Vector2(50, 5), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_0xpes"]
+_limits = [1.0, 5.0, 0.0, 50.0]
+_data = [Vector2(0, 5), 0.0, 0.0, 0, 0, Vector2(50, 1), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d8r5s"]
 radius = 7.0
@@ -38,6 +48,8 @@ points = PackedVector2Array(-450, 0, 450, 0)
 width = 70.0
 default_color = Color(0.48570347, 0.48570353, 0.48570347, 1)
 script = ExtResource("3_y47bw")
+time_curve = SubResource("Curve_d8r5s")
+spawn_amnt_curve = SubResource("Curve_0xpes")
 
 [node name="box_parent" type="Node2D" parent="line" unique_id=308884050]
 unique_name_in_owner = true

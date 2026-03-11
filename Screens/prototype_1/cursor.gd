@@ -15,14 +15,10 @@ func _ready() -> void:
 	pass
 
 func _process(delta: float) -> void:
-	#%text.text = str(current_box)
-	%Label.text = str(get_overlapping_areas(),
-	" : \n",
-	current_box
-	)#str("Combo!: ",combo)
 	
 	_move_handle(delta)
 	
+	%Label.text = str("Combo : ", combo)
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("click"):
@@ -35,7 +31,7 @@ func _input(event: InputEvent) -> void:
 			var biggest_box_idx : int = box_zorders_in_area.find(box_zorders_in_area.max())
 			var biggest_box : Box = get_overlapping_areas()[biggest_box_idx]
 			
-			biggest_box.queue_free()
+			biggest_box.slice()
 			
 			_succesful_box_hit()
 		else:
