@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bqubavsk5td7m" path="res://Art/newsprites.png" id="3_ysdlo"]
 [ext_resource type="Script" uid="uid://cylaa818xeqx2" path="res://Screens/prototype_1/cursor.gd" id="4_qbdax"]
 [ext_resource type="AudioStream" uid="uid://daiixog5jq884" path="res://Audio/cardtowersfx/sword_slash.wav" id="6_d8r5s"]
-[ext_resource type="AudioStream" uid="uid://crwvnwtgketcd" path="res://Audio/cardtowersfx/enemy_hit.wav" id="7_sm7c2"]
+[ext_resource type="AudioStream" uid="uid://cspd72htqero" path="res://Audio/jetslash sfx/SFX/hit.mp3" id="7_d8r5s"]
 [ext_resource type="AudioStream" uid="uid://e7fgtf2ti3ki" path="res://Audio/41randsfx/15.wav" id="8_d8r5s"]
 [ext_resource type="AudioStream" uid="uid://c05eac572q51" path="res://Audio/amalgun/MissileExplode.wav" id="9_d8r5s"]
 
@@ -84,11 +84,12 @@ text = "box"
 [node name="hit1" type="AudioStreamPlayer" parent="sfx" unique_id=1995491458]
 unique_name_in_owner = true
 stream = ExtResource("6_d8r5s")
+volume_db = -5.0
 bus = &"SFX"
 
 [node name="hit2" type="AudioStreamPlayer" parent="sfx" unique_id=45807827]
 unique_name_in_owner = true
-stream = ExtResource("7_sm7c2")
+stream = ExtResource("7_d8r5s")
 volume_db = -10.0
 bus = &"SFX"
 
@@ -110,5 +111,9 @@ unique_name_in_owner = true
 wait_time = 2.0
 one_shot = true
 autostart = true
+
+[node name="items" type="HBoxContainer" parent="." unique_id=2105632098]
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="timeout" from="spawnTimer" to="line" method="_on_spawn_timer_timeout"]
