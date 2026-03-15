@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://durivfa6igytm"]
+
+[ext_resource type="Script" uid="uid://cylaa818xeqx2" path="res://scenes/cursor/cursor.gd" id="1_e5wmr"]
+[ext_resource type="Texture2D" uid="uid://bqubavsk5td7m" path="res://Art/newsprites.png" id="2_tdtef"]
+[ext_resource type="AudioStream" uid="uid://daiixog5jq884" path="res://Audio/cardtowersfx/sword_slash.wav" id="3_nghos"]
+[ext_resource type="AudioStream" uid="uid://cspd72htqero" path="res://Audio/jetslash sfx/SFX/hit.mp3" id="4_1fc3j"]
+[ext_resource type="AudioStream" uid="uid://e7fgtf2ti3ki" path="res://Audio/41randsfx/15.wav" id="5_dicen"]
+[ext_resource type="AudioStream" uid="uid://c05eac572q51" path="res://Audio/amalgun/MissileExplode.wav" id="6_vq56n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d8r5s"]
+radius = 7.0
+
+[node name="cursor" type="Area2D" unique_id=1348747850]
+script = ExtResource("1_e5wmr")
+
+[node name="cursor_sprite" type="Sprite2D" parent="." unique_id=1094641587]
+z_index = 50
+rotation = 1.5707964
+scale = Vector2(2, 2)
+texture = ExtResource("2_tdtef")
+hframes = 3
+vframes = 3
+frame = 3
+
+[node name="cursor_collision" type="CollisionShape2D" parent="." unique_id=1951358250]
+unique_name_in_owner = true
+shape = SubResource("CircleShape2D_d8r5s")
+
+[node name="text" type="Label" parent="." unique_id=2090146776]
+unique_name_in_owner = true
+offset_left = -21.0
+offset_top = -63.0
+offset_right = 19.0
+offset_bottom = -40.0
+text = "box"
+
+[node name="sfx" type="Node" parent="." unique_id=1671173579]
+
+[node name="hit1" type="AudioStreamPlayer" parent="sfx" unique_id=755631562]
+unique_name_in_owner = true
+stream = ExtResource("3_nghos")
+bus = &"SFX"
+
+[node name="hit2" type="AudioStreamPlayer" parent="sfx" unique_id=1728571137]
+unique_name_in_owner = true
+stream = ExtResource("4_1fc3j")
+volume_db = -5.0
+bus = &"SFX"
+
+[node name="failHit" type="AudioStreamPlayer" parent="sfx" unique_id=2115316130]
+unique_name_in_owner = true
+stream = ExtResource("5_dicen")
+pitch_scale = 0.7
+bus = &"SFX"
+
+[node name="failHit2" type="AudioStreamPlayer" parent="sfx" unique_id=759909512]
+unique_name_in_owner = true
+stream = ExtResource("6_vq56n")
+volume_db = -5.0
+pitch_scale = 0.7
+bus = &"SFX"

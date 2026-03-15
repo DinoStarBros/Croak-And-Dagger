@@ -15,10 +15,10 @@ script = ExtResource("1_swvou")
 
 [node name="levelsV" type="VBoxContainer" parent="." unique_id=1533378547]
 layout_mode = 0
-offset_left = 259.0
-offset_top = 97.0
-offset_right = 513.0
-offset_bottom = 207.0
+offset_left = 119.0
+offset_top = 139.0
+offset_right = 528.0
+offset_bottom = 249.0
 theme_override_constants/separation = 25
 
 [node name="levelsH" type="HBoxContainer" parent="levelsV" unique_id=830235627]
@@ -40,3 +40,12 @@ text = "Level 2"
 unique_name_in_owner = true
 layout_mode = 2
 text = "Level 3"
+
+[node name="Quit" type="Button" parent="." unique_id=48565553]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 52.0
+offset_top = 36.0
+offset_right = 119.32413
+offset_bottom = 78.251
+text = "Quit"

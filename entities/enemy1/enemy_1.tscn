@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://bfmvl41xfvs85"]
+
+[ext_resource type="Script" uid="uid://bsmb3ir6ou4kt" path="res://entities/enemy1/enemy_1.gd" id="1_t4fes"]
+[ext_resource type="Texture2D" uid="uid://bn200tim80d5i" path="res://Art/Placeholder/Eneme.png" id="1_tdfkp"]
+
+[sub_resource type="Animation" id="Animation_ygu5k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Eneme:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_t4fes"]
+resource_name = "idle"
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Eneme:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ygu5k"]
+_data = {
+&"RESET": SubResource("Animation_ygu5k"),
+&"idle": SubResource("Animation_t4fes")
+}
+
+[node name="enemy1" type="Node2D" unique_id=1657567192]
+script = ExtResource("1_t4fes")
+
+[node name="Eneme" type="Sprite2D" parent="." unique_id=211008156]
+scale = Vector2(4, 4)
+texture = ExtResource("1_tdfkp")
+flip_h = true
+hframes = 5
+frame = 1
+
+[node name="anim" type="AnimationPlayer" parent="." unique_id=1538716984]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_ygu5k")
+autoplay = &"idle"

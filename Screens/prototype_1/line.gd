@@ -1,5 +1,6 @@
 extends Line2D
 
+
 @export var time_curve : Curve
 @export var spawn_amnt_curve : Curve
 
@@ -23,7 +24,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _spawn_box(
-	pos_x: float, 
+	pos_x: float,
 	box_type: int ## 0=attack box
 	) -> void:
 	

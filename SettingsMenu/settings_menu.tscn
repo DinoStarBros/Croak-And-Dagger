@@ -19,10 +19,9 @@ offset_bottom = 624.0
 
 [node name="Tabs" type="TabContainer" parent="PanelContainer" unique_id=917003247]
 layout_mode = 2
-current_tab = 1
+current_tab = 0
 
 [node name="Audio" type="VBoxContainer" parent="PanelContainer/Tabs" unique_id=1785194851]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -60,6 +59,7 @@ step = 0.15
 tick_count = 11
 
 [node name="Accessiblity" type="VBoxContainer" parent="PanelContainer/Tabs" unique_id=1868874210]
+visible = false
 layout_mode = 2
 alignment = 1
 metadata/_tab_index = 1
@@ -162,6 +162,28 @@ bus = &"Music"
 unique_name_in_owner = true
 stream = ExtResource("3_276ht")
 volume_db = -15.0
+
+[node name="resQuitButtons" type="HBoxContainer" parent="." unique_id=831965538]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 552.0
+offset_right = 280.0
+offset_bottom = 594.0
+
+[node name="resume" type="Button" parent="resQuitButtons" unique_id=1324591415]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Resume"
+
+[node name="quit" type="Button" parent="resQuitButtons" unique_id=1864410277]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quit"
+
+[node name="sure" type="Button" parent="resQuitButtons" unique_id=393915013]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Sure?"
 
 [connection signal="value_changed" from="PanelContainer/Tabs/Audio/master_volume" to="." method="_on_master_volume_value_changed"]
 [connection signal="value_changed" from="PanelContainer/Tabs/Audio/music_volume" to="." method="_on_music_volume_value_changed"]

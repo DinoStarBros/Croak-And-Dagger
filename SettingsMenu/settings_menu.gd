@@ -1,17 +1,38 @@
 extends Control
 class_name Settings
 
+@onready var button_pressed: AudioStreamPlayer = %button_pressed
+@onready var screen_shake: Button = %screen_shake
+@onready var frame_freeze: Button = %frame_freeze
+@onready var resume: Button = %resume
+@onready var quit: Button = %quit
+@onready var sure: Button = %sure
+
+var resolutions : Array[Vector2i] = [
+	Vector2i(1920, 1080),
+	Vector2i(1600, 900),
+	Vector2i(1280, 720),
+]
+var sure_quit:bool = false
+
 func _ready()->void:
+	
+	%resume.pressed.connect(on_resume)
+	%quit.pressed.connect(func():sure_quit=!sure_quit)
+	%sure.pressed.connect(func():
+		get_tree().paused = false
+		SceneManager.change_scene("res://Screens/level_select/level_select.tscn")
+		)
 	
 	await get_tree().process_frame
 	_on_load_pressed()
-	
-	#_update_res()
-	#_update_vol_val()
-	
-	#for n in %buttons.get_children():
-	#	if n is Button:
-	#		n.focus_mode = Control.FOCUS_NONE
+
+func on_pause() -> void:
+	sure_quit = false
+
+func on_resume() -> void:
+	get_tree().paused=false
+	_on_save_pressed()
 
 func _on_save_pressed()->void: ## Saves the settings stuff
 	SaveLoad.save_settings_stuff()
@@ -25,14 +46,14 @@ func _on_load_pressed()->void: ## Loads the settings stuff
 	%sfx_vol.value = SaveLoad.settings.sfx_volume
 	
 	if SaveLoad.settings.screen_shake_value:
-		%screen_shake.text = str("On")
+		screen_shake.text = str("On")
 	else:
-		%screen_shake.text = str("Off")
+		screen_shake.text = str("Off")
 	
 	if SaveLoad.settings.frame_freeze_value:
-		%frame_freeze.text = str("On")
+		frame_freeze.text = str("On")
 	else:
-		%frame_freeze.text = str("Off")
+		frame_freeze.text = str("Off")
 		
 	%resOptions.select(SaveLoad.settings.resolution_index)
 	_on_res_options_item_selected(SaveLoad.settings.resolution_index)
@@ -76,12 +97,6 @@ func _on_res_options_item_selected(index: int) -> void:
 	SaveLoad.settings.resolution_index = index
 	DisplayServer.window_set_size(resolutions[index])
 
-var resolutions : Array[Vector2i] = [
-	Vector2i(1920, 1080),
-	Vector2i(1600, 900),
-	Vector2i(1280, 720),
-]
-
 func _on_back_pressed() -> void:
 	_on_save_pressed()
 	hide()
@@ -89,20 +104,23 @@ func _on_back_pressed() -> void:
 
 func _on_frame_freeze_pressed() -> void:
 	SaveLoad.settings.frame_freeze_value = not SaveLoad.settings.frame_freeze_value
-	%button_pressed.pitch_scale = randf_range(1.8,2.2)
-	%button_pressed.play()
+	button_pressed.pitch_scale = randf_range(1.8,2.2)
+	button_pressed.play()
 	
 	if SaveLoad.settings.frame_freeze_value:
-		%frame_freeze.text = str("On")
+		frame_freeze.text = str("On")
 	else:
-		%frame_freeze.text = str("Off")
+		frame_freeze.text = str("Off")
 
 func _on_screen_shake_pressed() -> void:
 	SaveLoad.settings.screen_shake_value = not SaveLoad.settings.screen_shake_value
-	%button_pressed.pitch_scale = randf_range(1.8,2.2)
-	%button_pressed.play()
+	button_pressed.pitch_scale = randf_range(1.8,2.2)
+	button_pressed.play()
 	
 	if SaveLoad.settings.screen_shake_value:
-		%screen_shake.text = str("On")
+		screen_shake.text = str("On")
 	else:
-		%screen_shake.text = str("Off")
+		screen_shake.text = str("Off")
+
+func _process(delta: float) -> void:
+	sure.visible = sure_quit

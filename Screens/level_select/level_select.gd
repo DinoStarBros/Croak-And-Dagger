@@ -21,3 +21,7 @@ const level_scns : Array[String] = [
 func _ready() -> void:
 	for n in button_and_level.values(): if n[0] is Button:
 		n[0].pressed.connect(n[1])
+	
+	%Quit.pressed.connect(func():
+		SceneManager.change_scene("res://Screens/title_screen/title_screen.tscn")
+		)
