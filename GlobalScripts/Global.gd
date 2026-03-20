@@ -1,7 +1,7 @@
 extends Node
 
 enum game_states {
-	TITLE, FIGHT, UPGRADE
+	TITLE, FIGHT, DEAD, UPGRADE
 }
 
 var current_game_state : game_states

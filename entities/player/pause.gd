@@ -3,7 +3,9 @@ extends CanvasLayer
 @onready var settings_menu: Settings = %settingsMenu
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("esc"):
+	if (Input.is_action_just_pressed("esc") and 
+		Global.current_game_state == Global.game_states.FIGHT
+		):
 		get_tree().paused = not get_tree().paused
 		if get_tree().paused:
 			# Pause
@@ -13,4 +15,6 @@ func _input(event: InputEvent) -> void:
 			settings_menu.on_resume()
 
 func _process(delta: float) -> void:
-	visible = get_tree().paused
+	visible = (get_tree().paused and
+		Global.current_game_state == Global.game_states.FIGHT
+		)

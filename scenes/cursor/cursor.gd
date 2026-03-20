@@ -78,7 +78,7 @@ func _succesful_box_hit() -> void:
 func _failed_box_hit() -> void:
 	cursor_speed = base_speed
 	combo = 0
-	%failHit.pitch_scale = randf_range(0.8, 1.0)
-	%failHit.play()
-	%failHit2.pitch_scale = randf_range(0.8, 1.0)
-	%failHit2.play()
+	%hurt1.pitch_scale = randf_range(0.8, 1.0)
+	%hurt1.play()
+	%hurt2.pitch_scale = randf_range(0.8, 1.0)
+	%hurt2.play()

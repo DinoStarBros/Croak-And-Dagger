@@ -15,3 +15,6 @@ class_name EntityStats
 
 ## How fast the box will go to the left, usually for defend boxes
 @export var box_speed_range : Vector2 = Vector2(100, 200)
+
+@export_category("Displayed Combat Stats")
+@export var damage : int = 2

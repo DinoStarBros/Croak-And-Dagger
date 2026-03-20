@@ -1,4 +1,6 @@
 extends Box
+## This is the players own attacks
+## Slicing them will deal damage
 class_name AttackBox
 
 func _ready() -> void:

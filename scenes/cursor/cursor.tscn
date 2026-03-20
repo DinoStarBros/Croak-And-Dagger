@@ -36,6 +36,7 @@ offset_bottom = -40.0
 text = "box"
 
 [node name="sfx" type="Node" parent="." unique_id=1671173579]
+process_mode = 3
 
 [node name="hit1" type="AudioStreamPlayer" parent="sfx" unique_id=755631562]
 unique_name_in_owner = true
@@ -48,13 +49,13 @@ stream = ExtResource("4_1fc3j")
 volume_db = -5.0
 bus = &"SFX"
 
-[node name="failHit" type="AudioStreamPlayer" parent="sfx" unique_id=2115316130]
+[node name="hurt1" type="AudioStreamPlayer" parent="sfx" unique_id=2115316130]
 unique_name_in_owner = true
 stream = ExtResource("5_dicen")
 pitch_scale = 0.7
 bus = &"SFX"
 
-[node name="failHit2" type="AudioStreamPlayer" parent="sfx" unique_id=759909512]
+[node name="hurt2" type="AudioStreamPlayer" parent="sfx" unique_id=759909512]
 unique_name_in_owner = true
 stream = ExtResource("6_vq56n")
 volume_db = -5.0

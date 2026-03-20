@@ -10,3 +10,8 @@ signal SpawnBox(
 signal SpawnBoxRandomX(
 	box_scn:Box
 )
+
+## Signal called for damaging the player
+signal DamagePlayer(
+	damage : float
+)

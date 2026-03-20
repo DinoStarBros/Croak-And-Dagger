@@ -24,9 +24,13 @@ func _ready() -> void:
 		)
 
 func _spawn_timer_timeout() -> void:
-
+	
 	var spawn_amount : int = randi_range(spawn_amount_range.x, spawn_amount_range.y)
 	var spawn_time : float = randf_range(spawn_time_range.x, spawn_time_range.y)
+	
+	%SpawnTimer.start(spawn_time)
+	
+	if Global.boxes_amnt >= Global.MAX_BOXES: return
 	
 	for n in spawn_amount:
 		## 1st param, box scene
@@ -35,8 +39,8 @@ func _spawn_timer_timeout() -> void:
 		var box_instance : Box = box_scenes[0].instantiate()
 		if box_instance is DefendBox:
 			box_instance.velocity.x = -randf_range(box_speed_range.x, box_speed_range.y)
+			box_instance.damage = stats.damage
 			GlobalSignals.SpawnBox.emit(box_instance, Global.endpoints_x.y)
 		else:
 			GlobalSignals.SpawnBoxRandomX.emit(box_instance)
 	
-	%SpawnTimer.start(spawn_time)

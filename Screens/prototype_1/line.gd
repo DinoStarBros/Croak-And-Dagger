@@ -26,13 +26,11 @@ func _spawn_box(
 	pos_x: float
 	) -> void:
 	
-	#var box : Box = box_scene.instantiate()
 	%box_parent.add_child(box)
 	box.global_position.x = pos_x
 
 ## For boxes that just need random position
 func _spawn_box_rand_x(box: Box) -> void:
 	
-	#var box : Box = box_scene.instantiate()
 	%box_parent.add_child(box)
 	box.global_position.x = randf_range(endpoints_x.x, endpoints_x.y)
