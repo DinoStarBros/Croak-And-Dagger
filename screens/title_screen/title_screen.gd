@@ -6,6 +6,7 @@ func _ready() -> void:
 	%settings.pressed.connect(_settings_pressed)
 	%credits.pressed.connect(_credits_pressed)
 	%quit.pressed.connect(_quit_pressed)
+	MusicManager.play_song("title")
 
 func _play_pressed() -> void:
 	SceneManager.change_scene("res://Screens/level_select/level_select.tscn")

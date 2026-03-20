@@ -1,7 +1,13 @@
 [gd_scene format=3 uid="uid://bcsun61b3ipxw"]
 
 [ext_resource type="Script" uid="uid://b4fcytjt1kh6b" path="res://musicManager/music_manager.gd" id="1_vsips"]
+[ext_resource type="AudioStream" uid="uid://bn0rjklavbakb" path="res://Audio/Music/bivezLoopShort.wav" id="2_tgltr"]
 
 [node name="MusicManager" type="Node" unique_id=1224638921]
 process_mode = 3
 script = ExtResource("1_vsips")
+
+[node name="Title" type="AudioStreamPlayer" parent="." unique_id=1594769586]
+unique_name_in_owner = true
+stream = ExtResource("2_tgltr")
+bus = &"Music"

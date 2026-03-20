@@ -19,6 +19,7 @@ const level_scns : Array[String] = [
 }
 
 func _ready() -> void:
+	MusicManager.play_song("title")
 	for n in button_and_level.values(): if n[0] is Button:
 		n[0].pressed.connect(n[1])
 	
