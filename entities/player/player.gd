@@ -12,6 +12,8 @@ func _ready() -> void:
 	GlobalSignals.DamagePlayer.connect(hurt)
 	GlobalSignals.DamageEnemy.connect(hit_enemy)
 	GlobalSignals.FightWin.connect(fight_win)
+	GlobalSignals.UpgradeDone.connect(_upgrade_done)
+	GlobalSignals.CombatStart.connect(_combat_done)
 	Global.current_game_state = Global.game_states.FIGHT
 
 func _process(delta: float) -> void:
@@ -34,4 +36,11 @@ func fight_win() -> void:
 	pass
 
 func play_idle() -> void:
+	anim.play("idle")
+
+func _upgrade_done() -> void:
+	anim.stop()
+	anim.play("walk")
+
+func _combat_done() -> void:
 	anim.play("idle")

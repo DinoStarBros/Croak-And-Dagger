@@ -1,7 +1,7 @@
 extends Node
 
 enum game_states {
-	TITLE, FIGHT, DEAD, WIN, UPGRADE
+	TITLE, FIGHT, DEAD, WIN, UPGRADE, TRANSITION_NEXT_COMBAT
 }
 
 var current_game_state : game_states
@@ -10,6 +10,8 @@ var endpoints_x : Vector2
 
 ## The maximum amount of boxes that can be on screen 
 const MAX_BOXES : int = 25 
+## The time you need to wait for next combat
+const WAIT_TIME : float = 1.5
 
 func _volume_handle() -> void:
 	AudioServer.set_bus_volume_db(

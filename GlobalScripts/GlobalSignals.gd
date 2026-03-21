@@ -34,3 +34,6 @@ signal FightWin
 
 ## When player is done picking an upgrade
 signal UpgradeDone
+
+## After walking and encountering next enemy
+signal CombatStart

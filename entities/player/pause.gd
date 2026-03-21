@@ -6,14 +6,12 @@ var sure_quit : bool = false
 
 func _ready() -> void:
 	%resume.pressed.connect(on_resume)
-	%quit.pressed.connect(func():sure_quit=!sure_quit)
+	%quit.pressed.connect(func():%sure.visible=!%sure.visible)
 	%sure.pressed.connect(func():
 		get_tree().paused = false
 		SceneManager.change_scene("res://Screens/level_select/level_select.tscn")
 		%settingsMenu._on_save_pressed()
 		)
-
-
 
 func _input(event: InputEvent) -> void:
 	if (Input.is_action_just_pressed("esc") and 

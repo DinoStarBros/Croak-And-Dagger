@@ -10,7 +10,7 @@ extends Node2D
 
 var move_val : float = 0 ## Switches between 0 and 1
 
-const BG_LAYER_MS : float = -50
+const BG_LAYER_MS : float = -75
 
 func _ready() -> void:
 	MusicManager.stop_all_songs()
@@ -20,3 +20,8 @@ func _process(delta: float) -> void:
 		bg_and_speeds[i][0].global_position.x += BG_LAYER_MS * bg_and_speeds[i][1] * delta * move_val
 	
 		bg_and_speeds[i][0].global_position.x = wrapf(bg_and_speeds[i][0].global_position.x, -1280, 0)
+
+	if Global.current_game_state == Global.game_states.TRANSITION_NEXT_COMBAT:
+		move_val = 1
+	else:
+		move_val = 0

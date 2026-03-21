@@ -12,6 +12,7 @@ var endpoints_x : Vector2
 var combo : int = 0
 
 func _ready() -> void:
+	GlobalSignals.CombatStart.connect(_combat_done)
 	GlobalSignals.DamagePlayer.connect(_player_hurt)
 
 func _process(delta: float) -> void:
@@ -106,3 +107,6 @@ func _player_hurt(damage: float) -> void:
 	%hurt1.play()
 	%hurt2.pitch_scale = randf_range(0.8, 1.0)
 	%hurt2.play()
+
+func _combat_done() -> void:
+	cursor_speed = base_speed
