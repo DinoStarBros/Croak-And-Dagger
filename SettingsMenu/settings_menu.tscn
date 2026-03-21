@@ -8,7 +8,11 @@
 [node name="settingsMenu" type="Control" unique_id=68845947]
 process_mode = 3
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("1_hx8jy")
 script = ExtResource("1_pbt7f")
 
@@ -169,21 +173,6 @@ offset_left = 25.0
 offset_top = 552.0
 offset_right = 280.0
 offset_bottom = 594.0
-
-[node name="resume" type="Button" parent="resQuitButtons" unique_id=1324591415]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Resume"
-
-[node name="quit" type="Button" parent="resQuitButtons" unique_id=1864410277]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Quit"
-
-[node name="sure" type="Button" parent="resQuitButtons" unique_id=393915013]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Sure?"
 
 [connection signal="value_changed" from="PanelContainer/Tabs/Audio/master_volume" to="." method="_on_master_volume_value_changed"]
 [connection signal="value_changed" from="PanelContainer/Tabs/Audio/music_volume" to="." method="_on_music_volume_value_changed"]

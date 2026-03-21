@@ -4,9 +4,6 @@ class_name Settings
 @onready var button_pressed: AudioStreamPlayer = %button_pressed
 @onready var screen_shake: Button = %screen_shake
 @onready var frame_freeze: Button = %frame_freeze
-@onready var resume: Button = %resume
-@onready var quit: Button = %quit
-@onready var sure: Button = %sure
 
 var resolutions : Array[Vector2i] = [
 	Vector2i(1920, 1080),
@@ -17,13 +14,6 @@ var sure_quit:bool = false
 
 func _ready()->void:
 	
-	%resume.pressed.connect(on_resume)
-	%quit.pressed.connect(func():sure_quit=!sure_quit)
-	%sure.pressed.connect(func():
-		get_tree().paused = false
-		SceneManager.change_scene("res://Screens/level_select/level_select.tscn")
-		_on_save_pressed()
-		)
 	
 	await get_tree().process_frame
 	_on_load_pressed()
@@ -31,9 +21,6 @@ func _ready()->void:
 func on_pause() -> void:
 	sure_quit = false
 
-func on_resume() -> void:
-	get_tree().paused=false
-	_on_save_pressed()
 
 func _on_save_pressed()->void: ## Saves the settings stuff
 	SaveLoad.save_settings_stuff()
@@ -124,4 +111,4 @@ func _on_screen_shake_pressed() -> void:
 		screen_shake.text = str("Off")
 
 func _process(delta: float) -> void:
-	sure.visible = sure_quit
+	pass

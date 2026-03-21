@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d26mt5m255s86" path="res://Screens/title_screen/title_screen.gd" id="1_4rvf0"]
 [ext_resource type="Theme" uid="uid://bb6vwl0h1flws" path="res://FlatUI4/kenneyUI-blue.tres" id="1_dcgbb"]
+[ext_resource type="PackedScene" uid="uid://bqrd0srtdaksn" path="res://SettingsMenu/settings_menu.tscn" id="3_n23lg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dcgbb"]
 font_size = 100
@@ -67,7 +68,7 @@ text = "Credits"
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "QUIT"
+text = "Quit"
 
 [node name="credits_panel" type="PanelContainer" parent="." unique_id=457562881]
 unique_name_in_owner = true
@@ -86,3 +87,33 @@ LMMS
 Kenney's UI Theme, azagaya
 "
 label_settings = SubResource("LabelSettings_n23lg")
+
+[node name="settingsMenu" parent="." unique_id=68845947 instance=ExtResource("3_n23lg")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -274.0
+offset_top = -307.0
+offset_right = -274.0
+offset_bottom = -307.0
+
+[node name="close" type="Button" parent="settingsMenu" unique_id=1268277884]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 220.99998
+offset_top = 552.0
+offset_right = 294.3241
+offset_bottom = 606.251
+grow_horizontal = 2
+grow_vertical = 0
+text = "Close"
