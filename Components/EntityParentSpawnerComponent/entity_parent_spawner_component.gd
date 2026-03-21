@@ -1,4 +1,5 @@
 extends Node2D
+## Handles spawning enemies/entities
 class_name EntityParentSpawnerComponent
 
 func _ready() -> void:
