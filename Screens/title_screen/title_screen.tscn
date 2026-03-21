@@ -26,12 +26,13 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -441.0
-offset_right = 441.0
+offset_left = -560.0
+offset_right = 560.0
 offset_bottom = 137.0
 grow_horizontal = 2
-text = "Box Game Jon Jam"
+text = "Croak and Dagger"
 label_settings = SubResource("LabelSettings_dcgbb")
+horizontal_alignment = 1
 
 [node name="buttons" type="VBoxContainer" parent="." unique_id=1944396795]
 layout_mode = 1

@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bqrd0srtdaksn" path="res://SettingsMenu/settings_menu.tscn" id="3_sglur"]
 [ext_resource type="PackedScene" uid="uid://ih821u05qh4v" path="res://Components/HealthComponent/health_component.tscn" id="5_fkugw"]
 [ext_resource type="PackedScene" uid="uid://dqqmdp3hyac81" path="res://Components/BoxDecider/box_decider.tscn" id="6_qiwj3"]
+[ext_resource type="Texture2D" uid="uid://7squg72iawm1" path="res://Art/fxshit/Upgrades.png" id="7_3wlsy"]
 [ext_resource type="PackedScene" uid="uid://c1qobuo6afwil" path="res://Components/StatsAllocator/stats_allocator.tscn" id="7_26q78"]
 [ext_resource type="Script" uid="uid://d1thrvcvvld7y" path="res://entities/player/ui.gd" id="7_j3ovn"]
 [ext_resource type="Script" uid="uid://c2ovebnouj1i" path="res://entities/player/deathCanvas.gd" id="9_7thud"]
@@ -91,6 +92,18 @@ tracks/5/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Icon/shield:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_j3ovn"]
 resource_name = "attack"
@@ -171,6 +184,73 @@ tracks/5/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_3wlsy"]
+resource_name = "block"
+length = 0.2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon/Trail2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Icon:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(-25, 0), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Icon:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector2(1.1, 0.9), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Icon/shield:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_idle"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_abrql"]
 resource_name = "idle"
 length = 2.0
@@ -223,6 +303,73 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Icon/shield:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_yqrof"]
+resource_name = "take_damage"
+length = 0.2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon/Trail2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Icon:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(-50, 0), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Icon:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector2(1.2, 0.8), Vector2(1, 1)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_idle"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_afbqv"]
@@ -283,7 +430,9 @@ tracks/3/keys = {
 _data = {
 &"RESET": SubResource("Animation_sglur"),
 &"attack": SubResource("Animation_j3ovn"),
+&"block": SubResource("Animation_3wlsy"),
 &"idle": SubResource("Animation_abrql"),
+&"take_damage": SubResource("Animation_yqrof"),
 &"walk": SubResource("Animation_afbqv")
 }
 
@@ -306,6 +455,15 @@ unique_name_in_owner = true
 [node name="Icon" type="Sprite2D" parent="." unique_id=1200674643]
 scale = Vector2(0.8, 1.2)
 texture = ExtResource("2_abrql")
+
+[node name="shield" type="Sprite2D" parent="Icon" unique_id=2110461774]
+visible = false
+position = Vector2(77, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("7_3wlsy")
+hframes = 5
+vframes = 2
+frame = 5
 
 [node name="Trail2" type="Sprite2D" parent="Icon" unique_id=1352087740]
 position = Vector2(82.552635, 0)

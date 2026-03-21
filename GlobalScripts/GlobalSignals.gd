@@ -37,3 +37,6 @@ signal UpgradeDone
 
 ## After walking and encountering next enemy
 signal CombatStart
+
+## When hitting a defend box
+signal Defended

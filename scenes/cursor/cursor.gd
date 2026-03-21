@@ -2,7 +2,7 @@ extends Area2D
 class_name Cursor
 
 const speed_increase : int = 50
-const base_speed : float = 350
+const base_speed : float = 300
 const max_speed : float = 1200
 
 var current_box : Box
@@ -43,6 +43,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			if biggest_box is DefendBox:
 				%block.pitch_scale = randf_range(0.7,0.9)
 				%block.play()
+				GlobalSignals.Defended.emit()
 		else:
 			_failed_box_hit()
 

@@ -33,7 +33,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(-2, 1),
 "update": 0,
-"values": [Vector2(575, 800), Vector2(575, 164)]
+"values": [Vector2(563, 800), Vector2(563, 164)]
 }
 
 [sub_resource type="Animation" id="Animation_qc0sp"]
@@ -50,7 +50,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(-2, 1),
 "update": 0,
-"values": [Vector2(575, 164), Vector2(575, 800)]
+"values": [Vector2(563, 164), Vector2(563, 800)]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -94,27 +94,31 @@ anchor_bottom = 0.5
 offset_left = -65.0
 offset_top = 440.0
 offset_right = 88.667114
-offset_bottom = 634.64087
+offset_bottom = 694.6404
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="buttons" type="VBoxContainer" parent="panel" unique_id=908669666]
 layout_mode = 2
+alignment = 1
 
 [node name="upg1" type="Button" parent="panel/buttons" unique_id=489762656]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Upgrade 1:"
+alignment = 0
 
 [node name="upg2" type="Button" parent="panel/buttons" unique_id=824602839]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Upgrade 2:"
+alignment = 0
 
 [node name="upg3" type="Button" parent="panel/buttons" unique_id=1022094973]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Upgrade 3:"
+alignment = 0
 
 [node name="upgPicked" type="AudioStreamPlayer" parent="." unique_id=425292919]
 unique_name_in_owner = true
