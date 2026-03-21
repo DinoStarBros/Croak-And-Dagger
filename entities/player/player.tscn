@@ -10,7 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://c1qobuo6afwil" path="res://Components/StatsAllocator/stats_allocator.tscn" id="7_26q78"]
 [ext_resource type="Script" uid="uid://d1thrvcvvld7y" path="res://entities/player/ui.gd" id="7_j3ovn"]
 [ext_resource type="Script" uid="uid://c2ovebnouj1i" path="res://entities/player/deathCanvas.gd" id="9_7thud"]
+[ext_resource type="Texture2D" uid="uid://d31hdne52dndk" path="res://Art/uiButtons.png" id="9_gx6sm"]
 [ext_resource type="AudioStream" uid="uid://e7fgtf2ti3ki" path="res://Audio/41randsfx/15.wav" id="9_wvtmh"]
+[ext_resource type="Theme" uid="uid://bb6vwl0h1flws" path="res://FlatUI4/kenneyUI-blue.tres" id="9_yqrof"]
 [ext_resource type="AudioStream" uid="uid://c05eac572q51" path="res://Audio/amalgun/MissileExplode.wav" id="10_7thud"]
 [ext_resource type="PackedScene" uid="uid://cm14oxbcwtmbq" path="res://UIPopups/deathScreen/death_screen.tscn" id="10_a1qjk"]
 [ext_resource type="Texture2D" uid="uid://diihmdabfwa8g" path="res://Art/Placeholder/Trail2.png" id="14_afbqv"]
@@ -335,7 +337,22 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 
+[node name="pauseButton" type="Button" parent="ui" unique_id=1906936024]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -42.0
+offset_top = 31.0
+offset_right = 43.324097
+offset_bottom = 119.25101
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("9_yqrof")
+icon = ExtResource("9_gx6sm")
+
 [node name="pause" type="CanvasLayer" parent="." unique_id=898789355]
+unique_name_in_owner = true
 process_mode = 3
 visible = false
 script = ExtResource("3_bls4j")

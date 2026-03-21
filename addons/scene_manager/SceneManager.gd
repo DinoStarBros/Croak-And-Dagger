@@ -39,6 +39,7 @@ var singleton_entities := {}
 var _previous_scene = null
 
 func _ready() -> void:
+	
 	_set_singleton_entities()
 	scene_loaded.emit()
 

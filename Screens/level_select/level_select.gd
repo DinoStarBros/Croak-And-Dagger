@@ -19,6 +19,7 @@ const level_scns : Array[String] = [
 }
 
 func _ready() -> void:
+	
 	Global.current_game_state = Global.game_states.TITLE
 	
 	MusicManager.play_song("title")

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c15x2bc6j21vr"]
+
+[ext_resource type="Script" uid="uid://bfcp8j516bcsq" path="res://scenes/screen_unpauser/screen_unpauser.gd" id="1_jq8l2"]
+
+[node name="screen_unpauser" type="Node" unique_id=518566030]
+process_mode = 3
+script = ExtResource("1_jq8l2")

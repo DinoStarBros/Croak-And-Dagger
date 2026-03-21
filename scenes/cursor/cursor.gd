@@ -2,8 +2,8 @@ extends Area2D
 class_name Cursor
 
 const speed_increase : int = 50
-const base_speed : float = 400
-const max_speed : float = 1000
+const base_speed : float = 350
+const max_speed : float = 1200
 
 var current_box : Box
 var cursor_move_mode : bool = true ## True = right, False = left
@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 	
 	#%text.text = str("Combo : ", combo)
 
-func _input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	if not Global.current_game_state == Global.game_states.FIGHT:
 		return
 	

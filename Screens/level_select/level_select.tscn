@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://bb6vwl0h1flws" path="res://FlatUI4/kenneyUI-blue.tres" id="1_37umd"]
 [ext_resource type="Script" uid="uid://3fhlu1k4ylcl" path="res://Screens/level_select/level_select.gd" id="1_swvou"]
+[ext_resource type="PackedScene" uid="uid://c15x2bc6j21vr" path="res://scenes/screen_unpauser/screen_unpauser.tscn" id="3_lqllq"]
 
 [node name="level_select" type="Control" unique_id=619495632]
 layout_mode = 3
@@ -49,3 +50,5 @@ offset_top = 36.0
 offset_right = 119.32413
 offset_bottom = 78.251
 text = "Quit"
+
+[node name="screen_unpauser" parent="." unique_id=518566030 instance=ExtResource("3_lqllq")]
