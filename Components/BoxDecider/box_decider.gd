@@ -30,7 +30,7 @@ func _spawn_timer_timeout() -> void:
 	
 	%SpawnTimer.start(spawn_time)
 	
-	if Global.boxes_amnt >= Global.MAX_BOXES: return
+
 	if not Global.current_game_state == Global.game_states.FIGHT:
 		return
 	
@@ -44,6 +44,9 @@ func _spawn_timer_timeout() -> void:
 			box_instance.damage = stats.damage
 			GlobalSignals.SpawnBox.emit(box_instance, Global.endpoints_x.y)
 		elif box_instance is AttackBox:
+			if Global.boxes_amnt >= Global.MAX_BOXES: 
+				return
+			
 			box_instance.damage = stats.damage
 			GlobalSignals.SpawnBoxRandomX.emit(box_instance)
 	

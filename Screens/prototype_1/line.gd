@@ -18,7 +18,7 @@ func _ready() -> void:
 	GlobalSignals.SpawnBoxRandomX.connect(_spawn_box_rand_x)
 
 func _process(delta: float) -> void:
-	pass
+	Global.boxes_amnt = %box_parent.get_child_count()
 
 ## Function that spawns a box, specify box scene and position x
 func _spawn_box(
