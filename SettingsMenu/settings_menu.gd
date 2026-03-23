@@ -11,12 +11,14 @@ var resolutions : Array[Vector2i] = [
 	Vector2i(1280, 720),
 ]
 var sure_quit:bool = false
+var allow_audios_play: bool = false
 
 func _ready()->void:
 	
 	
 	await get_tree().process_frame
 	_on_load_pressed()
+	allow_audios_play = true
 
 func on_pause() -> void:
 	sure_quit = false
@@ -66,20 +68,23 @@ func _update_res()->void:
 	pass
 
 func _on_master_volume_value_changed(value: float)->void:
-	%vol_change_master.pitch_scale = value
-	%vol_change_master.play(0.005)
+	if allow_audios_play:
+		%vol_change_master.pitch_scale = value
+		%vol_change_master.play(0.005)
 	
 	SaveLoad.settings.master_volume = value
 
 func _on_music_volume_value_changed(value: float)->void:
-	%vol_change_music.pitch_scale = value
-	%vol_change_music.play(0.005)
+	if allow_audios_play:
+		%vol_change_music.pitch_scale = value
+		%vol_change_music.play(0.005)
 	
 	SaveLoad.settings.music_volume = value
 
 func _on_sfx_vol_value_changed(value: float)->void:
-	%vol_change_sfx.pitch_scale = value
-	%vol_change_sfx.play(0.005)
+	if allow_audios_play:
+		%vol_change_sfx.pitch_scale = value
+		%vol_change_sfx.play(0.005)
 	
 	SaveLoad.settings.sfx_volume = value
 

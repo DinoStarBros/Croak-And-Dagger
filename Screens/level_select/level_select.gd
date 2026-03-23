@@ -8,7 +8,7 @@ const level_scns : Array[String] = [
 @onready var button_and_level : Dictionary = {
 	"L1": [
 		%l1, 
-		func():SceneManager.change_scene("uid://blemjwhstvb1w")
+		func():SceneManager.change_scene(References.levels_arr[0])
 		],
 	"L2": [
 		%l2, 
