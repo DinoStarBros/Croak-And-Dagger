@@ -22,6 +22,12 @@ func _process(delta: float) -> void:
 	_move(delta)
 	
 	#%text.text = str("Combo : ", combo)
+	
+	%debug.text = str(
+		"Speed: ", cursor_speed, 
+		" ",
+		"Combo: ", combo
+	)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not Global.current_game_state == Global.game_states.FIGHT:

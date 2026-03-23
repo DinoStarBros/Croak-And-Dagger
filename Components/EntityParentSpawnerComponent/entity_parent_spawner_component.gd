@@ -4,10 +4,6 @@ extends Node2D
 ## After you picked an upgrade
 class_name EntityParentSpawnerComponent
 
-var enemy_scns : Array[PackedScene] = [
-	preload("res://entities/enemy1/enemy_1.tscn"),
-	
-]
 @export var level_resource : LevelResource
 
 func _ready() -> void:
@@ -21,7 +17,7 @@ func _upgrade_done() -> void:
 	GlobalSignals.CombatStart.emit()
 
 func _combat_done() -> void:
-	var enemy = enemy_scns.pick_random().instantiate()
+	var enemy = level_resource.enemy_scns.pick_random().instantiate()
 	add_child(enemy)
 	enemy.global_position = Global.ESPAWN_POS
 	

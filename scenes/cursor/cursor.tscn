@@ -74,3 +74,20 @@ stream = ExtResource("6_vq56n")
 volume_db = -5.0
 pitch_scale = 0.7
 bus = &"SFX"
+
+[node name="debug_ui" type="CanvasLayer" parent="." unique_id=57303251]
+
+[node name="debug" type="Label" parent="debug_ui" unique_id=1449697894]
+unique_name_in_owner = true
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -275.0
+offset_top = -42.0
+offset_right = -83.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.5, 1.5)
