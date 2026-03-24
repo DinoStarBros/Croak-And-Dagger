@@ -10,8 +10,20 @@ class_name StatsAllocator
 @export var health_component : HealthComponent
 @export var box_decider : BoxDecider
 
+var enemy_idx : int = 67
+
 func _ready() -> void:
+	
+	await get_tree().process_frame
+	print(enemy_idx)
+	
+	#if get_parent() is Enemy:
+		#stats.max_hp *= enemy_idx + 1
+		#
+		#stats.spawn_amount_range *= enemy_idx + 1
+		#stats.spawn_time_range *= enemy_idx + 1
+		#stats.box_speed_range *= enemy_idx + 1
+		#stats.damage *= enemy_idx + 1
 	
 	health_component.stats = stats
 	box_decider.stats = stats
-	

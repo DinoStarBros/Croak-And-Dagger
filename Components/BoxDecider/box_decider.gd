@@ -12,6 +12,8 @@ var box_speed_range : Vector2
 var stats : EntityStats
 
 func _ready() -> void:
+	await get_tree().process_frame
+	
 	random_or_pattern = stats.random_or_pattern
 	box_scenes = stats.box_scenes
 	spawn_amount_range = stats.spawn_amount_range

@@ -8,5 +8,5 @@ func _ready() -> void:
 	
 	%Text.text = str(
 		enemies, "/", max_enemies,
-		" Enemies Defeated!"
+		" Scalpers Sabotaged!"
 	)

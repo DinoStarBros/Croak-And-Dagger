@@ -1,4 +1,4 @@
-extends Node2D
+extends Enemy
 class_name Enemy1
 
 @onready var anim: AnimationPlayer = %anim
@@ -7,6 +7,7 @@ class_name Enemy1
 
 func _ready() -> void:
 	GlobalSignals.CursorMiss.connect(_cursor_miss)
+	stats_allocator.enemy_idx = enemy_idx
 
 func _cursor_miss() -> void:
 	GlobalSignals.DamagePlayer.emit(stats_allocator.stats.damage)

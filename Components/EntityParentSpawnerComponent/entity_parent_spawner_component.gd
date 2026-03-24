@@ -29,7 +29,8 @@ func _combat_start() -> void:
 	_spawn_enemy()
 
 func _spawn_enemy() -> void:
-	var enemy = level_resource.enemy_scns.pick_random().instantiate()
+	var enemy : Enemy = level_resource.enemy_scns.pick_random().instantiate()
+	enemy.enemy_idx = curr_enemies_defeated
 	add_child(enemy)
 	enemy.global_position = Global.ESPAWN_POS
 

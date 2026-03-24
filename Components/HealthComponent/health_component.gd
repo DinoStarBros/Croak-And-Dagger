@@ -30,6 +30,8 @@ func enemy_hurt(damage: float) -> void:
 			enemy_dead()
 
 func _ready() -> void:
+	await get_tree().process_frame
+	
 	max_hp = stats.max_hp
 	hp = max_hp
 	
