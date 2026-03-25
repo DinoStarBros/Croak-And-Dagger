@@ -9,7 +9,7 @@ func _ready() -> void:
 	z_index = id
 	%Label.text = str(z_index)
 	
-	scale.x *= randf_range(0.5, 2)
+	scale.x *= randf_range(X_SCALE_RANGE.x, X_SCALE_RANGE.y)
 
 func _exit_tree() -> void:
 	boxes_amount -= 1

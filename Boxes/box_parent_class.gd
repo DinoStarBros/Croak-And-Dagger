@@ -7,6 +7,8 @@ static var boxes_amount : int = 0
 var id : int = 0
 var velocity : Vector2
 
+const X_SCALE_RANGE : Vector2 = Vector2(0.7, 1.3)
+
 func slice() -> void:
 	pass
 
