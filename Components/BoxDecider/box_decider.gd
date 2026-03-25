@@ -30,10 +30,10 @@ func _ready() -> void:
 	spawn_amount_range = stats.spawn_amount_range
 	
 	# Decreases spawn time, making the enemy spawn boxes faster
-	spawn_time_range = stats.spawn_time_range * scaling(enemy_stat_mult, 50, false)
+	spawn_time_range = stats.spawn_time_range * scaling(enemy_stat_mult, 40, false)
 	
 	# Increases box speed, making defend boxes move faster to the left
-	box_speed_range = stats.box_speed_range * scaling(enemy_stat_mult, 50, true)
+	box_speed_range = stats.box_speed_range * scaling(enemy_stat_mult, 40, true)
 	
 	final_damage = roundi(
 		stats.damage * scaling(enemy_stat_mult - 1, 2.5, true)
