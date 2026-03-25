@@ -64,14 +64,14 @@ func _spawn_timer_timeout() -> void:
 		
 		## 1st param, box scene
 		## 2nd param, pos x, if it's not random x
-		var box_instance : Box = box_scenes[0].instantiate()
+		var box_instance : Box = box_scenes.pick_random().instantiate()
 		if box_instance is DefendBox:
 			# Boxes for the enemies
 			box_instance.velocity.x = -randf_range(box_speed_range.x, box_speed_range.y)
 			box_instance.damage = final_damage
 			GlobalSignals.SpawnBox.emit(box_instance, Global.endpoints_x.y)
 		
-		elif box_instance is AttackBox:
+		elif box_instance is ProductBox:
 			## Boxes for the player
 			if Global.boxes_amnt >= Global.MAX_BOXES: 
 				return

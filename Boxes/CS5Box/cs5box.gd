@@ -1,7 +1,5 @@
 extends ProductBox
-## This is the players own attacks
-## Slicing them will deal damage
-class_name AttackBox
+class_name CS5Box
 
 var damage : float
 
