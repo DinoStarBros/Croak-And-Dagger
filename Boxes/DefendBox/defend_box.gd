@@ -9,7 +9,6 @@ func _ready() -> void:
 	boxes_amount += 1
 	id = boxes_amount
 	z_index = Global.MAX_BOXES + id
-	%Label.text = str(z_index)
 	
 	scale.x *= randf_range(0.5, 2)
 	

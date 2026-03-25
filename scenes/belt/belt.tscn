@@ -8,7 +8,7 @@ size = Vector2(1, 80)
 
 [node name="belt" type="Line2D" unique_id=1659621718]
 points = PackedVector2Array(-450, 0, 450, 0)
-width = 80.0
+width = 50.0
 default_color = Color(0.48570347, 0.48570353, 0.48570347, 1)
 script = ExtResource("1_0u7u5")
 
