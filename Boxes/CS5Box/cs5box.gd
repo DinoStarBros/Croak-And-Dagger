@@ -1,6 +1,8 @@
 extends ProductBox
 class_name CS5Box
 
+@export var item_spawn_comp : ItemSpawningComponent
+
 var damage : float
 var flip_x : int = 0
 
@@ -21,3 +23,5 @@ func slice() -> void:
 	%anim.play("break")
 	
 	GlobalSignals.DamageEnemy.emit(damage)
+	
+	item_spawn_comp.on_slash()

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://eruaxc4xhip"]
+
+[ext_resource type="Script" uid="uid://nm8c4c6tcbuw" path="res://Components/ItemSpawningComponent/item_spawning_component.gd" id="1_l6tql"]
+
+[node name="ItemSpawningComponent" type="Node2D" unique_id=1018164484]
+script = ExtResource("1_l6tql")
