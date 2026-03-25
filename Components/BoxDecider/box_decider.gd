@@ -36,7 +36,7 @@ func _ready() -> void:
 	box_speed_range = stats.box_speed_range * scaling(enemy_stat_mult, 40, true)
 	
 	final_damage = roundi(
-		stats.damage * scaling(enemy_stat_mult - 1, 2.5, true)
+		stats.damage * scaling(enemy_stat_mult - 1, 4, true)
 		)
 	
 	final_damage_text.text = str(

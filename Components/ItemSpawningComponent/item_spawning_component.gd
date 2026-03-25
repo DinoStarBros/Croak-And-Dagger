@@ -10,10 +10,10 @@ var item_chance : float = 1.0/6.0
 
 func on_slash() -> void:
 	var rand : float = randf()
-	print(rand)
 	
 	if rand < item_chance:
 		_spawn_item()
 
 func _spawn_item() -> void:
-	pass
+	var item : Item = item_scn.instantiate()
+	Global.inventory.add_child(item)

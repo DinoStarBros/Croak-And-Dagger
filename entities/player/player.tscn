@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://cm14oxbcwtmbq" path="res://UIPopups/deathScreen/death_screen.tscn" id="10_a1qjk"]
 [ext_resource type="Script" uid="uid://c2l0k6v21mlhb" path="res://entities/player/stat_upgrades.gd" id="12_b2kln"]
 [ext_resource type="Texture2D" uid="uid://diihmdabfwa8g" path="res://Art/Placeholder/Trail2.png" id="14_afbqv"]
+[ext_resource type="Script" uid="uid://ba4q7byfi2rvv" path="res://entities/player/inventory.gd" id="17_we0b7"]
 
 [sub_resource type="Animation" id="Animation_sglur"]
 length = 0.001
@@ -588,6 +589,9 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="death_screen" parent="deathCanvas" unique_id=894014762 instance=ExtResource("10_a1qjk")]
+
+[node name="Inventory" type="CanvasLayer" parent="." unique_id=1740634853]
+script = ExtResource("17_we0b7")
 
 [node name="sfx" type="Node" parent="." unique_id=373327838]
 process_mode = 3
