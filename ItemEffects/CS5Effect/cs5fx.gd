@@ -49,7 +49,7 @@ func beam_start() -> void:
 		await get_tree().create_timer(1/(damage/duration)).timeout
 
 func _extra_sfx() -> void:
-	const PLAY_TIMES : int = 3
+	const PLAY_TIMES : int = 4
 	
 	for n in PLAY_TIMES:
 		%enemyHit.pitch_scale = randf_range(0.9, 1.1) + 1
