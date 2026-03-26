@@ -19,6 +19,8 @@
 [ext_resource type="Script" uid="uid://c2l0k6v21mlhb" path="res://entities/player/stat_upgrades.gd" id="12_b2kln"]
 [ext_resource type="Texture2D" uid="uid://diihmdabfwa8g" path="res://Art/Placeholder/Trail2.png" id="14_afbqv"]
 [ext_resource type="Script" uid="uid://ba4q7byfi2rvv" path="res://entities/player/inventory.gd" id="17_we0b7"]
+[ext_resource type="PackedScene" uid="uid://q4xc2vqw6hgi" path="res://scenes/item_slot/item_slot.tscn" id="18_mtric"]
+[ext_resource type="Script" uid="uid://dgggbtvfb1dl" path="res://entities/player/item_effects.gd" id="21_eyb6c"]
 
 [sub_resource type="Animation" id="Animation_sglur"]
 length = 0.001
@@ -438,6 +440,15 @@ _data = {
 &"walk": SubResource("Animation_afbqv")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_we0b7"]
+font_size = 20
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mtric"]
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
 [node name="player" type="Node2D" unique_id=1225601102]
 script = ExtResource("1_symyc")
 
@@ -591,7 +602,69 @@ grow_vertical = 2
 [node name="death_screen" parent="deathCanvas" unique_id=894014762 instance=ExtResource("10_a1qjk")]
 
 [node name="Inventory" type="CanvasLayer" parent="." unique_id=1740634853]
+layer = -1
 script = ExtResource("17_we0b7")
+
+[node name="itmtxt" type="Label" parent="Inventory" unique_id=1682876831]
+offset_left = 144.0
+offset_top = 473.0
+offset_right = 188.0
+offset_bottom = 494.0
+text = "Items:"
+label_settings = SubResource("LabelSettings_we0b7")
+
+[node name="i1" type="Label" parent="Inventory/itmtxt" unique_id=1499574419]
+z_index = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = 18.0
+offset_right = 12.0
+offset_bottom = 35.0
+text = "1."
+label_settings = SubResource("LabelSettings_mtric")
+
+[node name="i2" type="Label" parent="Inventory/itmtxt" unique_id=1282105748]
+z_index = 1
+layout_mode = 0
+offset_left = 71.0
+offset_top = 18.0
+offset_right = 80.0
+offset_bottom = 35.0
+text = "2."
+label_settings = SubResource("LabelSettings_mtric")
+
+[node name="i3" type="Label" parent="Inventory/itmtxt" unique_id=1481974845]
+z_index = 1
+layout_mode = 0
+offset_left = 139.0
+offset_top = 18.0
+offset_right = 148.0
+offset_bottom = 35.0
+text = "3."
+label_settings = SubResource("LabelSettings_mtric")
+
+[node name="items" type="HBoxContainer" parent="Inventory/itmtxt" unique_id=1668745939]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1.0
+offset_top = 34.0
+offset_right = 41.0
+offset_bottom = 74.0
+
+[node name="item_slot1" parent="Inventory/itmtxt/items" unique_id=2055774397 instance=ExtResource("18_mtric")]
+layout_mode = 2
+use_button = "item1"
+
+[node name="item_slot2" parent="Inventory/itmtxt/items" unique_id=1191385227 instance=ExtResource("18_mtric")]
+layout_mode = 2
+use_button = "item2"
+
+[node name="item_slot3" parent="Inventory/itmtxt/items" unique_id=850390082 instance=ExtResource("18_mtric")]
+layout_mode = 2
+use_button = "item3"
+
+[node name="ItemEffects" type="CanvasLayer" parent="." unique_id=368405744]
+script = ExtResource("21_eyb6c")
 
 [node name="sfx" type="Node" parent="." unique_id=373327838]
 process_mode = 3

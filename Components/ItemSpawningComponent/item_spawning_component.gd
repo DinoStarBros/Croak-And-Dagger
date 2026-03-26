@@ -6,7 +6,7 @@ class_name ItemSpawningComponent
 
 @export var item_scn : PackedScene
 
-var item_chance : float = 1.0/6.0
+var item_chance : float = 1.0/1.0
 
 func on_slash() -> void:
 	var rand : float = randf()
@@ -15,5 +15,4 @@ func on_slash() -> void:
 		_spawn_item()
 
 func _spawn_item() -> void:
-	var item : Item = item_scn.instantiate()
-	Global.inventory.add_child(item)
+	Global.inventory.add_item(item_scn)

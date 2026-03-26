@@ -1,7 +1,8 @@
 extends Node
 
 enum game_states {
-	TITLE, FIGHT, DEAD, WIN, UPGRADE, TRANSITION_NEXT_COMBAT
+	TITLE, FIGHT, DEAD, WIN, UPGRADE, TRANSITION_NEXT_COMBAT, 
+	USING_ITEM
 }
 
 var current_game_state : game_states
@@ -10,6 +11,8 @@ var endpoints_x : Vector2
 ## Index for the current enemy in the level
 var enemy_idx : int = -1
 var inventory : Inventory
+var cursor : Cursor
+var item_effects : ItemEffects
 
 ## The maximum amount of boxes that can be on screen 
 const MAX_BOXES : int = 25

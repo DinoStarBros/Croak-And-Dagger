@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://q4xc2vqw6hgi"]
+
+[ext_resource type="Theme" uid="uid://bb6vwl0h1flws" path="res://FlatUI4/kenneyUI-blue.tres" id="1_7iywk"]
+[ext_resource type="Script" uid="uid://bilui2vexxhk8" path="res://scenes/item_slot/item_slot.gd" id="1_oeqa3"]
+
+[node name="item_slot" type="PanelContainer" unique_id=2055774397]
+custom_minimum_size = Vector2(64, 64)
+offset_right = 64.0
+offset_bottom = 64.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("1_7iywk")
+script = ExtResource("1_oeqa3")

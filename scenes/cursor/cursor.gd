@@ -14,6 +14,8 @@ var combo : int = 0
 func _ready() -> void:
 	GlobalSignals.CombatStart.connect(_combat_done)
 	GlobalSignals.DamagePlayer.connect(_player_hurt)
+	
+	Global.cursor = self
 
 func _process(delta: float) -> void:
 	

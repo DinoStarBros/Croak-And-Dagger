@@ -296,10 +296,10 @@ region = Rect2(812, 458, 28, 10)
 
 [sub_resource type="StyleBoxTexture" id="21"]
 texture = ExtResource("1")
-texture_margin_left = 12.3202
-texture_margin_top = 13.3469
-texture_margin_right = 13.3469
-texture_margin_bottom = 11.2935
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
 region_rect = Rect2(485, 310, 100, 100)
 
 [sub_resource type="AtlasTexture" id="22"]
