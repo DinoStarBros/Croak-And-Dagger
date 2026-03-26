@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://mb3vb675hwyu" path="res://Boxes/PerfumeBox/perfume_box.gd" id="1_08rvr"]
 [ext_resource type="Texture2D" uid="uid://bu0x7lpmcykd8" path="res://Art/CrokDag/slashCleaveThing.png" id="2_wm4j4"]
 [ext_resource type="PackedScene" uid="uid://eruaxc4xhip" path="res://Components/ItemSpawningComponent/item_spawning_component.tscn" id="3_hrfk5"]
-[ext_resource type="PackedScene" uid="uid://n7kyhjwgq41n" path="res://Items/CS5/cs5.tscn" id="4_lxgo2"]
+[ext_resource type="PackedScene" uid="uid://bptk4a85i4y5n" path="res://Items/Perfume/perfume.tscn" id="4_7ohpq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wadgx"]
 size = Vector2(68, 64)
@@ -325,4 +325,4 @@ scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("2_wm4j4")
 
 [node name="ItemSpawningComponent" parent="." unique_id=1018164484 instance=ExtResource("3_hrfk5")]
-item_scn = ExtResource("4_lxgo2")
+item_scn = ExtResource("4_7ohpq")

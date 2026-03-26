@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://drg86be7d2liv" path="res://Boxes/KroFlexBox/kroflex_box.gd" id="1_01ui1"]
 [ext_resource type="Texture2D" uid="uid://bu0x7lpmcykd8" path="res://Art/CrokDag/slashCleaveThing.png" id="2_t2drq"]
 [ext_resource type="PackedScene" uid="uid://eruaxc4xhip" path="res://Components/ItemSpawningComponent/item_spawning_component.tscn" id="3_c0qid"]
-[ext_resource type="PackedScene" uid="uid://n7kyhjwgq41n" path="res://Items/CS5/cs5.tscn" id="4_h18di"]
+[ext_resource type="PackedScene" uid="uid://0xm1jhtb62bo" path="res://Items/KroFlex/kroflex.tscn" id="4_buexp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wadgx"]
 size = Vector2(68, 64)
@@ -325,4 +325,4 @@ scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("2_t2drq")
 
 [node name="ItemSpawningComponent" parent="." unique_id=1018164484 instance=ExtResource("3_c0qid")]
-item_scn = ExtResource("4_h18di")
+item_scn = ExtResource("4_buexp")
