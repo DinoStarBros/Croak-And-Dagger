@@ -16,3 +16,5 @@ func _unhandled_key_input(event: InputEvent) -> void:
 			item_held = get_child(0)
 			
 			item_held.use()
+			
+			Global.cursor.cursor_speed = Global.cursor.base_speed
