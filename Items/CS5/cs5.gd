@@ -1,7 +1,6 @@
 extends Item
 class_name CS5
 
-const item_effect_scn : PackedScene = preload("res://ItemEffects/CS5Effect/cs5fx.tscn")
 
 func _ready() -> void:
 	%combo_cost_txt.text = str(combo_cost)
