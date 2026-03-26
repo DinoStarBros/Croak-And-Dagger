@@ -70,7 +70,8 @@ folder_colors={
 "res://juices/": "yellow",
 "res://musicManager/": "pink",
 "res://scenes/": "orange",
-"res://shaders/": "teal"
+"res://shaders/": "teal",
+"res://upgrade_icons/": "red"
 }
 
 [gui]

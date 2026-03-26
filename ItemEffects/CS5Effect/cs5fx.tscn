@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://c05eac572q51" path="res://Audio/amalgun/MissileExplode.wav" id="4_7l6nb"]
 [ext_resource type="AudioStream" uid="uid://clojxvbxghphc" path="res://Audio/41randsfx/11.wav" id="5_facj5"]
 [ext_resource type="AudioStream" uid="uid://r0pny8lw760t" path="res://Audio/41randsfx/30.wav" id="6_8skgu"]
+[ext_resource type="AudioStream" uid="uid://d0q36gh641ds5" path="res://Audio/planesfx/explosion-312361.mp3" id="7_l2w37"]
 
 [sub_resource type="Animation" id="Animation_xbaye"]
 length = 0.001
@@ -404,7 +405,7 @@ bus = &"SFX"
 [node name="beam" type="AudioStreamPlayer" parent="sfx" unique_id=921400243]
 unique_name_in_owner = true
 stream = ExtResource("5_facj5")
-volume_db = -20.0
+volume_db = -15.0
 pitch_scale = 0.01
 bus = &"SFX"
 
@@ -413,6 +414,11 @@ unique_name_in_owner = true
 stream = ExtResource("6_8skgu")
 volume_db = -20.0
 pitch_scale = 0.2
+bus = &"SFX"
+
+[node name="enemyHit" type="AudioStreamPlayer" parent="sfx" unique_id=1632640526]
+unique_name_in_owner = true
+stream = ExtResource("7_l2w37")
 bus = &"SFX"
 
 [node name="laser" type="Node2D" parent="." unique_id=130078584]

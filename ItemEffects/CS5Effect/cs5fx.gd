@@ -6,12 +6,16 @@ var time_scale : float = 10
 var radius : float = 10
 var duration : float = 2
 var beam_shoot : bool = false
+var damage : float
 
 func _ready() -> void:
+	
 	%Timer.timeout.connect(func():
 		Global.current_game_state = Global.game_states.FIGHT
 		queue_free()
 		)
+	
+	damage = item_effects.final_damage * 3
 
 func _process(delta: float) -> void:
 	_visuals(delta)
@@ -20,6 +24,7 @@ func _process(delta: float) -> void:
 		%beam.play()
 		%beam.pitch_scale = min(2, %beam.pitch_scale + delta)
 		%beambass.play()
+
 
 func _visuals(delta: float) -> void:
 	time_val += delta * time_scale
@@ -36,3 +41,18 @@ func _visuals(delta: float) -> void:
 func beam_start() -> void:
 	beam_shoot = true
 	%Timer.start(duration)
+	
+	_extra_sfx()
+	
+	for dmg in roundi(damage):
+		GlobalSignals.DamageEnemy.emit(1)
+		await get_tree().create_timer(1/(damage+0.001/duration)).timeout
+
+func _extra_sfx() -> void:
+	const PLAY_TIMES : int = 3
+	
+	for n in PLAY_TIMES:
+		%enemyHit.pitch_scale = randf_range(0.9, 1.1) + 1
+		%enemyHit.play(0.14)
+		
+		await get_tree().create_timer(duration/PLAY_TIMES).timeout 

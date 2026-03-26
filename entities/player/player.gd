@@ -25,6 +25,9 @@ func hurt(damage: float) -> void:
 	anim.play("take_damage")
 
 func hit_enemy(damage: float) -> void:
+	if not Global.current_game_state == Global.game_states.FIGHT:
+		return
+	
 	anim.stop()
 	anim.play("attack")
 

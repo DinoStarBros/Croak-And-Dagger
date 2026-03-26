@@ -7,6 +7,7 @@ var damage : float
 var flip_x : int = 0
 
 func _ready() -> void:
+
 	boxes_amount += 1
 	id = boxes_amount
 	z_index = id
