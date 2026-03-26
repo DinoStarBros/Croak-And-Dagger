@@ -27,7 +27,11 @@ func _physics_process(delta: float) -> void:
 	#if global_position.x <= Global.endpoints_x.x:
 	#	deal_damage_to_player()
 	
-	if not Global.current_game_state == Global.game_states.FIGHT:
+	#if (
+		#not (Global.current_game_state == Global.game_states.FIGHT) and 
+		#not (Global.current_game_state == Global.game_states.USING_ITEM)
+		#):
+	if Global.current_game_state == Global.game_states.WIN:
 		queue_free()
 
 func deal_damage_to_player() -> void:
