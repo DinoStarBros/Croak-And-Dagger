@@ -26,11 +26,11 @@ func player_hurt(damage: float) -> void:
 ## Player damaging the enemy
 func enemy_hurt(damage: float) -> void:
 	hp -= roundi(damage)
-	if hp <= 0:
-		if !died:
-			Global.current_game_state = Global.game_states.WIN
-			died = true
-			enemy_dead()
+	#if hp <= 0:
+		#if !died:
+			#Global.current_game_state = Global.game_states.WIN
+			#died = true
+			#enemy_dead()
 
 func _ready() -> void:
 	await get_tree().process_frame
@@ -58,6 +58,13 @@ func _process(delta: float) -> void:
 	if health_bar:
 		health_bar.max_value = max_hp
 		health_bar.value = hp
+	
+	if get_parent() is Enemy: if hp <= 0:
+		if Global.current_game_state == Global.game_states.FIGHT:
+			if !died:
+				Global.current_game_state = Global.game_states.WIN
+				died = true
+				enemy_dead()
 
 func enemy_dead() -> void:
 	GlobalSignals.FightWin.emit()
