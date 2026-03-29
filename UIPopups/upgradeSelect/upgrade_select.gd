@@ -78,7 +78,7 @@ func _ready() -> void:
 	_load_button_textures()
 
 func _physics_process(delta: float) -> void:
-	panel.global_position.y = lerp(panel.global_position.y, panel_desire_pos_y, 8.0 * delta)
+	panel.global_position.y = lerp(panel.global_position.y, panel_desire_pos_y, 4.0 * delta)
 
 func _load_button_text() -> void:
 	%upg1.text = str(

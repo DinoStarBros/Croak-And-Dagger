@@ -1,12 +1,11 @@
 [gd_scene format=4 uid="uid://dn0iqnqk1ax2t"]
 
 [ext_resource type="Script" uid="uid://cad8y63hr8jqu" path="res://ItemEffects/CS5Fx/cs5fx.gd" id="1_4m0s5"]
-[ext_resource type="AudioStream" uid="uid://cq1v7cgw8ngyk" path="res://Audio/tresure/slashParry.wav" id="2_xbaye"]
-[ext_resource type="AudioStream" uid="uid://bj2u06h14hxmp" path="res://Audio/splashtownSFX/Airspin.wav" id="3_p185e"]
-[ext_resource type="AudioStream" uid="uid://c05eac572q51" path="res://Audio/amalgun/MissileExplode.wav" id="4_7l6nb"]
 [ext_resource type="AudioStream" uid="uid://clojxvbxghphc" path="res://Audio/41randsfx/11.wav" id="5_facj5"]
 [ext_resource type="AudioStream" uid="uid://r0pny8lw760t" path="res://Audio/41randsfx/30.wav" id="6_8skgu"]
+[ext_resource type="PackedScene" uid="uid://bk6spsfchrune" path="res://Components/ItemDurationTimer/item_duration_timer.tscn" id="6_biyba"]
 [ext_resource type="AudioStream" uid="uid://d0q36gh641ds5" path="res://Audio/planesfx/explosion-312361.mp3" id="7_l2w37"]
+[ext_resource type="PackedScene" uid="uid://6ppgamywek0" path="res://Components/ItemFXIntro/item_fx_intro.tscn" id="8_v0ygu"]
 
 [sub_resource type="Animation" id="Animation_xbaye"]
 length = 0.001
@@ -25,46 +24,10 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("greyOut:color")
+tracks/1/path = NodePath("laser:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("sfx/1:pitch_scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("sfx/3:pitch_scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("laser:scale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -75,25 +38,13 @@ tracks/4/keys = {
 resource_name = "done"
 length = 0.5
 step = 0.1
-tracks/0/type = "value"
+tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("greyOut:color")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0.27450982), Color(0, 0, 0, 0)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0.5),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -120,94 +71,22 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("greyOut:color")
+tracks/1/path = NodePath("laser:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.27450982)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("sfx/1:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("sfx/1:pitch_scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.5, 0.8]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("sfx/2:playing")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("sfx/3:playing")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, true, true]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("sfx/3:pitch_scale")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.5, 1.0, 1.5]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("laser:scale")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
 "times": PackedFloat32Array(0, 0.8, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(1e-05, 1e-05), Vector2(1e-05, 1e-05), Vector2(2, 2)]
 }
-tracks/8/type = "method"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath(".")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0.9),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -290,21 +169,14 @@ _data = {
 &"loop": SubResource("Animation_7l6nb")
 }
 
-[node name="CS5Fx" type="Node2D" unique_id=1796393015]
+[node name="CS5Fx" type="Node2D" unique_id=1796393015 node_paths=PackedStringArray("item_duration_timer")]
 script = ExtResource("1_4m0s5")
+item_duration_timer = NodePath("ItemDurationTimer")
 
 [node name="anim" type="AnimationPlayer" parent="." unique_id=701149470]
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_xbaye")
 autoplay = &"use"
-
-[node name="greyOut" type="ColorRect" parent="." unique_id=1224218096]
-z_index = 1
-offset_left = -52.0
-offset_top = -52.0
-offset_right = 1331.0
-offset_bottom = 744.0
-color = Color(0, 0, 0, 0)
 
 [node name="spr_par" type="Node2D" parent="." unique_id=42871090]
 z_index = 2
@@ -378,18 +250,6 @@ metadata/_aseprite_wizard_source_file_hash_ = "9d1678a65874f360cf64c9e38e35fd15"
 
 [node name="sfx" type="Node" parent="." unique_id=1808197177]
 
-[node name="1" type="AudioStreamPlayer" parent="sfx" unique_id=761012262]
-stream = ExtResource("2_xbaye")
-bus = &"SFX"
-
-[node name="2" type="AudioStreamPlayer" parent="sfx" unique_id=1783676799]
-stream = ExtResource("3_p185e")
-bus = &"SFX"
-
-[node name="3" type="AudioStreamPlayer" parent="sfx" unique_id=952590931]
-stream = ExtResource("4_7l6nb")
-bus = &"SFX"
-
 [node name="beam" type="AudioStreamPlayer" parent="sfx" unique_id=921400243]
 unique_name_in_owner = true
 stream = ExtResource("5_facj5")
@@ -427,5 +287,6 @@ root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_facj5")
 autoplay = &"loop"
 
-[node name="Timer" type="Timer" parent="." unique_id=664436817]
-unique_name_in_owner = true
+[node name="itemFXIntro" parent="." unique_id=794341249 instance=ExtResource("8_v0ygu")]
+
+[node name="ItemDurationTimer" parent="." unique_id=1562411559 instance=ExtResource("6_biyba")]

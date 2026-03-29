@@ -1,6 +1,8 @@
 [gd_scene format=4 uid="uid://csjgw1g7ut6wx"]
 
 [ext_resource type="Script" uid="uid://cfjwtr81gby5t" path="res://ItemEffects/TCGFx/tcg_fx.gd" id="1_wi3vy"]
+[ext_resource type="PackedScene" uid="uid://6ppgamywek0" path="res://Components/ItemFXIntro/item_fx_intro.tscn" id="2_n7ws8"]
+[ext_resource type="PackedScene" uid="uid://bk6spsfchrune" path="res://Components/ItemDurationTimer/item_duration_timer.tscn" id="3_13dn5"]
 
 [sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_h6ud5"]
 _data = PackedByteArray("AAADAAUAAAABAAAAYAAAAGAAAAAQAwAAUklGRggDAABXRUJQVlA4TPsCAAAvX8AXEN/ANrJtJd+iPz9zgQ6omHJIPYfcXSOGNpgGAJhka+4NeYEj9GQeILrDB55ItLENALBMqtE2P9DYA/pLz+VkY+ro+Y/f/af30IFQbTkpfHz/KUKVE66aUlQVQEpdJMKZF8Nz0hYD/deaDlPrdPMbe1dPVZWKLlWKARsvdHfFXiIJVaEXgSQBYNu2Ycuo3gYFSfGo/v/PkAAIEOg8RfQfgts2kiS6KtvpqT72qkfs/0GSeNaa2AAOf3THTkL6RpJIF8n3H6wyJzKOwusERA5lwBMFaYa6XM7SK4xhaAzOY7WkweoBTXsDEzFjyTlfziEsNEx/BLActpbDoiptOHjUjqHz0GYdTEq1Y4N9pPkDECn2jW1LojbJYBJNkxKfl/PQfW9LHdu2LO06XtgUfoIsuym2Qu+3bJqSUu/EELoly87upMFPDBxj/u/Er12XEFgEbYaS+jMgTYJJSS3VjLXW6N5LHyJG9J/9TrJqEs2DJjKoCe5+j2AmCW6aZlsDEIFhCRGh8ViS92nO88j/qkS6deDpPGejaz+pdQNNVZ4nE+XoAXAE6ozbN140xIeQETT7nhE/gi+pcwCIgBXSDmmHI80trzbpWv4AAVCdOhYrZMUHuy4mHkc/rd5f3szbAhoEB+93frOwV+gvQRSAzjRNpiWllJxLKdID+I1QqEZTi+5G+tPjiNP4f9edzpTpTuE0/VYGN/b47EutxLauq4v1qsyqAQBRCXGijQ6sggj5Ja1/LqWbjqcyuzE6SPP7hkCDGBZdUBQ+lRlM7oeViHImJhIPQFMAtLIveoX2/06azpDeHVVyJtNdKRZtRsaObzdnNGApt+fNTaoBmtTSQY4pYTyHk6LU7snQuEAWjeczBrapgok0/RoAW5Gm52ki3r76KQXapt93ODxJrQ8gnQ9kUaqdUNs6F3yJkV/hqV91pM9Y8QOANk8u2hJ2X+rgybDkSfam1rHzAbUpVQ+ItYMWPb59uyK3iFoAENF4mvM7DSxN6H3vM5QdAA==")
@@ -14,11 +16,15 @@ _data = {
 &"start": SubResource("Animation_h6ud5")
 }
 
-[node name="CardFX" type="Node2D" unique_id=847359284]
+[node name="CardFX" type="Node2D" unique_id=847359284 node_paths=PackedStringArray("item_duration_timer")]
 script = ExtResource("1_wi3vy")
+item_duration_timer = NodePath("ItemDurationTimer")
 
 [node name="sprite" type="Sprite2D" parent="." unique_id=709423721]
+unique_name_in_owner = true
 texture_filter = 1
+position = Vector2(356, 362)
+scale = Vector2(3, 3)
 texture = SubResource("PortableCompressedTexture2D_h6ud5")
 hframes = 3
 vframes = 3
@@ -49,3 +55,7 @@ metadata/_aseprite_wizard_source_file_hash_ = "92b718e017da9f1f24706877673bcec1"
 [node name="anim" type="AnimationPlayer" parent="." unique_id=1707333257]
 libraries/ = SubResource("AnimationLibrary_psj3q")
 autoplay = &"start"
+
+[node name="itemFXIntro" parent="." unique_id=794341249 instance=ExtResource("2_n7ws8")]
+
+[node name="ItemDurationTimer" parent="." unique_id=1562411559 instance=ExtResource("3_13dn5")]

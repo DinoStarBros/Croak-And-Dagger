@@ -4,4 +4,9 @@ extends Node2D
 ## while ItemEffect is the effect that shows up when using the item
 class_name ItemEffect
 
+@export var item_duration_timer : ItemDurationTimer
+
 @onready var item_effects : ItemEffects = get_parent()
+
+func intro_over() -> void:
+	pass

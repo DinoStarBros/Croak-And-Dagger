@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://6ppgamywek0"]
 
+[ext_resource type="Script" uid="uid://bctktut0yi06w" path="res://Components/ItemFXIntro/item_fx_intro.gd" id="1_xm2t2"]
 [ext_resource type="AudioStream" uid="uid://cq1v7cgw8ngyk" path="res://Audio/tresure/slashParry.wav" id="1_yysr6"]
 [ext_resource type="AudioStream" uid="uid://bj2u06h14hxmp" path="res://Audio/splashtownSFX/Airspin.wav" id="2_xm2t2"]
 [ext_resource type="AudioStream" uid="uid://c05eac572q51" path="res://Audio/amalgun/MissileExplode.wav" id="3_2lnhk"]
@@ -132,6 +133,7 @@ offset_top = -52.0
 offset_right = 1331.0
 offset_bottom = 744.0
 color = Color(0, 0, 0, 0)
+script = ExtResource("1_xm2t2")
 
 [node name="anim" type="AnimationPlayer" parent="." unique_id=619337565]
 unique_name_in_owner = true

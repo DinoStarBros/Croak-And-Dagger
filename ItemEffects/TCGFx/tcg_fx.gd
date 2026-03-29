@@ -1,15 +1,18 @@
 extends ItemEffect
 class_name CardFX
 
+@onready var sprite: Sprite2D = %sprite
+
 var rotation_speed : float
+var duration : float = 3
 
 func _ready() -> void:
-	pass
+	item_duration_timer.start(duration)
 
 func _process(delta: float) -> void:
 	_rotate_move(delta)
 	
-	rotation_speed += delta * 30
+	rotation_speed += delta * 300
 
 func _rotate_move(delta: float) -> void:
-	rotation_degrees += rotation_speed * delta
+	sprite.rotation_degrees += rotation_speed * delta

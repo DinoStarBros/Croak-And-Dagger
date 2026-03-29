@@ -9,12 +9,6 @@ var beam_shoot : bool = false
 var damage : float
 
 func _ready() -> void:
-	
-	%Timer.timeout.connect(func():
-		Global.current_game_state = Global.game_states.FIGHT
-		queue_free()
-		)
-	
 	damage = item_effects.box_decider.final_damage * 3
 
 func _process(delta: float) -> void:
@@ -24,7 +18,6 @@ func _process(delta: float) -> void:
 		%beam.play()
 		%beam.pitch_scale = min(2, %beam.pitch_scale + delta)
 		%beambass.play()
-
 
 func _visuals(delta: float) -> void:
 	time_val += delta * time_scale
@@ -40,13 +33,13 @@ func _visuals(delta: float) -> void:
 
 func beam_start() -> void:
 	beam_shoot = true
-	%Timer.start(duration)
+	item_duration_timer.start(duration)
 	
 	_extra_sfx()
 	
 	for dmg in damage:
 		GlobalSignals.DamageEnemy.emit(1)
-		await get_tree().create_timer(1/(damage/duration)).timeout
+		await get_tree().create_timer(duration/damage).timeout
 
 func _extra_sfx() -> void:
 	const PLAY_TIMES : int = 4
