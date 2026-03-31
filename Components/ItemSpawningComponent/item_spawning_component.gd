@@ -6,7 +6,7 @@ class_name ItemSpawningComponent
 
 @export var item_scn : PackedScene
 
-var item_chance : float = 1.0/1.0
+var item_chance : float = 1.0/8.0
 
 func on_slash() -> void:
 	var rand : float = randf()

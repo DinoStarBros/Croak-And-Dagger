@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cee33x0u8hn4c"]
+
+[ext_resource type="Script" uid="uid://cmdwomiij11af" path="res://Debuffs/Burn/burn.gd" id="1_rjaux"]
+[ext_resource type="Material" uid="uid://dcy3gqsxcj2bs" path="res://Debuffs/Burn/burn_particles.tres" id="2_t67ku"]
+
+[node name="Burn" type="Node2D" unique_id=1515188683]
+script = ExtResource("1_rjaux")
+
+[node name="Timer" type="Timer" parent="." unique_id=1444776408]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="TickTimer" type="Timer" parent="." unique_id=676343954]
+unique_name_in_owner = true
+wait_time = 0.1
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=872367582]
+lifetime = 1.5
+randomness = 0.5
+process_material = ExtResource("2_t67ku")

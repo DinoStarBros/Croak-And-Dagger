@@ -31,6 +31,7 @@ func enemy_hurt(damage: float) -> void:
 			#Global.current_game_state = Global.game_states.WIN
 			#died = true
 			#enemy_dead()
+	
 
 func _ready() -> void:
 	await get_tree().process_frame

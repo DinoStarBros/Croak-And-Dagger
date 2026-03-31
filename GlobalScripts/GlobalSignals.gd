@@ -27,6 +27,12 @@ signal DamageEnemy(
 	damage: float
 )
 
+## When you wanna give a debuff to an enemy
+signal DebuffEnemy(
+	debuff: DebuffsComponent.Debuffs,
+	duration: float
+)
+
 ## When you press the cursor but hit nothing, it'll deal damage to the player
 signal CursorMiss
 

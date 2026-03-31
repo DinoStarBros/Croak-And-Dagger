@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ih821u05qh4v" path="res://Components/HealthComponent/health_component.tscn" id="3_ortin"]
 [ext_resource type="PackedScene" uid="uid://c1qobuo6afwil" path="res://Components/StatsAllocator/stats_allocator.tscn" id="3_ygu5k"]
 [ext_resource type="PackedScene" uid="uid://dqqmdp3hyac81" path="res://Components/BoxDecider/box_decider.tscn" id="4_c0nl6"]
+[ext_resource type="PackedScene" uid="uid://0uair2p0ft75" path="res://Components/DebuffsComponent/debuffs_component.tscn" id="6_mm6iw"]
 
 [sub_resource type="Animation" id="Animation_ygu5k"]
 length = 0.001
@@ -62,6 +63,10 @@ health_text = NodePath("../ui/healthBar/healthText")
 [node name="BoxDecider" parent="." unique_id=448822901 node_paths=PackedStringArray("final_damage_text") instance=ExtResource("4_c0nl6")]
 unique_name_in_owner = true
 final_damage_text = NodePath("../ui/stats_panel/damage_txt")
+
+[node name="DebuffsComponent" parent="." unique_id=1285624151 node_paths=PackedStringArray("health_component") instance=ExtResource("6_mm6iw")]
+z_index = 1
+health_component = NodePath("../HealthComponent")
 
 [node name="Eneme" type="Sprite2D" parent="." unique_id=211008156]
 scale = Vector2(4, 4)
