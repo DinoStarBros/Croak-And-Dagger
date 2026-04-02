@@ -646,7 +646,6 @@ use_button = "item1"
 
 [node name="CroakDonalds" parent="Inventory/itmtxt/items/item_slot1" unique_id=1293636754 instance=ExtResource("19_221hk")]
 layout_mode = 2
-combo_cost = 0
 
 [node name="item_slot2" parent="Inventory/itmtxt/items" unique_id=1191385227 instance=ExtResource("18_mtric")]
 layout_mode = 2
@@ -654,7 +653,6 @@ use_button = "item2"
 
 [node name="TCG" parent="Inventory/itmtxt/items/item_slot2" unique_id=1327641511 instance=ExtResource("20_t1t22")]
 layout_mode = 2
-combo_cost = 0
 
 [node name="item_slot3" parent="Inventory/itmtxt/items" unique_id=850390082 instance=ExtResource("18_mtric")]
 layout_mode = 2
@@ -662,7 +660,6 @@ use_button = "item3"
 
 [node name="CS5" parent="Inventory/itmtxt/items/item_slot3" unique_id=2114700001 instance=ExtResource("21_50fht")]
 layout_mode = 2
-combo_cost = 0
 
 [node name="item_slot4" parent="Inventory/itmtxt/items" unique_id=1855295061 instance=ExtResource("18_mtric")]
 layout_mode = 2

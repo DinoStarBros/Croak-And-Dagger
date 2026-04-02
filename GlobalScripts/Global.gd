@@ -18,7 +18,10 @@ var defend_box_speed_multiplier: float = 1:  ## Multiplier for how fast defend b
 	set(value):
 		defend_box_speed_multiplier = clamp(value, 0, 1)
 var player_crit_chance : float
-var item_efficiency : int ## The less combo cost items have
+var item_efficiency : int: ## The less combo cost items have
+	set(value):
+		item_efficiency = clamp(value, 0, 3)
+		GlobalSignals.ItemEfficiencyChanged.emit()
 var entity_parent_spawner_comp : EntityParentSpawnerComponent
 var camera : Camera
 

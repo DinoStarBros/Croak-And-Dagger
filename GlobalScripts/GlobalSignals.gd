@@ -4,7 +4,8 @@ extends Node
 ## While the jam was ongoing, so I don't give a shit
 ## if this is spaghetti as hell
 
-
+func _ready() -> void:
+	pass
 
 ## Signal that spawns a box, specify box scene and position x
 signal SpawnBox(
@@ -59,3 +60,5 @@ signal Defended
 
 ## When selecting stat upgrade after a fight
 signal AddUpgrade(upgrade_scn: PackedScene)
+
+signal ItemEfficiencyChanged

@@ -6,5 +6,7 @@ class_name Item
 ## The scene for the Item effect
 @export var item_effect_scn : PackedScene
 
+var final_combo_cost : int
+
 func use() -> void:
 	pass
