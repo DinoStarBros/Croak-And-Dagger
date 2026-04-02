@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 	
 	%damage_txt.text = str(
 		"Damage: ", roundi(box_decider.final_damage)
-		)
+	)
 	
 	%crit_txt.text = str(
 		"Critical Chance: ", roundi(Global.player_crit_chance)

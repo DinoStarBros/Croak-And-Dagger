@@ -10,6 +10,7 @@ var curr_enemies_defeated: int = -1
 
 func _ready() -> void:
 	Global.enemy_idx = curr_enemies_defeated
+	Global.entity_parent_spawner_comp = self
 	
 	GlobalSignals.UpgradeDone.connect(_upgrade_done)
 	GlobalSignals.CombatStart.connect(_combat_start)

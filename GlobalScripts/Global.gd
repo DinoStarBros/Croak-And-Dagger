@@ -18,6 +18,8 @@ var defend_box_speed_multiplier: float = 1:  ## Multiplier for how fast defend b
 	set(value):
 		defend_box_speed_multiplier = clamp(value, 0, 1)
 var player_crit_chance : float
+var entity_parent_spawner_comp : EntityParentSpawnerComponent
+var camera : Camera
 
 ## The maximum amount of boxes that can be on screen 
 const MAX_BOXES : int = 25
@@ -25,6 +27,9 @@ const MAX_BOXES : int = 25
 const WAIT_TIME : float = 1.5
 ## The position of the enemy in combat
 const ESPAWN_POS : Vector2 = Vector2(960, 360)
+## The damage multiplier when you crit
+const CRIT_DMG_MULT : float = 2
+const txt_scn : PackedScene = preload("res://juices/DmgNum/dmg_num.tscn")
 
 func _volume_handle() -> void:
 	AudioServer.set_bus_volume_db(
@@ -49,3 +54,15 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	_volume_handle()
+
+func frame_freeze(timescale: float, duration: float) -> void: ## Slows down the engine's time scale, slowing down the time, for a certain duration. Use for da juice
+	if SaveLoad.settings.frame_freeze_value:
+		Engine.time_scale = timescale
+		await get_tree().create_timer(duration, true, false, true).timeout
+		Engine.time_scale = 1.0
+
+func spawn_txt(text: String, global_pos: Vector2)->void: ## Spawns a splash text effect, can be used for damage numbers, or score
+	var txt : DmgNum = txt_scn.instantiate()
+	txt.text = text
+	txt.global_position = global_pos
+	entity_parent_spawner_comp.add_child(txt)

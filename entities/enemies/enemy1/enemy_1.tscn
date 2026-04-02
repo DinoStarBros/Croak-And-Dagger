@@ -60,9 +60,8 @@ unique_name_in_owner = true
 health_bar = NodePath("../ui/healthBar")
 health_text = NodePath("../ui/healthBar/healthText")
 
-[node name="BoxDecider" parent="." unique_id=448822901 node_paths=PackedStringArray("final_damage_text") instance=ExtResource("4_c0nl6")]
+[node name="BoxDecider" parent="." unique_id=448822901 instance=ExtResource("4_c0nl6")]
 unique_name_in_owner = true
-final_damage_text = NodePath("../ui/stats_panel/damage_txt")
 
 [node name="DebuffsComponent" parent="." unique_id=1285624151 node_paths=PackedStringArray("health_component") instance=ExtResource("6_mm6iw")]
 z_index = 1

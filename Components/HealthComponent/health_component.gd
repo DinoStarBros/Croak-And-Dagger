@@ -26,6 +26,10 @@ func player_hurt(damage: float) -> void:
 ## Player damaging the enemy
 func enemy_hurt(damage: float) -> void:
 	hp -= roundi(damage)
+	Global.spawn_txt(
+		str(roundi(damage)),
+		global_position
+	)
 	#if hp <= 0:
 		#if !died:
 			#Global.current_game_state = Global.game_states.WIN

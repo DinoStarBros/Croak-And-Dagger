@@ -16,6 +16,7 @@ metadata/_edit_vertical_guides_ = [-778.0]
 
 [node name="Background" type="CanvasLayer" parent="." unique_id=2034225536]
 layer = -1
+follow_viewport_enabled = true
 
 [node name="l4" type="Sprite2D" parent="Background" unique_id=1750960018]
 unique_name_in_owner = true

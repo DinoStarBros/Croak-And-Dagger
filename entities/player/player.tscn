@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://q4xc2vqw6hgi" path="res://scenes/item_slot/item_slot.tscn" id="18_mtric"]
 [ext_resource type="PackedScene" uid="uid://b2kijos1eykp8" path="res://Items/CroakDonalds/croakdonalds.tscn" id="19_221hk"]
 [ext_resource type="Script" uid="uid://dgggbtvfb1dl" path="res://entities/player/item_effects.gd" id="21_eyb6c"]
+[ext_resource type="Script" uid="uid://cfa7h6tybbt7x" path="res://entities/player/camera.gd" id="23_ghoj8"]
 
 [sub_resource type="Animation" id="Animation_sglur"]
 length = 0.001
@@ -676,5 +677,7 @@ volume_db = -10.0
 pitch_scale = 0.7
 bus = &"SFX"
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=790389014]
+[node name="Camera" type="Camera2D" parent="." unique_id=790389014]
+unique_name_in_owner = true
 position = Vector2(320, 0)
+script = ExtResource("23_ghoj8")

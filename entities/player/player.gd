@@ -7,6 +7,7 @@ class_name Player
 @onready var box_decider: BoxDecider = %BoxDecider
 @onready var ui: CanvasLayer = %ui
 @onready var anim: AnimationPlayer = %anim
+@onready var camera: Camera = %Camera
 
 var died : bool = false ## A one time thingy
 var current
@@ -26,6 +27,8 @@ func _process(delta: float) -> void:
 func hurt(damage: float) -> void:
 	anim.stop()
 	anim.play("take_damage")
+	camera.screen_shake(5, 0.2)
+	Global.frame_freeze(0.9, 0.1)
 
 func hit_enemy(damage: float) -> void:
 	if not Global.current_game_state == Global.game_states.FIGHT:
@@ -33,6 +36,7 @@ func hit_enemy(damage: float) -> void:
 	
 	anim.stop()
 	anim.play("attack")
+	camera.screen_shake(6, 0.05)
 
 func play_hurt_sfx() -> void:
 	%hurt1.pitch_scale = randf_range(0.8, 1.0)
@@ -56,6 +60,7 @@ func _combat_done() -> void:
 func _defended() -> void:
 	anim.stop()
 	anim.play("block")
+	camera.screen_shake(5, 0.1)
 
 func _heal_player_percent(percent: float) -> void:
 	var heal_amount : float = (health_component.max_hp * percent)

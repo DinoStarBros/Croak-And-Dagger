@@ -41,6 +41,7 @@ func beam_start() -> void:
 	
 	for dmg in damage:
 		GlobalSignals.DamageEnemy.emit(tick_dmg_mult)
+		Global.camera.screen_shake(10, 0.05)
 		await get_tree().create_timer((duration/damage) * tick_dmg_mult).timeout
 
 func _extra_sfx() -> void:
