@@ -1,5 +1,5 @@
 extends Debuff
-class_name BurnDebuff
+class_name PoisonDebuff
 
 func _ready() -> void:
 	%Timer.start(duration)

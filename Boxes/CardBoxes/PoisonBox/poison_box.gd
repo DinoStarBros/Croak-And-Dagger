@@ -20,5 +20,5 @@ func slice() -> void:
 	#GlobalSignals.DamageEnemy.emit(damage)
 	GlobalSignals.DebuffEnemy.emit(
 		DebuffsComponent.Debuffs.POISON,
-		3
+		6
 		)

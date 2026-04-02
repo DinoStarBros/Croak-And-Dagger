@@ -9,7 +9,7 @@ enum Debuffs {
 }
 
 const debuffs_dict : Dictionary = {
-	Debuffs.POISON: "pluh",
+	Debuffs.POISON: preload("res://Debuffs/Poison/poison.tscn"),
 	Debuffs.BURN: preload("res://Debuffs/Burn/burn.tscn"),
 	Debuffs.SLOW: "huh",
 }
