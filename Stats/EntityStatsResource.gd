@@ -19,3 +19,4 @@ class_name EntityStats
 @export_category("Displayed Combat Stats")
 @export var damage : float = 2
 @export var crit_chance : float = 3
+@export var item_efficiency : int = 0

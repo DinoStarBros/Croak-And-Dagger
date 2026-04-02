@@ -30,6 +30,10 @@ func _process(delta: float) -> void:
 	%crit_txt.text = str(
 		"Critical Chance: ", roundi(Global.player_crit_chance)
 	)
+	
+	%item_eff_txt.text = str(
+		"Item Efficiency: ", roundi(Global.item_efficiency)
+	)
 
 func _pause_pressed() -> void:
 	pause_ui.pause_or_resume()

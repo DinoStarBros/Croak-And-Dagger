@@ -9,33 +9,33 @@ var panel_desire_pos_y : float
 var upgrades : Array
 var upgrade_ids : Array
 
-enum upgrades_enum {
-	HEALTH, ATTACK_DAMAGE, CRIT_CHANCE, ITEM_EFFICIENCY, LUCK
-}
+#enum upgrades_enum {
+	#ITEM_EFFICIENCY, HEALTH, ATTACK_DAMAGE, CRIT_CHANCE, LUCK
+#}
 
 ## 0-Description, 1-Texture, 2-UpgScene
 const ITEM_DATA : Dictionary = {
-	upgrades_enum.HEALTH: [
-		"Max Health",
-		preload("res://upgrade_icons/health_texture.tres"),
-		preload("res://upgrade_icons/health/health.tscn")
-	],
-	upgrades_enum.ATTACK_DAMAGE: [
-		"Attack Damage",
-		preload("res://upgrade_icons/attack_damage_texture.tres"),
-		preload("res://upgrade_icons/attack_damage/attack_damage.tscn")
-	],
-	upgrades_enum.CRIT_CHANCE: [
-		"Crit Chance",
-		preload("res://upgrade_icons/crit_chance_texture.tres"),
-		preload("res://upgrade_icons/crit_chance/crit_chance.tscn")
-	],
-	upgrades_enum.ITEM_EFFICIENCY: [
+	4: [
 		"Item Efficiency",
 		preload("res://upgrade_icons/item_eff_texture.tres"),
 		preload("res://upgrade_icons/item_efficiency/item_efficiency.tscn")
 	],
-	upgrades_enum.LUCK: [
+	0: [
+		"Max Health",
+		preload("res://upgrade_icons/health_texture.tres"),
+		preload("res://upgrade_icons/health/health.tscn")
+	],
+	1: [
+		"Attack Damage",
+		preload("res://upgrade_icons/attack_damage_texture.tres"),
+		preload("res://upgrade_icons/attack_damage/attack_damage.tscn")
+	],
+	2: [
+		"Crit Chance",
+		preload("res://upgrade_icons/crit_chance_texture.tres"),
+		preload("res://upgrade_icons/crit_chance/crit_chance.tscn")
+	],
+	3: [
 		"Luck",
 		preload("res://upgrade_icons/luck_texture.tres"),
 		preload("res://upgrade_icons/luck/luck.tscn")
@@ -69,8 +69,13 @@ func _ready() -> void:
 	
 	panel_desire_pos_y = 180
 	
-	for item in upgrades_enum.size():
+	
+	for item in ITEM_DATA.size():
 		upgrade_ids.append(item)
+	
+	upgrade_ids = [
+		4, 1,2,3,0
+	]
 	
 	#upgrade_ids.shuffle()
 	
