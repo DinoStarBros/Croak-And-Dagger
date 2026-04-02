@@ -11,8 +11,6 @@ var item_chance : float = 1.0/4.0
 func on_slash() -> void:
 	var rand : float = randf()
 	
-	prints(rand < item_chance)
-	
 	if rand < item_chance:
 		_spawn_item()
 
