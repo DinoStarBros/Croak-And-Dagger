@@ -13,7 +13,7 @@ var move_val : float = 0 ## Switches between 0 and 1
 const BG_LAYER_MS : float = -75
 
 func _ready() -> void:
-	MusicManager.stop_all_songs()
+	pass
 
 func _process(delta: float) -> void:
 	for i in bg_and_speeds.size():

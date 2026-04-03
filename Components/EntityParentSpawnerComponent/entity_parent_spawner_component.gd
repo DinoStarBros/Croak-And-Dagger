@@ -15,6 +15,8 @@ func _ready() -> void:
 	GlobalSignals.UpgradeDone.connect(_upgrade_done)
 	GlobalSignals.CombatStart.connect(_combat_start)
 	
+	MusicManager.play_song("combat")
+	
 	await get_tree().process_frame
 	GlobalSignals.UpgradeDone.emit()
 
