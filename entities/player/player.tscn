@@ -465,8 +465,9 @@ unique_name_in_owner = true
 health_bar = NodePath("../ui/healthBar")
 health_text = NodePath("../ui/healthBar/healthText")
 
-[node name="BoxDecider" parent="." unique_id=448822901 instance=ExtResource("6_qiwj3")]
+[node name="BoxDecider" parent="." unique_id=448822901 node_paths=PackedStringArray("final_damage_text") instance=ExtResource("6_qiwj3")]
 unique_name_in_owner = true
+final_damage_text = NodePath("../ui/stats_panel/damage_txt")
 
 [node name="StatusComponent" parent="." unique_id=1285624151 node_paths=PackedStringArray("health_component") instance=ExtResource("25_50fht")]
 z_index = 2

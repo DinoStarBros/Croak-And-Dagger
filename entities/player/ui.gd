@@ -23,9 +23,9 @@ func _process(delta: float) -> void:
 		Global.product_box_spawn_speed_multiplier
 	)
 	
-	%damage_txt.text = str(
-		"Damage: ", roundi(box_decider.final_damage)
-	)
+	#%damage_txt.text = str(
+		#"Damage: ", roundi(box_decider.final_damage)
+	#)
 	
 	%crit_txt.text = str(
 		"Critical Chance: ", roundi(Global.player_crit_chance)

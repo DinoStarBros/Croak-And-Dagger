@@ -1,6 +1,62 @@
-[gd_scene format=3 uid="uid://n7ffugljfpmd"]
+[gd_scene format=4 uid="uid://n7ffugljfpmd"]
 
 [ext_resource type="Script" uid="uid://dvy8dngck3cpg" path="res://ItemEffects/ZarchivasFX/zarchivas_fx.gd" id="1_x156y"]
+[ext_resource type="PackedScene" uid="uid://6ppgamywek0" path="res://Components/ItemFXIntro/item_fx_intro.tscn" id="2_13x05"]
+[ext_resource type="PackedScene" uid="uid://bk6spsfchrune" path="res://Components/ItemDurationTimer/item_duration_timer.tscn" id="3_8o1yl"]
 
-[node name="ZarchivasFX" type="Node2D" unique_id=847359284]
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_13x05"]
+_data = PackedByteArray("AAADAAUAAAABAAAAYAAAAGAAAAAQAwAAUklGRggDAABXRUJQVlA4TPsCAAAvX8AXEN/ANrJtJd+iPz9zgQ6omHJIPYfcXSOGNpgGAJhka+4NeYEj9GQeILrDB55ItLENALBMqtE2P9DYA/pLz+VkY+ro+Y/f/af30IFQbTkpfHz/KUKVE66aUlQVQEpdJMKZF8Nz0hYD/deaDlPrdPMbe1dPVZWKLlWKARsvdHfFXiIJVaEXgSQBYNu2Ycuo3gYFSfGo/v/PkAAIEOg8RfQfgts2kiS6KtvpqT72qkfs/0GSeNaa2AAOf3THTkL6RpJIF8n3H6wyJzKOwusERA5lwBMFaYa6XM7SK4xhaAzOY7WkweoBTXsDEzFjyTlfziEsNEx/BLActpbDoiptOHjUjqHz0GYdTEq1Y4N9pPkDECn2jW1LojbJYBJNkxKfl/PQfW9LHdu2LO06XtgUfoIsuym2Qu+3bJqSUu/EELoly87upMFPDBxj/u/Er12XEFgEbYaS+jMgTYJJSS3VjLXW6N5LHyJG9J/9TrJqEs2DJjKoCe5+j2AmCW6aZlsDEIFhCRGh8ViS92nO88j/qkS6deDpPGejaz+pdQNNVZ4nE+XoAXAE6ozbN140xIeQETT7nhE/gi+pcwCIgBXSDmmHI80trzbpWv4AAVCdOhYrZMUHuy4mHkc/rd5f3szbAhoEB+93frOwV+gvQRSAzjRNpiWllJxLKdID+I1QqEZTi+5G+tPjiNP4f9edzpTpTuE0/VYGN/b47EutxLauq4v1qsyqAQBRCXGijQ6sggj5Ja1/LqWbjqcyuzE6SPP7hkCDGBZdUBQ+lRlM7oeViHImJhIPQFMAtLIveoX2/06azpDeHVVyJtNdKRZtRsaObzdnNGApt+fNTaoBmtTSQY4pYTyHk6LU7snQuEAWjeczBrapgok0/RoAW5Gm52ki3r76KQXapt93ODxJrQ8gnQ9kUaqdUNs6F3yJkV/hqV91pM9Y8QOANk8u2hJ2X+rgybDkSfam1rHzAbUpVQ+ItYMWPb59uyK3iFoAENF4mvM7DSxN6H3vM5QdAA==")
+size_override = Vector2(96, 96)
+
+[sub_resource type="Animation" id="Animation_13x05"]
+resource_name = "start"
+step = 0.1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7fxah"]
+_data = {
+&"start": SubResource("Animation_13x05")
+}
+
+[node name="ZarchivasFX" type="Node2D" unique_id=847359284 node_paths=PackedStringArray("item_duration_timer")]
 script = ExtResource("1_x156y")
+item_duration_timer = NodePath("ItemDurationTimer")
+
+[node name="itemFXIntro" parent="." unique_id=794341249 instance=ExtResource("2_13x05")]
+
+[node name="ItemDurationTimer" parent="." unique_id=1004819799 instance=ExtResource("3_8o1yl")]
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=74003916]
+z_index = 1
+texture_filter = 1
+position = Vector2(183, 227)
+scale = Vector2(2, 2)
+texture = SubResource("PortableCompressedTexture2D_13x05")
+hframes = 3
+vframes = 3
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "AnimationPlayer",
+"scale": "1.0",
+"slice": "",
+"source": "res://Art/CrokDag/croakDagItemsPrototype.aseprite",
+"source_uid": 2903553389710257372
+}
+metadata/_aseprite_wizard_source_file_hash_ = "92b718e017da9f1f24706877673bcec1"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1227352191]
+libraries/ = SubResource("AnimationLibrary_7fxah")
+autoplay = &"start"

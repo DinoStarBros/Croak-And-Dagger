@@ -2,6 +2,8 @@ extends EntityComponentClass
 ## Component for entities that decides what, when, and where for the box spawning
 class_name BoxDecider
 
+@export var final_damage_text : Label
+
 ## True = Chooses Boxes Randomly;
 ## False = Chooses Boxes on a Pattern
 var random_or_pattern : bool 
@@ -58,8 +60,6 @@ func _spawn_timer_timeout() -> void:
 		return
 	
 	for n in spawn_amount:
-
-		
 		
 		## 1st param, box scene
 		## 2nd param, pos x, if it's not random x
@@ -79,9 +79,8 @@ func _spawn_timer_timeout() -> void:
 			GlobalSignals.SpawnBoxRandomX.emit(box_instance)
 
 func _process(delta: float) -> void:
-	#final_damage_text.text = str(
-		#"Damage: ", roundi(final_damage)
-		#)
-	pass
+	final_damage_text.text = str(
+		"Damage: ", roundi(final_damage)
+		)
 	
-	#Global.final_damage = final_damage
+	Global.final_damage = final_damage
