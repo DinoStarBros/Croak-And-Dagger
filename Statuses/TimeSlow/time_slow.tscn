@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://fdjmgrrk85rc"]
 
-[ext_resource type="Script" uid="uid://camlfnv6wkrha" path="res://Debuffs/TimeSlow/time_slow_particles.gd" id="1_8gd6a"]
-[ext_resource type="Material" uid="uid://bumxqts7bqgu6" path="res://Debuffs/TimeSlow/time_slow_particles.tres" id="2_81xhs"]
+[ext_resource type="Script" uid="uid://camlfnv6wkrha" path="res://Statuses/TimeSlow/time_slow_particles.gd" id="1_8gd6a"]
+[ext_resource type="Material" uid="uid://bumxqts7bqgu6" path="res://Statuses/TimeSlow/time_slow_particles.tres" id="2_81xhs"]
 [ext_resource type="AudioStream" uid="uid://dogbkcuv1aiuc" path="res://Audio/crokSfx/slow-cinematic-clock-ticking-405471.mp3" id="3_12517"]
 
 [node name="TimeSlow" type="Node2D" unique_id=1515188683]

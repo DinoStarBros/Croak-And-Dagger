@@ -38,8 +38,14 @@ signal DamageEnemy(
 signal Crit
 
 ## When you wanna give a debuff to an enemy
-signal DebuffEnemy(
-	debuff: EnemyDebuffsComponent.Debuffs,
+signal GiveStatusEnemy(
+	debuff: StatusComponent.Statuses,
+	duration: float
+)
+
+## When you wanna give a debuff to an enemy
+signal GiveStatusPlayer(
+	debuff: StatusComponent.Statuses,
 	duration: float
 )
 

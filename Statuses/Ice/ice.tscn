@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cnsbed46lpsy"]
 
-[ext_resource type="Script" uid="uid://ccnqbsbxgmxh6" path="res://Debuffs/Ice/ice.gd" id="1_j2kwx"]
-[ext_resource type="Material" uid="uid://cj0rvklp43o61" path="res://Debuffs/Ice/ice_particles.tres" id="2_msf2t"]
+[ext_resource type="Script" uid="uid://ccnqbsbxgmxh6" path="res://Statuses/Ice/ice.gd" id="1_j2kwx"]
+[ext_resource type="Material" uid="uid://cj0rvklp43o61" path="res://Statuses/Ice/ice_particles.tres" id="2_msf2t"]
 
 [node name="Ice" type="Node2D" unique_id=1515188683]
 script = ExtResource("1_j2kwx")

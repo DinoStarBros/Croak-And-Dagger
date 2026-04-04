@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b2b36ok7gysx3"]
 
-[ext_resource type="Script" uid="uid://cu1d6i6kkjqas" path="res://Debuffs/Poison/poison.gd" id="1_r1isc"]
-[ext_resource type="Material" uid="uid://bdj7quxyvvr0h" path="res://Debuffs/Poison/poison_particles.tres" id="2_1lmlt"]
+[ext_resource type="Script" uid="uid://cu1d6i6kkjqas" path="res://Statuses/Poison/poison.gd" id="1_r1isc"]
+[ext_resource type="Material" uid="uid://bdj7quxyvvr0h" path="res://Statuses/Poison/poison_particles.tres" id="2_1lmlt"]
 
 [node name="Poison" type="Node2D" unique_id=1515188683]
 script = ExtResource("1_r1isc")

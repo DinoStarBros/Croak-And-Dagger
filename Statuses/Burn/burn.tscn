@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cee33x0u8hn4c"]
 
-[ext_resource type="Script" uid="uid://cmdwomiij11af" path="res://Debuffs/Burn/burn.gd" id="1_rjaux"]
-[ext_resource type="Material" uid="uid://dcy3gqsxcj2bs" path="res://Debuffs/Burn/burn_particles.tres" id="2_t67ku"]
+[ext_resource type="Script" uid="uid://cmdwomiij11af" path="res://Statuses/Burn/burn.gd" id="1_rjaux"]
+[ext_resource type="Material" uid="uid://dcy3gqsxcj2bs" path="res://Statuses/Burn/burn_particles.tres" id="2_t67ku"]
 
 [node name="Burn" type="Node2D" unique_id=1515188683]
 script = ExtResource("1_rjaux")

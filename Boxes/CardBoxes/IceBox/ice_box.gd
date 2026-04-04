@@ -18,7 +18,7 @@ func slice() -> void:
 	%slashsfx.pitch_scale += randf_range(-.1, .1)
 	%slashsfx.play()
 	Global.camera.screen_shake(6, 0.2)
-	GlobalSignals.DebuffEnemy.emit(
-		EnemyDebuffsComponent.Debuffs.ICE,
+	GlobalSignals.GiveStatusEnemy.emit(
+		StatusComponent.Statuses.ICE,
 		4
 		)
