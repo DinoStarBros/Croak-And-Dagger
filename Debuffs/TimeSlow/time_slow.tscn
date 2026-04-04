@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://fdjmgrrk85rc"]
+
+[ext_resource type="Script" uid="uid://camlfnv6wkrha" path="res://Debuffs/TimeSlow/time_slow_particles.gd" id="1_8gd6a"]
+[ext_resource type="Material" uid="uid://bumxqts7bqgu6" path="res://Debuffs/TimeSlow/time_slow_particles.tres" id="2_81xhs"]
+[ext_resource type="AudioStream" uid="uid://dogbkcuv1aiuc" path="res://Audio/crokSfx/slow-cinematic-clock-ticking-405471.mp3" id="3_12517"]
+
+[node name="TimeSlow" type="Node2D" unique_id=1515188683]
+script = ExtResource("1_8gd6a")
+
+[node name="Timer" type="Timer" parent="." unique_id=1444776408]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=872367582]
+lifetime = 1.5
+randomness = 0.5
+process_material = ExtResource("2_81xhs")
+
+[node name="tick" type="AudioStreamPlayer" parent="." unique_id=1979145803]
+stream = ExtResource("3_12517")
+pitch_scale = 0.8
+autoplay = true
+bus = &"SFX"

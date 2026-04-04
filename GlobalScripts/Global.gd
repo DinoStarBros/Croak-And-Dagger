@@ -33,7 +33,7 @@ const WAIT_TIME : float = 1.5
 ## The position of the enemy in combat
 const ESPAWN_POS : Vector2 = Vector2(960, 360)
 ## The damage multiplier when you crit
-const CRIT_DMG_MULT : float = 2
+const CRIT_DMG_MULT : float = 1.5
 const txt_scn : PackedScene = preload("res://juices/DmgNum/dmg_num.tscn")
 
 func _volume_handle() -> void:

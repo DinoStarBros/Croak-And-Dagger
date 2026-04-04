@@ -39,17 +39,20 @@ func beam_start() -> void:
 	
 	_extra_sfx()
 	
-	for dmg in damage/tick_dmg_mult:
-		GlobalSignals.DamageEnemy.emit(tick_dmg_mult, false)
-		Global.camera.screen_shake(10, 0.05)
-		#await get_tree().create_timer((duration/damage) * tick_dmg_mult).timeout
-		await get_tree().process_frame
+	#for dmg in damage/tick_dmg_mult:
+		#
+		#
+		##await get_tree().create_timer((duration/damage) * tick_dmg_mult).timeout
+		#await get_tree().process_frame
 
 func _extra_sfx() -> void:
 	const PLAY_TIMES : int = 4
 	
 	for n in PLAY_TIMES:
+		GlobalSignals.DamageEnemy.emit(damage / PLAY_TIMES, false)
+		
 		%enemyHit.pitch_scale = randf_range(0.9, 1.1) + 1
 		%enemyHit.play(0.14)
+		Global.camera.screen_shake(10, duration/PLAY_TIMES)
 		
 		await get_tree().create_timer(duration/PLAY_TIMES).timeout 
