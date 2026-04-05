@@ -1,0 +1,21 @@
+[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://7ivpyjxeuprq"]
+
+[sub_resource type="Curve" id="Curve_jrph7"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_pfp65"]
+curve = SubResource("Curve_jrph7")
+
+[resource]
+particle_flag_disable_z = true
+inherit_velocity_ratio = 1.0
+direction = Vector3(-1, 0, 0)
+initial_velocity_max = 500.0
+angular_velocity_min = -336.0
+angular_velocity_max = 327.99997
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 500.0
+linear_accel_max = 1000.0
+scale_max = 10.0
+scale_curve = SubResource("CurveTexture_pfp65")

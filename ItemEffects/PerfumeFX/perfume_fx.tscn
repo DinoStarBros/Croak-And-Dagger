@@ -3,16 +3,108 @@
 [ext_resource type="Script" uid="uid://co0geggngrjvr" path="res://ItemEffects/PerfumeFX/perfume_fx.gd" id="1_wiomu"]
 [ext_resource type="PackedScene" uid="uid://6ppgamywek0" path="res://Components/ItemFXIntro/item_fx_intro.tscn" id="2_0e72n"]
 [ext_resource type="PackedScene" uid="uid://bk6spsfchrune" path="res://Components/ItemDurationTimer/item_duration_timer.tscn" id="3_6dob0"]
+[ext_resource type="Material" uid="uid://7ivpyjxeuprq" path="res://ItemEffects/PerfumeFX/perfume_spray_particles.tres" id="4_6dob0"]
+[ext_resource type="AudioStream" uid="uid://cb5wrd1ritotm" path="res://Audio/crokSfx/freesound_community-spray-bottle-36050.mp3" id="5_26tj8"]
 
 [sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_26tj8"]
 _data = PackedByteArray("AAADAAUAAAABAAAAYAAAAGAAAAAQAwAAUklGRggDAABXRUJQVlA4TPsCAAAvX8AXEN/ANrJtJd+iPz9zgQ6omHJIPYfcXSOGNpgGAJhka+4NeYEj9GQeILrDB55ItLENALBMqtE2P9DYA/pLz+VkY+ro+Y/f/af30IFQbTkpfHz/KUKVE66aUlQVQEpdJMKZF8Nz0hYD/deaDlPrdPMbe1dPVZWKLlWKARsvdHfFXiIJVaEXgSQBYNu2Ycuo3gYFSfGo/v/PkAAIEOg8RfQfgts2kiS6KtvpqT72qkfs/0GSeNaa2AAOf3THTkL6RpJIF8n3H6wyJzKOwusERA5lwBMFaYa6XM7SK4xhaAzOY7WkweoBTXsDEzFjyTlfziEsNEx/BLActpbDoiptOHjUjqHz0GYdTEq1Y4N9pPkDECn2jW1LojbJYBJNkxKfl/PQfW9LHdu2LO06XtgUfoIsuym2Qu+3bJqSUu/EELoly87upMFPDBxj/u/Er12XEFgEbYaS+jMgTYJJSS3VjLXW6N5LHyJG9J/9TrJqEs2DJjKoCe5+j2AmCW6aZlsDEIFhCRGh8ViS92nO88j/qkS6deDpPGejaz+pdQNNVZ4nE+XoAXAE6ozbN140xIeQETT7nhE/gi+pcwCIgBXSDmmHI80trzbpWv4AAVCdOhYrZMUHuy4mHkc/rd5f3szbAhoEB+93frOwV+gvQRSAzjRNpiWllJxLKdID+I1QqEZTi+5G+tPjiNP4f9edzpTpTuE0/VYGN/b47EutxLauq4v1qsyqAQBRCXGijQ6sggj5Ja1/LqWbjqcyuzE6SPP7hkCDGBZdUBQ+lRlM7oeViHImJhIPQFMAtLIveoX2/06azpDeHVVyJtNdKRZtRsaObzdnNGApt+fNTaoBmtTSQY4pYTyHk6LU7snQuEAWjeczBrapgok0/RoAW5Gm52ki3r76KQXapt93ODxJrQ8gnQ9kUaqdUNs6F3yJkV/hqV91pM9Y8QOANk8u2hJ2X+rgybDkSfam1rHzAbUpVQ+ItYMWPb59uyK3iFoAENF4mvM7DSxN6H3vM5QdAA==")
 size_override = Vector2(96, 96)
 
+[sub_resource type="Animation" id="Animation_6dob0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.3, 2.3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D/spray1:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D/spray2:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="Animation" id="Animation_0e72n"]
 resource_name = "start"
+length = 1.2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.19999999, 1.1, 1.2),
+"transitions": PackedFloat32Array(0.5, 2, 1, -2, 0.5),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(2.3, 2.3), Vector2(2, 2), Vector2(2, 2), Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.40000004, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D/spray1:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.40000004),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D/spray2:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.8000001),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6dob0"]
 _data = {
+&"RESET": SubResource("Animation_6dob0"),
 &"start": SubResource("Animation_0e72n")
 }
 
@@ -23,13 +115,14 @@ item_duration_timer = NodePath("ItemDurationTimer")
 [node name="itemFXIntro" parent="." unique_id=794341249 instance=ExtResource("2_0e72n")]
 
 [node name="ItemDurationTimer" parent="." unique_id=1004819799 instance=ExtResource("3_6dob0")]
+wait_time = 1.2999999999999998
 autostart = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1191874158]
 z_index = 1
 texture_filter = 1
-position = Vector2(140, 130)
-scale = Vector2(2, 2)
+position = Vector2(504, 362)
+scale = Vector2(2.3, 2.3)
 texture = SubResource("PortableCompressedTexture2D_26tj8")
 hframes = 3
 vframes = 3
@@ -57,5 +150,30 @@ metadata/_aseprite_wizard_config_ = {
 }
 metadata/_aseprite_wizard_source_file_hash_ = "92b718e017da9f1f24706877673bcec1"
 
+[node name="spray1" type="GPUParticles2D" parent="Sprite2D" unique_id=968601146]
+position = Vector2(0.5, -10)
+emitting = false
+amount = 20
+lifetime = 0.5
+one_shot = true
+speed_scale = 2.0
+explosiveness = 1.0
+process_material = ExtResource("4_6dob0")
+
+[node name="spray2" type="GPUParticles2D" parent="Sprite2D" unique_id=1790812964]
+position = Vector2(0.5, -10)
+emitting = false
+amount = 20
+lifetime = 0.5
+one_shot = true
+speed_scale = 2.0
+explosiveness = 1.0
+process_material = ExtResource("4_6dob0")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1860645002]
 libraries/ = SubResource("AnimationLibrary_6dob0")
+autoplay = &"start"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=151065964]
+stream = ExtResource("5_26tj8")
+volume_db = -5.0

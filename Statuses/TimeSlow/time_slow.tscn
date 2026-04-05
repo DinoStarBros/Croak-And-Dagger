@@ -20,6 +20,7 @@ process_material = ExtResource("2_81xhs")
 
 [node name="tick" type="AudioStreamPlayer" parent="." unique_id=1979145803]
 stream = ExtResource("3_12517")
+volume_db = -5.0
 pitch_scale = 0.8
 autoplay = true
 bus = &"SFX"

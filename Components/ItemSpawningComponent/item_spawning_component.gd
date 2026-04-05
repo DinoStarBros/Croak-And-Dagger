@@ -6,7 +6,7 @@ class_name ItemSpawningComponent
 
 @export var item_scn : PackedScene
 
-var item_drop_chance : float 
+var item_drop_chance : float
 
 const base_item_chance : float = 1.0/10.0
 
@@ -15,6 +15,14 @@ func on_slash() -> void:
 	item_drop_chance = base_item_chance + linear_scaling(base_item_chance, Global.luck)
 	
 	var rand : float = randf()
+	
+	#print(
+		#item_drop_chance, 
+		#":",
+		#rand,
+		#":",
+		#rand < item_drop_chance
+	#)
 	
 	if rand < item_drop_chance:
 		_spawn_item()
@@ -26,4 +34,4 @@ func diminishing_returns_scaling(value: float, k: float) -> float:
 	return 1 + (value / (value+k))
 
 func linear_scaling(base_chance: float, luck:float) -> float:
-	return (1 - base_chance) * (luck / 100)
+	return (1 - base_chance) * (luck / 200)

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dt5q8iuehpsap"]
+
+[ext_resource type="Script" uid="uid://cct4cjuw1jt8h" path="res://Statuses/PerfumeCrit/perfume_crit.gd" id="1_0783i"]
+[ext_resource type="Texture2D" uid="uid://cpm4yl536x7rv" path="res://Art/CrokDag/crokDagUpgIcons-Sheet.png" id="2_udnc8"]
+[ext_resource type="Material" uid="uid://d36rgwqfjoww1" path="res://Statuses/PerfumeCrit/perfume_crit_particles.tres" id="3_03mk3"]
+[ext_resource type="PackedScene" uid="uid://cmhn8qvkc0k4m" path="res://Statuses/StatusDurationTimer/status_duration_timer.tscn" id="4_hougj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pq0vb"]
+atlas = ExtResource("2_udnc8")
+region = Rect2(64, 0, 64, 64)
+
+[node name="PerfumeCrit" type="Node2D" unique_id=1515188683 node_paths=PackedStringArray("timer")]
+script = ExtResource("1_0783i")
+timer = NodePath("StatusDurationTimer")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=872367582]
+texture = SubResource("AtlasTexture_pq0vb")
+lifetime = 1.5
+randomness = 0.5
+process_material = ExtResource("3_03mk3")
+
+[node name="StatusDurationTimer" parent="." unique_id=1831485290 instance=ExtResource("4_hougj")]
