@@ -179,7 +179,7 @@ libraries/ = SubResource("AnimationLibrary_xbaye")
 autoplay = &"use"
 
 [node name="spr_par" type="Node2D" parent="." unique_id=42871090]
-z_index = 2
+z_index = 3
 position = Vector2(356, 362)
 scale = Vector2(1e-05, 1e-05)
 
@@ -270,7 +270,7 @@ stream = ExtResource("7_l2w37")
 bus = &"SFX"
 
 [node name="laser" type="Node2D" parent="." unique_id=130078584]
-z_index = 1
+z_index = 2
 position = Vector2(347, 362)
 
 [node name="laserB" type="Line2D" parent="laser" unique_id=1258241467]
