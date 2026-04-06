@@ -25,9 +25,6 @@ func _ready() -> void:
 	
 	Global.item_efficiency = stats.item_efficiency
 	Global.luck = stats.luck
-	
-	await get_tree().process_frame
-	Global.cursor.combo = 100
 
 func _process(delta: float) -> void:
 	pass

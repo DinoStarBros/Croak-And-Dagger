@@ -14,6 +14,7 @@ offset_right = 64.0
 offset_bottom = 64.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
+mouse_filter = 2
 theme = ExtResource("1_7iywk")
 script = ExtResource("1_oeqa3")
 
@@ -23,3 +24,12 @@ z_index = 2
 layout_mode = 2
 text = "1."
 label_settings = SubResource("LabelSettings_7iywk")
+
+[node name="Button" type="Button" parent="text" unique_id=310377805]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0.010000001)
+layout_mode = 0
+offset_left = -3.0
+offset_top = -26.0
+offset_right = 75.0
+offset_bottom = 50.0

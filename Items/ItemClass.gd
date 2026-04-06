@@ -8,5 +8,8 @@ class_name Item
 
 var final_combo_cost : int
 
+func _init() -> void:
+	mouse_filter = Control.MOUSE_FILTER_IGNORE
+
 func use() -> void:
 	pass

@@ -22,8 +22,6 @@
 [ext_resource type="PackedScene" uid="uid://q4xc2vqw6hgi" path="res://scenes/item_slot/item_slot.tscn" id="18_mtric"]
 [ext_resource type="PackedScene" uid="uid://d1sa6j4hn6gud" path="res://Items/Phone/phone.tscn" id="20_wuv6x"]
 [ext_resource type="Script" uid="uid://dgggbtvfb1dl" path="res://entities/player/item_effects.gd" id="21_eyb6c"]
-[ext_resource type="PackedScene" uid="uid://njpr1s68ann7" path="res://Items/Zarchivas/zarchivas.tscn" id="21_qpopc"]
-[ext_resource type="PackedScene" uid="uid://bptk4a85i4y5n" path="res://Items/Perfume/perfume.tscn" id="22_wq0jh"]
 [ext_resource type="Script" uid="uid://cfa7h6tybbt7x" path="res://entities/player/camera.gd" id="23_ghoj8"]
 [ext_resource type="PackedScene" uid="uid://0uair2p0ft75" path="res://Components/StatusComponent/status_component.tscn" id="25_50fht"]
 
@@ -662,15 +660,9 @@ layout_mode = 2
 layout_mode = 2
 use_button = "item2"
 
-[node name="Zarchivas" parent="Inventory/itmtxt/items/item_slot2" unique_id=539913488 instance=ExtResource("21_qpopc")]
-layout_mode = 2
-
 [node name="item_slot3" parent="Inventory/itmtxt/items" unique_id=850390082 instance=ExtResource("18_mtric")]
 layout_mode = 2
 use_button = "item3"
-
-[node name="Perfume" parent="Inventory/itmtxt/items/item_slot3" unique_id=1257628675 instance=ExtResource("22_wq0jh")]
-layout_mode = 2
 
 [node name="item_slot4" parent="Inventory/itmtxt/items" unique_id=1855295061 instance=ExtResource("18_mtric")]
 layout_mode = 2
