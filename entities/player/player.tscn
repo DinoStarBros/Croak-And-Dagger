@@ -574,6 +574,7 @@ text = "6767"
 [node name="pause" type="CanvasLayer" parent="." unique_id=898789355]
 unique_name_in_owner = true
 process_mode = 3
+visible = false
 script = ExtResource("3_bls4j")
 
 [node name="Panel" type="Panel" parent="pause" unique_id=815143836]

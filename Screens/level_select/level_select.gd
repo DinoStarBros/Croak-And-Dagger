@@ -1,10 +1,5 @@
 extends Control
 
-const level_scns : Array[String] = [
-	 ## Level 1
-	
-]
-
 @onready var button_and_level : Dictionary = {
 	"L1": [
 		%l1, 
