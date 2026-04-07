@@ -23,9 +23,10 @@ offset_bottom = 624.0
 
 [node name="Tabs" type="TabContainer" parent="PanelContainer" unique_id=917003247]
 layout_mode = 2
-current_tab = 0
+current_tab = 2
 
 [node name="Audio" type="VBoxContainer" parent="PanelContainer/Tabs" unique_id=1785194851]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -87,7 +88,6 @@ layout_mode = 2
 text = "On"
 
 [node name="Video" type="VBoxContainer" parent="PanelContainer/Tabs" unique_id=1575859939]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
@@ -179,7 +179,6 @@ offset_bottom = 594.0
 [connection signal="value_changed" from="PanelContainer/Tabs/Audio/sfx_vol" to="." method="_on_sfx_vol_value_changed"]
 [connection signal="pressed" from="PanelContainer/Tabs/Accessiblity/screen_shake" to="." method="_on_screen_shake_pressed"]
 [connection signal="pressed" from="PanelContainer/Tabs/Accessiblity/frame_freeze" to="." method="_on_frame_freeze_pressed"]
-[connection signal="item_selected" from="PanelContainer/Tabs/Video/resOptions" to="." method="_on_res_options_item_selected"]
 [connection signal="pressed" from="buttons/save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="buttons/load" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="buttons/reset" to="." method="_on_reset_pressed"]

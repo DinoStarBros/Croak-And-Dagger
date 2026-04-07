@@ -48,8 +48,8 @@ func _on_load_pressed()->void: ## Loads the settings stuff
 	else:
 		frame_freeze.text = str("Off")
 		
-	%resOptions.select(SaveLoad.settings.resolution_index)
-	_on_res_options_item_selected(SaveLoad.settings.resolution_index)
+	#%resOptions.select(SaveLoad.settings.resolution_index)
+	#_on_res_options_item_selected(SaveLoad.settings.resolution_index)
 
 func _on_reset_pressed()->void:
 	SaveLoad._reset_save_file()
@@ -88,10 +88,10 @@ func _on_sfx_vol_value_changed(value: float)->void:
 	
 	SaveLoad.settings.sfx_volume = value
 
-func _on_res_options_item_selected(index: int) -> void:
-	#pass
-	SaveLoad.settings.resolution_index = index
-	DisplayServer.window_set_size(resolutions[index])
+#func _on_res_options_item_selected(index: int) -> void:
+	##pass
+	#SaveLoad.settings.resolution_index = index
+	#DisplayServer.window_set_size(resolutions[index])
 
 func _on_back_pressed() -> void:
 	_on_save_pressed()
