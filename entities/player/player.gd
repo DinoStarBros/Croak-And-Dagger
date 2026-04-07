@@ -15,6 +15,7 @@ var died : bool = false ## A one time thingy
 const stats : EntityStats = preload("res://Stats/BasePlayerStats.tres")
 
 func _ready() -> void:
+	
 	GlobalSignals.DamagePlayer.connect(hurt)
 	GlobalSignals.DamageEnemy.connect(hit_enemy)
 	GlobalSignals.FightWin.connect(fight_win)

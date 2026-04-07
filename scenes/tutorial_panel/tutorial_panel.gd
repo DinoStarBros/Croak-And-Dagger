@@ -5,6 +5,10 @@ class_name TutorialPanel
 	%page1,
 	%page2,
 	%page3,
+	%page4,
+	%page5,
+	%page6,
+	%page7,
 	
 ]
 
@@ -12,7 +16,6 @@ var current_page : int = 0
 
 func _ready() -> void:
 	_update_page()
-	
 	%next.pressed.connect(_next_pressed)
 	%prev.pressed.connect(_prev_pressed)
 	%close.pressed.connect(
@@ -31,10 +34,11 @@ func _change_current_page_num(change: int) -> void:
 	_update_page()
 
 func _update_page() -> void:
-	
 	var ndex : int = -1
 	for page in pages:
 		page.hide()
 		ndex += 1
 		if ndex == current_page:
 			page.show()
+	
+	%page_no.text = str(current_page+1, "/", pages.size())

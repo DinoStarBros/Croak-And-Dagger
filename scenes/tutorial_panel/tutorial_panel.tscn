@@ -1,9 +1,17 @@
-[gd_scene format=3 uid="uid://bwb7fwa8odqg3"]
+[gd_scene format=4 uid="uid://bwb7fwa8odqg3"]
 
 [ext_resource type="Theme" uid="uid://bb6vwl0h1flws" path="res://FlatUI4/kenneyUI-blue.tres" id="1_1wflc"]
 [ext_resource type="Script" uid="uid://b08p74vxb4xqk" path="res://scenes/tutorial_panel/tutorial_panel.gd" id="1_xkt6d"]
+[ext_resource type="Texture2D" uid="uid://4gu855cmgak5" path="res://Art/CrokDag/redThin.png" id="3_62fg3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1wflc"]
+font_size = 30
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_ui5pc"]
+_data = PackedByteArray("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")
+size_override = Vector2(192, 192)
+
+[sub_resource type="LabelSettings" id="LabelSettings_62fg3"]
 font_size = 30
 
 [node name="TutorialPanel" type="Control" unique_id=1400776454]
@@ -33,32 +41,322 @@ grow_vertical = 2
 
 [node name="page1" type="MarginContainer" parent="PanelContainer" unique_id=2027162069]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
 [node name="label" type="Label" parent="PanelContainer/page1" unique_id=192366755]
 layout_mode = 2
 size_flags_vertical = 0
-text = "Page 1"
+text = "The line going back & forth on the belt is your \"cursor\". Time your
+presses when the cursor is on a box to deal damage or defend from
+enemy attacks."
 label_settings = SubResource("LabelSettings_1wflc")
 
 [node name="page2" type="MarginContainer" parent="PanelContainer" unique_id=1238480738]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
 [node name="label" type="Label" parent="PanelContainer/page2" unique_id=304925630]
 layout_mode = 2
 size_flags_vertical = 0
-text = "Page 2"
+text = "Timing your press with a \"product box\" slices it open and deals
+ damage to the enemy, having a chance to drop an item"
 label_settings = SubResource("LabelSettings_1wflc")
+
+[node name="box_sprites" type="Node2D" parent="PanelContainer/page2" unique_id=353491754]
+position = Vector2(295, -20)
+
+[node name="1" type="Sprite2D" parent="PanelContainer/page2/box_sprites" unique_id=1004119652]
+texture_filter = 1
+position = Vector2(158, 147)
+texture = SubResource("PortableCompressedTexture2D_ui5pc")
+hframes = 3
+vframes = 3
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "PanelContainer/page2/AnimationPlayer",
+"scale": "1.0",
+"slice": "",
+"source": "res://Art/CrokDag/crokDagBoxes.aseprite",
+"source_uid": 8940436187432048685
+}
+metadata/_aseprite_wizard_source_file_hash_ = "cd6d19c066b2ee97490f46a227745e5a"
+
+[node name="2" type="Sprite2D" parent="PanelContainer/page2/box_sprites" unique_id=691752333]
+texture_filter = 1
+position = Vector2(222, 146)
+texture = SubResource("PortableCompressedTexture2D_ui5pc")
+hframes = 3
+vframes = 3
+frame = 1
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "PanelContainer/page2/AnimationPlayer",
+"scale": "1.0",
+"slice": "",
+"source": "res://Art/CrokDag/crokDagBoxes.aseprite",
+"source_uid": 8940436187432048685
+}
+metadata/_aseprite_wizard_source_file_hash_ = "cd6d19c066b2ee97490f46a227745e5a"
+
+[node name="3" type="Sprite2D" parent="PanelContainer/page2/box_sprites" unique_id=2021236371]
+texture_filter = 1
+position = Vector2(291, 146)
+texture = SubResource("PortableCompressedTexture2D_ui5pc")
+hframes = 3
+vframes = 3
+frame = 2
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "PanelContainer/page2/AnimationPlayer",
+"scale": "1.0",
+"slice": "",
+"source": "res://Art/CrokDag/crokDagBoxes.aseprite",
+"source_uid": 8940436187432048685
+}
+metadata/_aseprite_wizard_source_file_hash_ = "cd6d19c066b2ee97490f46a227745e5a"
+
+[node name="4" type="Sprite2D" parent="PanelContainer/page2/box_sprites" unique_id=574706026]
+texture_filter = 1
+position = Vector2(156, 195)
+texture = SubResource("PortableCompressedTexture2D_ui5pc")
+hframes = 3
+vframes = 3
+frame = 3
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "PanelContainer/page2/AnimationPlayer",
+"scale": "1.0",
+"slice": "",
+"source": "res://Art/CrokDag/crokDagBoxes.aseprite",
+"source_uid": 8940436187432048685
+}
+metadata/_aseprite_wizard_source_file_hash_ = "cd6d19c066b2ee97490f46a227745e5a"
+
+[node name="5" type="Sprite2D" parent="PanelContainer/page2/box_sprites" unique_id=1976263882]
+texture_filter = 1
+position = Vector2(227, 202)
+texture = SubResource("PortableCompressedTexture2D_ui5pc")
+hframes = 3
+vframes = 3
+frame = 4
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "PanelContainer/page2/AnimationPlayer",
+"scale": "1.0",
+"slice": "",
+"source": "res://Art/CrokDag/crokDagBoxes.aseprite",
+"source_uid": 8940436187432048685
+}
+metadata/_aseprite_wizard_source_file_hash_ = "cd6d19c066b2ee97490f46a227745e5a"
+
+[node name="6" type="Sprite2D" parent="PanelContainer/page2/box_sprites" unique_id=842213530]
+texture_filter = 1
+position = Vector2(300, 206)
+texture = SubResource("PortableCompressedTexture2D_ui5pc")
+hframes = 3
+vframes = 3
+frame = 5
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "PanelContainer/page2/AnimationPlayer",
+"scale": "1.0",
+"slice": "",
+"source": "res://Art/CrokDag/crokDagBoxes.aseprite",
+"source_uid": 8940436187432048685
+}
+metadata/_aseprite_wizard_source_file_hash_ = "cd6d19c066b2ee97490f46a227745e5a"
+
+[node name="7" type="Sprite2D" parent="PanelContainer/page2/box_sprites" unique_id=265076406]
+texture_filter = 1
+position = Vector2(372, 144)
+texture = SubResource("PortableCompressedTexture2D_ui5pc")
+hframes = 3
+vframes = 3
+frame = 6
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "PanelContainer/page2/AnimationPlayer",
+"scale": "1.0",
+"slice": "",
+"source": "res://Art/CrokDag/crokDagBoxes.aseprite",
+"source_uid": 8940436187432048685
+}
+metadata/_aseprite_wizard_source_file_hash_ = "cd6d19c066b2ee97490f46a227745e5a"
+
+[node name="Label" type="Label" parent="PanelContainer/page2/box_sprites" unique_id=2119760925]
+offset_left = -173.0
+offset_top = 115.0
+offset_right = -23.0
+offset_bottom = 145.0
+text = "Product boxes"
+label_settings = SubResource("LabelSettings_62fg3")
+
+[node name="redCircle" type="Sprite2D" parent="PanelContainer/page2/box_sprites" unique_id=1569159527]
+position = Vector2(259, 170)
+scale = Vector2(2.8203125, 1.3125)
+texture = ExtResource("3_62fg3")
+hframes = 2
+
+[node name="arrow" type="Sprite2D" parent="PanelContainer/page2/box_sprites" unique_id=1492493743]
+position = Vector2(50, 141)
+rotation = 0.7853982
+texture = ExtResource("3_62fg3")
+hframes = 2
+frame = 1
 
 [node name="page3" type="MarginContainer" parent="PanelContainer" unique_id=1457254621]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
 [node name="label" type="Label" parent="PanelContainer/page3" unique_id=731216572]
 layout_mode = 2
 size_flags_vertical = 0
-text = "Page 3"
+text = "Enemies send out red boxes that damage you when reaching the end
+of the belt. Time your press to delete them."
+label_settings = SubResource("LabelSettings_1wflc")
+
+[node name="page4" type="MarginContainer" parent="PanelContainer" unique_id=1272471586]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="label" type="Label" parent="PanelContainer/page4" unique_id=1140164515]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Pressing when there isn't a box on the cursor also deals damage to
+you."
+label_settings = SubResource("LabelSettings_1wflc")
+
+[node name="page5" type="MarginContainer" parent="PanelContainer" unique_id=1777105211]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="label" type="Label" parent="PanelContainer/page5" unique_id=49140214]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Consecutively pressing on boxes builds up combo and speed up your 
+cursor. You can spend your combo on items, their combo cost being 
+shown on their bottom left. 
+You can know what each item does in the settings/pause menu."
+label_settings = SubResource("LabelSettings_1wflc")
+
+[node name="page6" type="MarginContainer" parent="PanelContainer" unique_id=298647707]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="label" type="Label" parent="PanelContainer/page6" unique_id=1448840285]
+layout_mode = 2
+size_flags_vertical = 0
+text = "After defeating an enemy, you get to choose a stat to upgrade."
+label_settings = SubResource("LabelSettings_1wflc")
+
+[node name="page7" type="MarginContainer" parent="PanelContainer" unique_id=1896390128]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="label" type="Label" parent="PanelContainer/page7" unique_id=796583634]
+layout_mode = 2
+size_flags_vertical = 0
+text = "And that's pretty much it. This is playtest version 1, so please give
+suggestions, changes, and bug reports so that we can improve this
+game."
 label_settings = SubResource("LabelSettings_1wflc")
 
 [node name="Buttons" type="Control" parent="." unique_id=1850599887]
@@ -106,3 +404,14 @@ offset_bottom = 255.25098
 grow_horizontal = 2
 grow_vertical = 2
 text = "Close"
+
+[node name="page_no" type="Label" parent="." unique_id=1772919979]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 903.0
+offset_top = 582.0
+offset_right = 950.0
+offset_bottom = 612.0
+text = "1/67"
+horizontal_alignment = 2
+vertical_alignment = 1
