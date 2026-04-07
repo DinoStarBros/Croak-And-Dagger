@@ -25,6 +25,7 @@ offset_bottom = 64.0
 theme = ExtResource("1_yxct2")
 texture = SubResource("AtlasTexture_xou7r")
 script = ExtResource("2_h80bf")
+combo_cost = 7
 item_effect_scn = ExtResource("3_sun7e")
 
 [node name="combo_cost_txt" type="Label" parent="." unique_id=1371063059]

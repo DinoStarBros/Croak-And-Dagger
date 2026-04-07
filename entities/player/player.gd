@@ -30,6 +30,8 @@ func _process(delta: float) -> void:
 	pass
 
 func hurt(damage: float) -> void:
+	Global.spawn_txt(str(roundi(damage)), global_position)
+	
 	anim.stop()
 	anim.play("take_damage")
 	camera.screen_shake(5, 0.2)

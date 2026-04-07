@@ -12,7 +12,7 @@ const poison_dmg_tick : float = 1
 const ice_slow_mult : float = 0.2
 const time_slow_mult : float = 0.4
 const energy_up_mult : float = 0.3
-const perfume_crit_amnt : float = 35
+const perfume_crit_amnt : float = 25
 
 func _setup_timer() -> void:
 	timer.start(duration)
