@@ -11,6 +11,14 @@ class_name TutorialPanel
 	%page7,
 	
 ]
+@onready var vids : Array[VideoStreamPlayer] = [
+	%vid1,
+	%vid2,
+	%vid3,
+	%vid4,
+	%vid5,
+	
+]
 
 var current_page : int = 0
 
@@ -42,3 +50,11 @@ func _update_page() -> void:
 			page.show()
 	
 	%page_no.text = str(current_page+1, "/", pages.size())
+	
+	for video in vids:
+		var vid_par = video.get_parent().get_parent()
+		
+		if vid_par.visible:
+			video.play()
+		else:
+			video.stop()

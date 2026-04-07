@@ -63,6 +63,7 @@ label_settings = SubResource("LabelSettings_1wflc")
 position = Vector2(-596, 235)
 
 [node name="vid1" type="VideoStreamPlayer" parent="PanelContainer/page1/vid" unique_id=1273072982]
+unique_name_in_owner = true
 offset_left = 659.0
 offset_top = -95.0
 offset_right = 1261.0
@@ -322,6 +323,7 @@ frame = 1
 position = Vector2(-596, 235)
 
 [node name="vid2" type="VideoStreamPlayer" parent="PanelContainer/page2/vid" unique_id=1025297293]
+unique_name_in_owner = true
 offset_left = 624.0
 offset_top = -28.0
 offset_right = 970.0
@@ -349,6 +351,7 @@ label_settings = SubResource("LabelSettings_1wflc")
 position = Vector2(-596, 235)
 
 [node name="vid3" type="VideoStreamPlayer" parent="PanelContainer/page3/vid" unique_id=447000745]
+unique_name_in_owner = true
 offset_left = 659.0
 offset_top = -95.0
 offset_right = 1261.0
@@ -375,6 +378,7 @@ label_settings = SubResource("LabelSettings_1wflc")
 position = Vector2(-596, 235)
 
 [node name="vid4" type="VideoStreamPlayer" parent="PanelContainer/page4/vid" unique_id=1720192095]
+unique_name_in_owner = true
 offset_left = 659.0
 offset_top = -95.0
 offset_right = 1261.0
@@ -402,6 +406,7 @@ label_settings = SubResource("LabelSettings_1wflc")
 position = Vector2(-596, 235)
 
 [node name="vid5" type="VideoStreamPlayer" parent="PanelContainer/page5/vid" unique_id=891541482]
+unique_name_in_owner = true
 offset_left = 624.0
 offset_top = -95.0
 offset_right = 1226.0
