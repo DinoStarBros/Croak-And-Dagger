@@ -26,6 +26,8 @@ func save_settings_stuff() -> void: ## Saves only the data used in the settings 
 	
 	SaveFileData.frame_freeze = settings.frame_freeze_value
 	SaveFileData.screen_shake = settings.screen_shake_value
+	SaveFileData.crt_effect_value = settings.crt_effect_value
+	
 	SaveFileData.resolutuion_index = settings.resolution_index
 	
 	_save()
@@ -39,6 +41,7 @@ func load_settings_stuff() -> void: ## Loads settings variables and data
 	
 	settings.frame_freeze_value = SaveFileData.frame_freeze
 	settings.screen_shake_value = SaveFileData.screen_shake
+	settings.crt_effect_value = SaveFileData.crt_effect_value
 	
 	settings.resolution_index = SaveFileData.resolutuion_index
 

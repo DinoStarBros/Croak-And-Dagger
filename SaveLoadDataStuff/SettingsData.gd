@@ -8,8 +8,9 @@ var sfx_volume : float = 0.0
 
 var screen_shake_value : bool = true
 var frame_freeze_value : bool = true
+var crt_effect_value : bool = false:
+	set(value):
+		crt_effect_value = value
+		ScreenFx.update_crt(crt_effect_value)
 
 var resolution_index : int = 0
-var switch_accelerate_roll : bool = false
-
-var language_idx : int = 0 ##English=0, Filipino=1

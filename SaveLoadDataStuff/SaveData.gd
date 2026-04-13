@@ -9,3 +9,4 @@ class_name SaveDataResource
 
 @export var screen_shake : bool = true
 @export var frame_freeze : bool = true
+@export var crt_effect_value : bool = true

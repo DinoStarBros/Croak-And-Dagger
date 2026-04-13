@@ -4,6 +4,7 @@ class_name Settings
 @onready var button_pressed: AudioStreamPlayer = %button_pressed
 @onready var screen_shake: Button = %screen_shake
 @onready var frame_freeze: Button = %frame_freeze
+@onready var crt_effect: Button = %crt_effect
 
 var resolutions : Array[Vector2i] = [
 	Vector2i(1920, 1080),
@@ -15,6 +16,7 @@ var allow_audios_play: bool = false
 
 func _ready()->void:
 	
+	crt_effect.pressed.connect(_on_crt_effect_pressed)
 	
 	await get_tree().process_frame
 	_on_load_pressed()
@@ -47,7 +49,12 @@ func _on_load_pressed()->void: ## Loads the settings stuff
 		frame_freeze.text = str("On")
 	else:
 		frame_freeze.text = str("Off")
-		
+	
+	if SaveLoad.settings.crt_effect_value:
+		crt_effect.text = str("On")
+	else:
+		crt_effect.text = str("Off")
+	
 	#%resOptions.select(SaveLoad.settings.resolution_index)
 	#_on_res_options_item_selected(SaveLoad.settings.resolution_index)
 
@@ -117,6 +124,16 @@ func _on_screen_shake_pressed() -> void:
 		screen_shake.text = str("On")
 	else:
 		screen_shake.text = str("Off")
+
+func _on_crt_effect_pressed() -> void:
+	SaveLoad.settings.crt_effect_value = not SaveLoad.settings.crt_effect_value
+	button_pressed.pitch_scale = randf_range(1.8,2.2)
+	button_pressed.play()
+	
+	if SaveLoad.settings.crt_effect_value:
+		crt_effect.text = str("On")
+	else:
+		crt_effect.text = str("Off")
 
 func _process(delta: float) -> void:
 	pass
