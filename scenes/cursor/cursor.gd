@@ -4,13 +4,13 @@ class_name Cursor
 const speed_increase : int = 50
 const base_speed : float = 300
 const max_speed : float = 1200
-const base_comboo : int = 0
+const base_combo : int = 0
 
 var current_box : Box
 var cursor_move_mode : bool = true ## True = right, False = left
 var cursor_speed : float = base_speed
 var endpoints_x : Vector2
-var combo : int = 0
+var combo : int = base_combo
 var box_clicked : bool = false
 
 func _ready() -> void:
@@ -112,7 +112,7 @@ func _succesful_box_hit() -> void:
 
 func _failed_box_hit() -> void:
 	cursor_speed = base_speed
-	combo = base_comboo
+	combo = base_combo
 	
 	Global.spawn_clickboom(Color.RED, global_position)
 	GlobalSignals.CursorMiss.emit()
@@ -121,7 +121,7 @@ func _player_hurt(damage: float) -> void:
 	# Had to copy-paste instead of just calling
 	# _failed_box_hit() cuz it'll be infinite recursion
 	cursor_speed = base_speed
-	combo = base_comboo
+	combo = base_combo
 	%hurt1.pitch_scale = randf_range(0.8, 1.0)
 	%hurt1.play()
 	%hurt2.pitch_scale = randf_range(0.8, 1.0)
