@@ -4,6 +4,8 @@ class_name DefendBox
 var damage : float
 var sliced : bool = false
 
+@export var icon_sprite : Sprite2D
+
 func _init() -> void:
 	area_entered.connect(_area_entered)
 
@@ -12,7 +14,9 @@ func _ready() -> void:
 	id = boxes_amount
 	z_index = Global.MAX_BOXES + id
 	
-	scale.x *= randf_range(0.5, 2)
+	var xcale : float = randf_range(0.5, 2)
+	scale.x *= xcale
+	icon_sprite.scale.x /= xcale
 
 func _exit_tree() -> void:
 	boxes_amount -= 1
