@@ -5,6 +5,7 @@ var damage : float
 var sliced : bool = false
 
 @export var icon_sprite : Sprite2D
+@export var move_spd_mult : float = 1.0 ## Can determine if the box is inherently faster or slower
 
 func _init() -> void:
 	area_entered.connect(_area_entered)
@@ -17,6 +18,9 @@ func _ready() -> void:
 	var xcale : float = randf_range(0.5, 2)
 	scale.x *= xcale
 	icon_sprite.scale.x /= xcale
+	
+	await get_tree().process_frame
+	velocity.x *= move_spd_mult
 
 func _exit_tree() -> void:
 	boxes_amount -= 1

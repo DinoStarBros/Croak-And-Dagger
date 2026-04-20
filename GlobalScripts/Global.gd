@@ -34,7 +34,7 @@ var camera : Camera
 var luck : float = 0
 
 ## The maximum amount of boxes that can be on screen 
-const MAX_BOXES : int = 25
+const MAX_BOXES : int = 17
 ## The time you need to wait for next combat
 const WAIT_TIME : float = 1.5
 ## The position of the enemy in combat
