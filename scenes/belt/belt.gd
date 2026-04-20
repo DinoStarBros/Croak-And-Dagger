@@ -3,10 +3,10 @@ extends Line2D
 @onready var cursor: Area2D = %cursor
 
 var endpoints_x : Vector2 ## X is neg/left, Y is pos/right
-var boxes_scns : Array[PackedScene] = [
-	load("res://Boxes/AttackBox/attack_box.tscn"),
-	
-]
+#var boxes_scns : Array[PackedScene] = [
+	#load("res://Boxes/AttackBox/attack_box.tscn"),
+	#
+#]
 
 func _ready() -> void:
 	endpoints_x.x = points[0].x + global_position.x

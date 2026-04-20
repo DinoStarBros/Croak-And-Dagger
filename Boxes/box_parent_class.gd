@@ -12,13 +12,11 @@ const X_SCALE_RANGE : Vector2 = Vector2(0.7, 1.3)
 func slice() -> void:
 	pass
 
-#func _init() -> void:
-	#global_position.x = clamp(global_position.x, Global.endpoints_x.x, Global.endpoints_x.y)
-
-
-
 func _move(delta: float) -> void:
 	if not Global.current_game_state == Global.game_states.FIGHT: 
 		return
 	
 	global_position += velocity * delta * Global.defend_box_speed_multiplier
+
+func _exit_tree() -> void:
+	boxes_amount -= 1

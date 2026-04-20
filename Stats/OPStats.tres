@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="EntityStats" format=3 uid="uid://bdt5xe8k206d1"]
 
-[ext_resource type="PackedScene" uid="uid://dolxx7718k6xh" path="res://Boxes/DefendBox/defend_box.tscn" id="1_t8ba1"]
+[ext_resource type="PackedScene" uid="uid://dolxx7718k6xh" path="res://EnemyBoxes/BaseDefendBox/base_defend_box.tscn" id="1_t8ba1"]
 [ext_resource type="Script" uid="uid://chqad1x7kc28f" path="res://Stats/EntityStatsResource.gd" id="2_mxkvd"]
 
 [resource]
