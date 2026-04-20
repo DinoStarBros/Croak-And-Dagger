@@ -4,6 +4,7 @@ class_name DefendBox
 @export var icon_sprite : Sprite2D
 @export var move_spd_mult : float = 1.0 ## Can determine if the box is inherently faster or slower
 @export var max_hp : int = 1
+@export var size_mult : float = 1.0
 
 var damage : float
 var sliced : bool = false
@@ -23,7 +24,7 @@ func _ready() -> void:
 	z_index = Global.MAX_BOXES + id
 	hp = max_hp
 	
-	var xcale : float = randf_range(0.8, 2)
+	var xcale : float = randf_range(0.8, 2) * size_mult
 	scale.x *= xcale
 	icon_sprite.scale.x /= xcale
 	
@@ -33,6 +34,10 @@ func _ready() -> void:
 	await get_tree().process_frame
 	velocity.x *= move_spd_mult
 	leftward_velocity.x = velocity.x # Leftward velocity just stays the same, while I can update velocity
+	
+	if self is FastDefendBox:
+		velocity.x *= 0.1
+		tween_velocity_back(0.5)
 
 func _exit_tree() -> void:
 	boxes_amount -= 1
@@ -59,7 +64,7 @@ func slice() -> void:
 		final_slice()
 	else:
 		velocity.x = 500
-		tween_velocity_back()
+		tween_velocity_back(0.25)
 
 func final_slice() -> void:
 	sliced = true
@@ -71,6 +76,6 @@ func final_slice() -> void:
 	else:
 		queue_free()
 
-func tween_velocity_back() -> void:
+func tween_velocity_back(duration: float = 0.25) -> void:
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "velocity", leftward_velocity, 0.25)
+	tween.tween_property(self, "velocity", leftward_velocity, duration)
