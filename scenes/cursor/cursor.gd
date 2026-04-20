@@ -47,24 +47,27 @@ func _unhandled_input(event: InputEvent) -> void:
 		box_clicked = false
 
 func determin_box_click() -> void:
-		var overlaps : Array = get_overlapping_areas()
-		var box_zorders_in_area : Array = []
-		for box in overlaps: if box is Box:
-			box_zorders_in_area.append(box.z_index)
+	var overlaps : Array = get_overlapping_areas()
+	var box_zorders_in_area : Array = []
+	for box in overlaps: if box is Box:
+		box_zorders_in_area.append(box.z_index)
+	
+	if overlaps.size() > 0:
+		var biggest_box_idx : int = box_zorders_in_area.find(box_zorders_in_area.max())
+		var biggest_box : Box = get_overlapping_areas()[biggest_box_idx]
 		
-		if overlaps.size() > 0:
-			var biggest_box_idx : int = box_zorders_in_area.find(box_zorders_in_area.max())
-			var biggest_box : Box = get_overlapping_areas()[biggest_box_idx]
-			
-			biggest_box.slice()
-			
-			_succesful_box_hit()
-			if biggest_box is DefendBox:
+		biggest_box.slice()
+		
+		_succesful_box_hit()
+		if biggest_box is DefendBox:
+			if biggest_box is TrapDefendBox:
+				pass
+			else:
 				%block.pitch_scale = randf_range(0.7,0.9)
 				%block.play()
 				GlobalSignals.Defended.emit()
-		else:
-			_failed_box_hit()
+	else:
+		_failed_box_hit()
 
 func _move(delta: float) -> void:
 	if not Global.current_game_state == Global.game_states.FIGHT:

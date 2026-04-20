@@ -38,6 +38,9 @@ func _ready() -> void:
 	if self is FastDefendBox:
 		velocity.x *= 0.1
 		tween_velocity_back(0.5)
+	elif self is TrapDefendBox:
+		scale.x /= xcale
+		icon_sprite.scale.x *= xcale
 
 func _exit_tree() -> void:
 	boxes_amount -= 1
@@ -75,6 +78,10 @@ func final_slice() -> void:
 		anim.play("break")
 	else:
 		queue_free()
+	
+	await get_tree().process_frame
+	if self is TrapDefendBox:
+		GlobalSignals.DamagePlayer.emit(damage)
 
 func tween_velocity_back(duration: float = 0.25) -> void:
 	var tween = get_tree().create_tween()
