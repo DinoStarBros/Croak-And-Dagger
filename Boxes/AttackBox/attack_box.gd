@@ -3,8 +3,6 @@ extends ProductBox
 ## Slicing them will deal damage
 class_name AttackBox
 
-var damage : float
-
 func _ready() -> void:
 	boxes_amount += 1
 	id = boxes_amount

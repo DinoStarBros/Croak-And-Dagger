@@ -12,7 +12,10 @@ var current_box : Box
 var cursor_move_mode : bool = true ## True = right, False = left
 var cursor_speed : float = base_speed
 var endpoints_x : Vector2
-var combo : int = base_combo
+var combo : int = base_combo:
+	set(value):
+		combo = value
+		GlobalSignals.ComboChanged.emit()
 var box_clicked : bool = false
 var ctxt_desire_scale : Vector2
 

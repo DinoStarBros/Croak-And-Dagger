@@ -67,7 +67,11 @@ signal Defended
 ## When selecting stat upgrade after a fight
 signal AddUpgrade(upgrade_scn: PackedScene)
 
+## When the item efficiency stat of the player changes
 signal ItemEfficiencyChanged
+
+## When the combo of the player changes
+signal ComboChanged
 
 ## When the current_game_state gets changed
 signal GameStateChanged
