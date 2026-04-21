@@ -1,8 +1,7 @@
 extends EntityComponentClass
 class_name HealthComponent
 
-@export var health_bar : Range
-@export var health_text : Label
+@export var health_bar : ProgressBar
 
 var max_hp : float = 100.0
 var hp : float:
@@ -52,10 +51,19 @@ func enemy_hurt(damage: float, allow_crit: bool = true) -> void:
 		)
 
 func _ready() -> void:
+	
 	await get_tree().process_frame
 	
 	if get_parent() is Enemy:
 		enemy_stat_mult = (Global.enemy_idx + 1)
+		if health_bar:
+			health_bar.global_position = get_parent().HEALTHBAR_POSITION
+			health_bar.self_modulate = Color.RED
+			
+			
+			if health_bar is ProgressBar:
+				health_bar.fill_mode = health_bar.FillMode.FILL_END_TO_BEGIN
+			
 	else:
 		enemy_stat_mult = 1
 	
@@ -70,9 +78,6 @@ func _ready() -> void:
 		GlobalSignals.DamageEnemy.connect(enemy_hurt)
 
 func _process(delta: float) -> void:
-	if health_text:
-		health_text.text = str(roundi(hp), " / ", roundi(max_hp))
-		#health_text.text = str((hp), " / ", (max_hp))
 	
 	if health_bar:
 		#if get_parent() is Player:

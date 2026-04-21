@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dqqmdp3hyac81" path="res://Components/BoxDecider/box_decider.tscn" id="5_gj1dt"]
 [ext_resource type="PackedScene" uid="uid://0uair2p0ft75" path="res://Components/StatusComponent/status_component.tscn" id="6_51nmk"]
 [ext_resource type="Texture2D" uid="uid://bn200tim80d5i" path="res://Art/Placeholder/Eneme.png" id="7_3r3wr"]
+[ext_resource type="PackedScene" uid="uid://dryipx6eo8d1y" path="res://scenes/fancy_healthbar/fancy_healthbar.tscn" id="8_l7728"]
 
 [sub_resource type="Animation" id="Animation_ygu5k"]
 length = 0.001
@@ -192,10 +193,9 @@ stats = ExtResource("3_4evkx")
 health_component = NodePath("../HealthComponent")
 box_decider = NodePath("../BoxDecider")
 
-[node name="HealthComponent" parent="." unique_id=971455295 node_paths=PackedStringArray("health_bar", "health_text") instance=ExtResource("4_rl7tf")]
+[node name="HealthComponent" parent="." unique_id=971455295 node_paths=PackedStringArray("health_bar") instance=ExtResource("4_rl7tf")]
 unique_name_in_owner = true
-health_bar = NodePath("../ui/healthBar")
-health_text = NodePath("../ui/healthBar/healthText")
+health_bar = NodePath("../ui/FancyHealthbar")
 
 [node name="BoxDecider" parent="." unique_id=448822901 node_paths=PackedStringArray("final_damage_text") instance=ExtResource("5_gj1dt")]
 unique_name_in_owner = true
@@ -219,18 +219,6 @@ autoplay = &"idle"
 
 [node name="ui" type="CanvasLayer" parent="." unique_id=1586263448]
 
-[node name="healthBar" type="ProgressBar" parent="ui" unique_id=1209636920]
-offset_left = 861.0
-offset_top = 77.0
-offset_right = 1140.0
-offset_bottom = 104.0
-show_percentage = false
-
-[node name="healthText" type="Label" parent="ui/healthBar" unique_id=1297544898]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-
 [node name="stats_panel" type="VBoxContainer" parent="ui" unique_id=60656746]
 offset_left = 1063.0
 offset_top = 137.0
@@ -240,6 +228,8 @@ offset_bottom = 177.0
 [node name="damage_txt" type="Label" parent="ui/stats_panel" unique_id=1925632547]
 unique_name_in_owner = true
 layout_mode = 2
+
+[node name="FancyHealthbar" parent="ui" unique_id=526919355 instance=ExtResource("8_l7728")]
 
 [node name="Label" type="Label" parent="." unique_id=1472366335]
 offset_left = -92.0

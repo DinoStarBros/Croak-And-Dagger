@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://c6gugda7ns177"]
+
+[ext_resource type="Script" uid="uid://c4tq65cucecnv" path="res://Backgrounds/Background1/background_1.gd" id="1_k8eks"]
+[ext_resource type="Texture2D" uid="uid://ckq3u0xeguhhb" path="res://Art/crokDagTestBG.png" id="2_r6k22"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gguu6"]
+load_path = "res://.godot/imported/crokDagTestBG.png-597d3b724fdd4e8ad4a14f4ebb1614ac.ctex"
+
+[node name="Background1" type="CanvasLayer" unique_id=1646486462]
+layer = -1
+script = ExtResource("1_k8eks")
+
+[node name="l4" type="Sprite2D" parent="." unique_id=320800074]
+unique_name_in_owner = true
+position = Vector2(0, -100)
+scale = Vector2(4, 4)
+texture = SubResource("CompressedTexture2D_gguu6")
+centered = false
+hframes = 3
+vframes = 3
+frame = 4
+
+[node name="extra" type="Sprite2D" parent="l4" unique_id=1718037246]
+position = Vector2(320, 0)
+texture = ExtResource("2_r6k22")
+centered = false
+hframes = 3
+vframes = 3
+frame = 4
+
+[node name="l3" type="Sprite2D" parent="." unique_id=1769897233]
+unique_name_in_owner = true
+scale = Vector2(4, 4)
+texture = ExtResource("2_r6k22")
+centered = false
+hframes = 3
+vframes = 3
+frame = 3
+
+[node name="extra" type="Sprite2D" parent="l3" unique_id=775280771]
+position = Vector2(320, 0)
+texture = ExtResource("2_r6k22")
+centered = false
+hframes = 3
+vframes = 3
+frame = 3
+
+[node name="l2" type="Sprite2D" parent="." unique_id=1539491405]
+unique_name_in_owner = true
+position = Vector2(0, 100)
+scale = Vector2(4, 4)
+texture = ExtResource("2_r6k22")
+centered = false
+hframes = 3
+vframes = 3
+frame = 2
+
+[node name="extra" type="Sprite2D" parent="l2" unique_id=1972598893]
+position = Vector2(320, 0)
+texture = ExtResource("2_r6k22")
+centered = false
+hframes = 3
+vframes = 3
+frame = 2
+
+[node name="l1" type="Sprite2D" parent="." unique_id=1821722760]
+unique_name_in_owner = true
+position = Vector2(0, 200)
+scale = Vector2(4, 4)
+texture = ExtResource("2_r6k22")
+centered = false
+hframes = 3
+vframes = 3
+frame = 1
+
+[node name="extra" type="Sprite2D" parent="l1" unique_id=986305599]
+position = Vector2(320, 0)
+texture = ExtResource("2_r6k22")
+centered = false
+hframes = 3
+vframes = 3
+frame = 1

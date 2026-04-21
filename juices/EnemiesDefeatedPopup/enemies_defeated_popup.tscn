@@ -67,6 +67,7 @@ _data = {
 }
 
 [node name="EnemiesDefeatedPopup" type="CanvasLayer" unique_id=773924252]
+layer = 2
 script = ExtResource("1_d7ii7")
 
 [node name="Text" type="Label" parent="." unique_id=991756323]

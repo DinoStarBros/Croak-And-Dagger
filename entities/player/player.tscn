@@ -16,6 +16,7 @@
 [ext_resource type="Theme" uid="uid://bb6vwl0h1flws" path="res://FlatUI4/kenneyUI-blue.tres" id="9_yqrof"]
 [ext_resource type="AudioStream" uid="uid://c05eac572q51" path="res://Audio/amalgun/MissileExplode.wav" id="10_7thud"]
 [ext_resource type="PackedScene" uid="uid://cm14oxbcwtmbq" path="res://UIPopups/deathScreen/death_screen.tscn" id="10_a1qjk"]
+[ext_resource type="PackedScene" uid="uid://dryipx6eo8d1y" path="res://scenes/fancy_healthbar/fancy_healthbar.tscn" id="11_t1t22"]
 [ext_resource type="Script" uid="uid://c2l0k6v21mlhb" path="res://entities/player/stat_upgrades.gd" id="12_b2kln"]
 [ext_resource type="Texture2D" uid="uid://diihmdabfwa8g" path="res://Art/Placeholder/Trail2.png" id="14_afbqv"]
 [ext_resource type="Script" uid="uid://ba4q7byfi2rvv" path="res://entities/player/inventory.gd" id="17_we0b7"]
@@ -442,6 +443,16 @@ _data = {
 &"walk": SubResource("Animation_afbqv")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_t1t22"]
+font_size = 30
+outline_size = 11
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_50fht"]
+font_size = 20
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_we0b7"]
 font_size = 20
 outline_size = 10
@@ -457,10 +468,9 @@ stats = ExtResource("3_26q78")
 health_component = NodePath("../HealthComponent")
 box_decider = NodePath("../BoxDecider")
 
-[node name="HealthComponent" parent="." unique_id=971455295 node_paths=PackedStringArray("health_bar", "health_text") instance=ExtResource("5_fkugw")]
+[node name="HealthComponent" parent="." unique_id=971455295 node_paths=PackedStringArray("health_bar") instance=ExtResource("5_fkugw")]
 unique_name_in_owner = true
-health_bar = NodePath("../ui/healthBar")
-health_text = NodePath("../ui/healthBar/healthText")
+health_bar = NodePath("../ui/FancyHealthbar")
 
 [node name="BoxDecider" parent="." unique_id=448822901 node_paths=PackedStringArray("final_damage_text") instance=ExtResource("6_qiwj3")]
 unique_name_in_owner = true
@@ -501,17 +511,20 @@ unique_name_in_owner = true
 process_mode = 3
 script = ExtResource("7_j3ovn")
 
-[node name="healthBar" type="ProgressBar" parent="ui" unique_id=1601355000]
-offset_left = 140.0
-offset_top = 77.0
-offset_right = 419.0
-offset_bottom = 104.0
-show_percentage = false
+[node name="FancyHealthbar" parent="ui" unique_id=526919355 instance=ExtResource("11_t1t22")]
+offset_left = 50.0
+offset_top = 138.0
+offset_right = 400.0
+offset_bottom = 173.0
 
-[node name="healthText" type="Label" parent="ui/healthBar" unique_id=1028513403]
+[node name="Name" type="Label" parent="ui/FancyHealthbar" unique_id=1839763261]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 6.0
+offset_top = -37.0
+offset_right = 106.0
+offset_bottom = -7.0
+text = "Player HP:"
+label_settings = SubResource("LabelSettings_t1t22")
 
 [node name="pauseButton" type="Button" parent="ui" unique_id=1906936024]
 unique_name_in_owner = true
@@ -540,30 +553,34 @@ scale = Vector2(0.5, 0.5)
 columns = 37
 
 [node name="stats_panel" type="VBoxContainer" parent="ui" unique_id=683005175]
-offset_left = 52.0
-offset_top = 137.0
-offset_right = 92.0
-offset_bottom = 177.0
+offset_left = 88.0
+offset_top = 223.0
+offset_right = 244.0
+offset_bottom = 339.0
 
 [node name="damage_txt" type="Label" parent="ui/stats_panel" unique_id=500562700]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Damage: 67"
+label_settings = SubResource("LabelSettings_50fht")
 
 [node name="crit_txt" type="Label" parent="ui/stats_panel" unique_id=405168453]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Crit Chance : 69"
+label_settings = SubResource("LabelSettings_50fht")
 
 [node name="item_eff_txt" type="Label" parent="ui/stats_panel" unique_id=305260382]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Item Efficiency: 2"
+label_settings = SubResource("LabelSettings_50fht")
 
 [node name="luck_txt" type="Label" parent="ui/stats_panel" unique_id=538254473]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Luck: 67"
+label_settings = SubResource("LabelSettings_50fht")
 
 [node name="debug" type="Label" parent="ui" unique_id=65773474]
 unique_name_in_owner = true
