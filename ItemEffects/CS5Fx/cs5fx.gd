@@ -9,7 +9,7 @@ var beam_shoot : bool = false
 var damage : float
 
 const tick_dmg_mult : float = 4
-const damage_scaling : float = 8
+const damage_scaling : float = 6
 
 func _ready() -> void:
 	damage = roundi(item_effects.box_decider.final_damage * damage_scaling)
@@ -39,12 +39,6 @@ func beam_start() -> void:
 	item_duration_timer.start(duration)
 	
 	_laser()
-	
-	#for dmg in damage/tick_dmg_mult:
-		#
-		#
-		##await get_tree().create_timer((duration/damage) * tick_dmg_mult).timeout
-		#await get_tree().process_frame
 
 func _laser() -> void:
 	const PLAY_TIMES : int = 4
