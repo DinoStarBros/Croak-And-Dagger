@@ -14,6 +14,7 @@ var cursor_speed : float = base_speed
 var endpoints_x : Vector2
 var combo : int = base_combo
 var box_clicked : bool = false
+var ctxt_desire_scale : Vector2
 
 func _ready() -> void:
 	GlobalSignals.CombatStart.connect(_combat_done)
@@ -26,8 +27,11 @@ func _process(delta: float) -> void:
 	
 	cursor_speed = clamp(cursor_speed, 0, max_speed)
 	
+	ctxt_desire_scale.x = 0.9 + (float(combo) / 100)
+	ctxt_desire_scale.y = ctxt_desire_scale.x
+	
 	ctxt_pivot.rotation = lerp_angle(ctxt_pivot.rotation, 0.0, 8.0 * delta)
-	ctxt_pivot.scale = lerp(ctxt_pivot.scale, Vector2.ONE, 12.0 * delta)
+	ctxt_pivot.scale = lerp(ctxt_pivot.scale, ctxt_desire_scale, 12.0 * delta)
 	ctxt_pivot.global_position = lerp(ctxt_pivot.global_position, Vector2(640,560), 6.0 * delta)
 	
 	_move(delta)
@@ -55,9 +59,6 @@ func determin_box_click() -> void:
 	var box_zorders_in_area : Array = []
 	for box in overlaps: if box is Box:
 		box_zorders_in_area.append(box.z_index)
-	
-	ctxt_pivot.global_position.y += randf_range(-30, 30)
-	ctxt_pivot.global_position.x += randf_range(-30, 30)
 	
 	if overlaps.size() > 0:
 		var biggest_box_idx : int = box_zorders_in_area.find(box_zorders_in_area.max())
@@ -121,10 +122,10 @@ func _succesful_box_hit() -> void:
 	Global.spawn_clickboom(Color.WHITE, global_position)
 	
 	if randf() > 0.5:
-		ctxt_pivot.rotation_degrees += randf_range(20,40)
+		ctxt_pivot.rotation_degrees += randf_range(15,30)
 	else:
-		ctxt_pivot.rotation_degrees += -randf_range(20,40)
-	ctxt_pivot.scale = Vector2(1.5, 1.5)
+		ctxt_pivot.rotation_degrees += -randf_range(15,30)
+	#ctxt_pivot.scale = Vector2(1.5, 1.5)
 
 func _failed_box_hit() -> void:
 	cursor_speed = base_speed
@@ -133,7 +134,8 @@ func _failed_box_hit() -> void:
 	Global.spawn_clickboom(Color.RED, global_position)
 	GlobalSignals.CursorMiss.emit()
 	
-	ctxt_pivot.scale = Vector2(0.9, 0.9)
+	ctxt_pivot.global_position.y += randf_range(-20, 20)
+	ctxt_pivot.global_position.x += randf_range(-20, 20)
 
 func _player_hurt(damage: float) -> void:
 	# Had to copy-paste instead of just calling
