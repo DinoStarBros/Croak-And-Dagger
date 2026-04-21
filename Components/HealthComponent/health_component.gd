@@ -93,4 +93,4 @@ func _process(delta: float) -> void:
 
 func enemy_dead() -> void:
 	GlobalSignals.FightWin.emit()
-	get_parent().queue_free()
+	#get_parent().queue_free()

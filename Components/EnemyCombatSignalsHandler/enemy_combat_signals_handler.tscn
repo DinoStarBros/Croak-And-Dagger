@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://j3miyhd54t2j"]
+
+[ext_resource type="Script" uid="uid://drac5tom1np5o" path="res://Components/EnemyCombatSignalsHandler/enemy_combat_signals_handler.gd" id="1_cmeot"]
+
+[node name="EnemyCombatSignalsHandler" type="Node2D" unique_id=12414593]
+script = ExtResource("1_cmeot")

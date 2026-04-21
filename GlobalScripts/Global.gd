@@ -2,7 +2,7 @@ extends Node
 
 enum game_states {
 	TITLE, FIGHT, DEAD, WIN, UPGRADE, TRANSITION_NEXT_COMBAT, 
-	USING_ITEM
+	USING_ITEM, LEVEL_WIN
 }
 
 var current_game_state : game_states:
@@ -32,6 +32,7 @@ var item_efficiency : int: ## The less combo cost items have
 var entity_parent_spawner_comp : EntityParentSpawnerComponent
 var camera : Camera
 var luck : float = 0
+var boss_spawned : bool = false
 
 ## The maximum amount of boxes that can be on screen 
 const MAX_BOXES : int = 17

@@ -1,9 +1,15 @@
 [gd_scene format=3 uid="uid://cm14oxbcwtmbq"]
 
-[ext_resource type="Script" uid="uid://d2vnfgdvse7bh" path="res://UIPopups/deathScreen/death_screen.gd" id="1_bvyep"]
 [ext_resource type="Theme" uid="uid://bb6vwl0h1flws" path="res://FlatUI4/kenneyUI-blue.tres" id="1_duotr"]
+[ext_resource type="Script" uid="uid://d2vnfgdvse7bh" path="res://UIPopups/deathScreen/death_screen.gd" id="2_e8j4s"]
 
-[node name="death_screen" type="Control" unique_id=894014762]
+[sub_resource type="LabelSettings" id="LabelSettings_e8j4s"]
+font_size = 80
+shadow_size = 9
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 3)
+
+[node name="deathScreen" type="Control" unique_id=894014762]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,7 +17,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_duotr")
-script = ExtResource("1_bvyep")
+script = ExtResource("2_e8j4s")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=2102631408]
 layout_mode = 1
@@ -29,7 +35,8 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="PanelContainer" unique_id=709704051]
 layout_mode = 2
-text = "You Died!"
+text = "You Failed!"
+label_settings = SubResource("LabelSettings_e8j4s")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -47,4 +54,4 @@ offset_right = 85.67981
 offset_bottom = -244.749
 grow_horizontal = 2
 grow_vertical = 0
-text = "Exit"
+text = "Exit To Menu"

@@ -7,14 +7,15 @@ class_name EntityParentSpawnerComponent
 @export var level_resource : LevelResource
 
 var curr_enemies_defeated: int = -1
-var boss_spawned : bool = false
 
 func _ready() -> void:
 	Global.enemy_idx = curr_enemies_defeated
 	Global.entity_parent_spawner_comp = self
+	Global.boss_spawned = false
 	
 	GlobalSignals.UpgradeDone.connect(_upgrade_done)
 	GlobalSignals.CombatStart.connect(_combat_start)
+	GlobalSignals.FightWin.connect(_fight_win)
 	
 	MusicManager.play_song("combat1")
 	
@@ -47,6 +48,7 @@ func _spawn_enemy() -> void:
 	enemy.global_position = Global.ESPAWN_POS
 
 func _spawn_boss() -> void:
+	Global.boss_spawned = true
 	MusicManager.play_song("boss3")
 	
 	var boss : Enemy = level_resource.boss_scn.instantiate()
@@ -58,3 +60,6 @@ func _spawn_ene_defeated_popup(enemies_defeated: int, max_enemies: int) -> void:
 	enemies_defeated_popup.enemies = enemies_defeated
 	enemies_defeated_popup.max_enemies = max_enemies
 	add_child(enemies_defeated_popup)
+
+func _fight_win() -> void:
+	pass

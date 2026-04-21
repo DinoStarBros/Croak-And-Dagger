@@ -74,3 +74,7 @@ signal GameStateChanged
 
 ## When the Zarchivas shoes item gets used
 signal ZarchivasKick
+
+## When the enemy is done with their death animation
+## so the upgrade select thing can spawn
+signal StartUpgrade
