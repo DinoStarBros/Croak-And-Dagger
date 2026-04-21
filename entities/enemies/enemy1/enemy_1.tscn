@@ -237,13 +237,16 @@ _data = {
 [node name="enemy1" type="Node2D" unique_id=1657567192]
 script = ExtResource("1_t4fes")
 
-[node name="StatsAllocator" parent="." unique_id=437436460 node_paths=PackedStringArray("health_component", "box_decider") instance=ExtResource("3_ygu5k")]
+[node name="StatsAllocator" parent="." unique_id=437436460 node_paths=PackedStringArray("health_component", "box_decider", "combat_signals") instance=ExtResource("3_ygu5k")]
 unique_name_in_owner = true
 stats = ExtResource("3_c0nl6")
 health_component = NodePath("../HealthComponent")
 box_decider = NodePath("../BoxDecider")
+combat_signals = NodePath("../EnemyCombatSignalsHandler")
 
-[node name="CombatSignalsHandler" parent="." unique_id=12414593 instance=ExtResource("6_y113a")]
+[node name="EnemyCombatSignalsHandler" parent="." unique_id=12414593 node_paths=PackedStringArray("anim", "box_decider") instance=ExtResource("6_y113a")]
+anim = NodePath("../anim")
+box_decider = NodePath("../BoxDecider")
 
 [node name="HealthComponent" parent="." unique_id=971455295 node_paths=PackedStringArray("health_bar") instance=ExtResource("3_ortin")]
 unique_name_in_owner = true

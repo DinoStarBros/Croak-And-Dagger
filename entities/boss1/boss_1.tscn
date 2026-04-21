@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://d3gi0n1ejmscl" path="res://entities/boss1/boss_1.gd" id="1_0rt1n"]
 [ext_resource type="PackedScene" uid="uid://c1qobuo6afwil" path="res://Components/StatsAllocator/stats_allocator.tscn" id="2_q8bsv"]
 [ext_resource type="Resource" uid="uid://d16iobhf0py1v" path="res://Stats/Boss1.tres" id="3_4evkx"]
+[ext_resource type="PackedScene" uid="uid://j3miyhd54t2j" path="res://Components/EnemyCombatSignalsHandler/enemy_combat_signals_handler.tscn" id="4_hwmh2"]
 [ext_resource type="PackedScene" uid="uid://ih821u05qh4v" path="res://Components/HealthComponent/health_component.tscn" id="4_rl7tf"]
 [ext_resource type="PackedScene" uid="uid://dqqmdp3hyac81" path="res://Components/BoxDecider/box_decider.tscn" id="5_gj1dt"]
 [ext_resource type="PackedScene" uid="uid://0uair2p0ft75" path="res://Components/StatusComponent/status_component.tscn" id="6_51nmk"]
@@ -59,6 +60,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Eneme:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_mm6iw"]
 resource_name = "attack"
@@ -86,7 +99,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.15),
 "transitions": PackedFloat32Array(2, 1),
 "update": 0,
-"values": [Vector2(-20, 0), Vector2(0, 0)]
+"values": [Vector2(-40, 0), Vector2(0, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -99,6 +112,47 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_hwmh2"]
+resource_name = "death"
+length = 0.75
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Eneme:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(0.2588163, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(100, -100)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Eneme:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(0.2588163, 1),
+"update": 0,
+"values": [0.0, 1.2217305]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Eneme:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_iaqll"]
@@ -175,14 +229,10 @@ tracks/1/keys = {
 _data = {
 &"RESET": SubResource("Animation_ygu5k"),
 &"attack": SubResource("Animation_mm6iw"),
+&"death": SubResource("Animation_hwmh2"),
 &"hurt": SubResource("Animation_iaqll"),
 &"idle": SubResource("Animation_t4fes")
 }
-
-[sub_resource type="LabelSettings" id="LabelSettings_4evkx"]
-font_size = 53
-outline_size = 17
-outline_color = Color(0, 0, 0, 1)
 
 [node name="boss1" type="Node2D" unique_id=1657567192]
 script = ExtResource("1_0rt1n")
@@ -191,6 +241,10 @@ script = ExtResource("1_0rt1n")
 unique_name_in_owner = true
 stats = ExtResource("3_4evkx")
 health_component = NodePath("../HealthComponent")
+box_decider = NodePath("../BoxDecider")
+
+[node name="EnemyCombatSignalsHandler" parent="." unique_id=12414593 node_paths=PackedStringArray("anim", "box_decider") instance=ExtResource("4_hwmh2")]
+anim = NodePath("../anim")
 box_decider = NodePath("../BoxDecider")
 
 [node name="HealthComponent" parent="." unique_id=971455295 node_paths=PackedStringArray("health_bar") instance=ExtResource("4_rl7tf")]
@@ -218,6 +272,7 @@ libraries/ = SubResource("AnimationLibrary_ygu5k")
 autoplay = &"idle"
 
 [node name="ui" type="CanvasLayer" parent="." unique_id=1586263448]
+layer = 0
 
 [node name="stats_panel" type="VBoxContainer" parent="ui" unique_id=60656746]
 offset_left = 1063.0
@@ -230,11 +285,3 @@ unique_name_in_owner = true
 layout_mode = 2
 
 [node name="FancyHealthbar" parent="ui" unique_id=526919355 instance=ExtResource("8_l7728")]
-
-[node name="Label" type="Label" parent="." unique_id=1472366335]
-offset_left = -92.0
-offset_top = -105.0
-offset_right = 67.0
-offset_bottom = -51.0
-text = "BIG BOSS"
-label_settings = SubResource("LabelSettings_4evkx")
