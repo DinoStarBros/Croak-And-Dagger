@@ -31,6 +31,8 @@ func _fight_win() -> void:
 func death_anim() -> void:
 	anim.stop()
 	anim.play("death")
+	%deathSfx.pitch_scale += randf_range(-.1,.1)
+	%deathSfx.play()
 	await anim.animation_finished
 	# This means the death animation is done
 	GlobalSignals.StartUpgrade.emit()

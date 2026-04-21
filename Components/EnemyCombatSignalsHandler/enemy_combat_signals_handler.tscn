@@ -1,6 +1,12 @@
 [gd_scene format=3 uid="uid://j3miyhd54t2j"]
 
 [ext_resource type="Script" uid="uid://drac5tom1np5o" path="res://Components/EnemyCombatSignalsHandler/enemy_combat_signals_handler.gd" id="1_cmeot"]
+[ext_resource type="AudioStream" uid="uid://hcghyqqf752d" path="res://Audio/amalgun/Death.wav" id="2_jmjch"]
 
 [node name="EnemyCombatSignalsHandler" type="Node2D" unique_id=12414593]
 script = ExtResource("1_cmeot")
+
+[node name="deathSfx" type="AudioStreamPlayer" parent="." unique_id=75450341]
+unique_name_in_owner = true
+stream = ExtResource("2_jmjch")
+bus = &"SFX"
