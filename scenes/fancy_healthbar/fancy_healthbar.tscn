@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://enbiwhg3tll5" path="res://scenes/fancy_healthbar/fancy_healthbar.gd" id="1_1620c"]
 [ext_resource type="Material" uid="uid://bhkdvn07xjay3" path="res://scenes/fancy_healthbar/hp_barticle.tres" id="2_l6s5o"]
+[ext_resource type="Texture2D" uid="uid://bxi1xb61q71gy" path="res://Art/CrokDag/luhCircle.png" id="2_qjbgn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6s5o"]
 bg_color = Color(1, 1, 1, 0)
@@ -80,8 +81,9 @@ horizontal_alignment = 1
 
 [node name="HpBarticle" type="GPUParticles2D" parent="." unique_id=916696418]
 unique_name_in_owner = true
+visible = false
 position = Vector2(0, 18)
-emitting = false
 amount = 10
+texture = ExtResource("2_qjbgn")
 lifetime = 0.2
 process_material = ExtResource("2_l6s5o")

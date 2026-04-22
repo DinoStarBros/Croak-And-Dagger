@@ -9,6 +9,7 @@ var item_held_desire_pos_y : float
 
 func _ready() -> void:
 	GlobalSignals.ComboChanged.connect(_combo_changed)
+	GlobalSignals.ItemEfficiencyChanged.connect(_item_efficiency_changed)
 	
 	await get_tree().process_frame
 	%text.text = key_text
@@ -36,6 +37,12 @@ func determine_item() -> void:
 			Global.cursor.cursor_speed = Global.cursor.base_speed
 
 func _combo_changed() -> void:
+	_item_popup_check()
+
+func _item_efficiency_changed() -> void:
+	_item_popup_check()
+
+func _item_popup_check() -> void:
 	if get_child_count() >= 1:
 		for child in get_children():
 			if child is Item:
