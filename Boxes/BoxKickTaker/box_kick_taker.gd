@@ -1,7 +1,7 @@
 extends Node2D
 class_name BoxKickTaker
 
-const kick_strength : float = 500
+const kick_strength : float = 700
 
 func _init() -> void:
 	GlobalSignals.ZarchivasKick.connect(_zarchivas_kick)

@@ -45,6 +45,7 @@ func _combat_start() -> void:
 func _spawn_enemy() -> void:
 	var enemy : Enemy = level_resource.enemy_scns.pick_random().instantiate()
 	add_child(enemy)
+	enemy.stat_headstart = level_resource.inherent_stat_headstart
 	enemy.global_position = Global.ESPAWN_POS
 
 func _spawn_boss() -> void:
@@ -52,6 +53,7 @@ func _spawn_boss() -> void:
 	MusicManager.play_song("boss3")
 	
 	var boss : Enemy = level_resource.boss_scn.instantiate()
+	boss.stat_headstart = level_resource.inherent_stat_headstart
 	add_child(boss)
 	boss.global_position = Global.ESPAWN_POS
 

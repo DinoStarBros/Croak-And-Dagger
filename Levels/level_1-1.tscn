@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://0mt44wimyda" path="res://entities/player/player.tscn" id="2_qbdax"]
 [ext_resource type="PackedScene" uid="uid://clqb3v33yj3ol" path="res://Components/EntityParentSpawnerComponent/entity_parent_spawner_component.tscn" id="2_vqkvo"]
 [ext_resource type="PackedScene" uid="uid://c6gugda7ns177" path="res://Backgrounds/Background1/background_1.tscn" id="2_vxhsm"]
-[ext_resource type="Resource" uid="uid://b2wdj6jcb0gce" path="res://LevelResources/1-1.tres" id="4_or086"]
+[ext_resource type="Resource" uid="uid://b2wdj6jcb0gce" path="res://LevelResources/World1/1-1.tres" id="4_or086"]
 [ext_resource type="PackedScene" uid="uid://cio8dkdlh1ofh" path="res://scenes/belt/belt.tscn" id="4_y47bw"]
 
 [node name="Level1-1" type="Node2D" unique_id=1226450776]

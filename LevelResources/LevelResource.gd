@@ -8,4 +8,4 @@ class_name LevelResource
 ## The boss that you fight as the last enemy in the level
 @export var boss_scn : PackedScene
 ## The extra inherehnt stat buff/scaling that enemies have in the level
-@export var inherent_stat_headstart : int = 0
+@export var inherent_stat_headstart : float = 0
