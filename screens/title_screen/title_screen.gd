@@ -29,4 +29,4 @@ func _quit_pressed() -> void:
 
 func _close_pressed() -> void:
 	_settings_pressed()
-	%settingsMenu._on_save_pressed()
+	%settingsMenu._save()

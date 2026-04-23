@@ -10,7 +10,7 @@ func _ready() -> void:
 	%quit.pressed.connect(func():%sure.visible=!%sure.visible)
 	%sure.pressed.connect(func():
 		SceneManager.change_scene("res://Screens/level_select/level_select.tscn")
-		%settingsMenu._on_save_pressed()
+		%settingsMenu._save()
 		)
 
 func _input(event: InputEvent) -> void:
@@ -36,5 +36,5 @@ func _process(delta: float) -> void:
 
 func on_resume() -> void:
 	get_tree().paused=false
-	%settingsMenu._on_save_pressed()
+	%settingsMenu._save()
 	%sure.hide()

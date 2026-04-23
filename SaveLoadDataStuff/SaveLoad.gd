@@ -29,6 +29,7 @@ func save_settings_stuff() -> void: ## Saves only the data used in the settings 
 	SaveFileData.crt_effect_value = settings.crt_effect_value
 	
 	SaveFileData.resolutuion_index = settings.resolution_index
+	SaveFileData.language_idx = settings.language_idx
 	
 	_save()
 
@@ -44,6 +45,7 @@ func load_settings_stuff() -> void: ## Loads settings variables and data
 	settings.crt_effect_value = SaveFileData.crt_effect_value
 	
 	settings.resolution_index = SaveFileData.resolutuion_index
+	settings.language_idx = SaveFileData.language_idx
 
 func save_everything() -> void: ## Saves all the SaveFileData according to their current values in the game
 	save_settings_stuff()

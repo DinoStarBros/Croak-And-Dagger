@@ -1,5 +1,5 @@
 extends RefCounted
-## Contains the data of the settings menu that gets saved & loaded
+## Contains the data of the settings menu data that gets saved & loaded
 class_name SettingsData
 
 var master_volume : float = 0.0
@@ -14,3 +14,4 @@ var crt_effect_value : bool = false:
 		ScreenFx.update_crt(crt_effect_value)
 
 var resolution_index : int = 0
+var language_idx : int = 0

@@ -5,6 +5,7 @@ class_name Settings
 @onready var screen_shake: Button = %screen_shake
 @onready var frame_freeze: Button = %frame_freeze
 @onready var crt_effect: Button = %crt_effect
+@onready var translations: OptionButton = %Translations
 
 var resolutions : Array[Vector2i] = [
 	Vector2i(1920, 1080),
@@ -19,7 +20,7 @@ func _ready()->void:
 	crt_effect.pressed.connect(_on_crt_effect_pressed)
 	
 	await get_tree().process_frame
-	_on_load_pressed()
+	_load()
 	allow_audios_play = true
 
 func on_pause() -> void:
@@ -27,12 +28,12 @@ func on_pause() -> void:
 
 func on_resume() -> void:
 	get_tree().paused=false
-	_on_save_pressed()
+	_save()
 
-func _on_save_pressed()->void: ## Saves the settings stuff
+func _save()->void: ## Saves the settings stuff
 	SaveLoad.save_settings_stuff()
 
-func _on_load_pressed()->void: ## Loads the settings stuff
+func _load()->void: ## Loads the settings stuff
 	SaveLoad.load_settings_stuff()
 	
 	# Updates the visuals and sliders in the settings menu
@@ -54,25 +55,10 @@ func _on_load_pressed()->void: ## Loads the settings stuff
 		crt_effect.text = str("On")
 	else:
 		crt_effect.text = str("Off")
-	
-	#%resOptions.select(SaveLoad.settings.resolution_index)
-	#_on_res_options_item_selected(SaveLoad.settings.resolution_index)
 
 func _on_reset_pressed()->void:
 	SaveLoad._reset_save_file()
 	SaveLoad._load()
-	_update_vol_val()
-	_update_accessibility_val()
-	_update_res()
-
-func _update_vol_val()->void:
-	pass
-
-func _update_accessibility_val() -> void:
-	pass
-
-func _update_res()->void:
-	pass
 
 func _on_master_volume_value_changed(value: float)->void:
 	if allow_audios_play:
@@ -94,16 +80,6 @@ func _on_sfx_vol_value_changed(value: float)->void:
 		%vol_change_sfx.play(0.005)
 	
 	SaveLoad.settings.sfx_volume = value
-
-#func _on_res_options_item_selected(index: int) -> void:
-	##pass
-	#SaveLoad.settings.resolution_index = index
-	#DisplayServer.window_set_size(resolutions[index])
-
-func _on_back_pressed() -> void:
-	_on_save_pressed()
-	hide()
-	get_tree().paused = false
 
 func _on_frame_freeze_pressed() -> void:
 	SaveLoad.settings.frame_freeze_value = not SaveLoad.settings.frame_freeze_value
@@ -135,5 +111,10 @@ func _on_crt_effect_pressed() -> void:
 	else:
 		crt_effect.text = str("Off")
 
-func _process(delta: float) -> void:
-	pass
+func _on_translations_selected(index: int) -> void:
+	SaveLoad.settings.language_idx = index
+	
+	var item_string : String = (
+		translations.get_item_text(index)
+	)
+	TranslationServer.set_locale(item_string)

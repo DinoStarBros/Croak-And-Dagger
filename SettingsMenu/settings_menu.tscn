@@ -62,9 +62,10 @@ offset_bottom = 624.0
 
 [node name="Tabs" type="TabContainer" parent="PanelContainer" unique_id=917003247]
 layout_mode = 2
-current_tab = 0
+current_tab = 3
 
 [node name="Audio" type="VBoxContainer" parent="PanelContainer/Tabs" unique_id=1785194851]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -415,34 +416,19 @@ Ice: Slows down Enemy Attacks
 Fire: Deals damage overtime
 Poison: ALSO Deals damage overtime"
 
-[node name="buttons" type="HBoxContainer" parent="." unique_id=360431369]
+[node name="Language" type="VBoxContainer" parent="PanelContainer/Tabs" unique_id=546180974]
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="Translations" type="OptionButton" parent="PanelContainer/Tabs/Language" unique_id=48500903]
 unique_name_in_owner = true
-visible = false
-layout_mode = 0
-offset_left = 16.0
-offset_top = 552.0
-offset_right = 57.0
-offset_bottom = 608.0
-
-[node name="save" type="Button" parent="buttons" unique_id=1270017186]
-visible = false
 layout_mode = 2
-text = "Save"
-
-[node name="load" type="Button" parent="buttons" unique_id=877350391]
-visible = false
-layout_mode = 2
-text = "Load"
-
-[node name="reset" type="Button" parent="buttons" unique_id=961413349]
-visible = false
-layout_mode = 2
-text = "Reset
-Settings"
-
-[node name="back" type="Button" parent="buttons" unique_id=1165260062]
-layout_mode = 2
-text = "Back"
+selected = 0
+item_count = 2
+popup/item_0/text = "English"
+popup/item_0/id = 0
+popup/item_1/text = "Filipino"
+popup/item_1/id = 1
 
 [node name="Panel" type="PanelContainer" parent="." unique_id=620910937]
 layout_mode = 0
@@ -488,7 +474,3 @@ offset_bottom = 594.0
 [connection signal="value_changed" from="PanelContainer/Tabs/Audio/sfx_vol" to="." method="_on_sfx_vol_value_changed"]
 [connection signal="pressed" from="PanelContainer/Tabs/Accessiblity/screen_shake" to="." method="_on_screen_shake_pressed"]
 [connection signal="pressed" from="PanelContainer/Tabs/Accessiblity/frame_freeze" to="." method="_on_frame_freeze_pressed"]
-[connection signal="pressed" from="buttons/save" to="." method="_on_save_pressed"]
-[connection signal="pressed" from="buttons/load" to="." method="_on_load_pressed"]
-[connection signal="pressed" from="buttons/reset" to="." method="_on_reset_pressed"]
-[connection signal="pressed" from="buttons/back" to="." method="_on_back_pressed"]
