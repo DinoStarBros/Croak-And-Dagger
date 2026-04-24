@@ -1,13 +1,14 @@
 [gd_resource type="Resource" script_class="BaseEntityStats" format=3 uid="uid://dsvt1nkiovat0"]
 
 [ext_resource type="PackedScene" uid="uid://dolxx7718k6xh" path="res://EnemyBoxes/BaseDefendBox/base_defend_box.tscn" id="1_s3d1q"]
+[ext_resource type="PackedScene" uid="uid://da5bvpmo66hyq" path="res://EnemyBoxes/ToughDefendBox/tough_defend_box.tscn" id="2_bshxp"]
 [ext_resource type="Script" uid="uid://chqad1x7kc28f" path="res://Stats/EntityStatsResource.gd" id="2_mjp7e"]
 
 [resource]
 script = ExtResource("2_mjp7e")
 the_name = "Tanky 1"
 max_hp = 150.0
-box_scenes = Array[PackedScene]([ExtResource("1_s3d1q")])
+box_scenes = Array[PackedScene]([ExtResource("1_s3d1q"), ExtResource("2_bshxp")])
 spawn_time_range = Vector2(2, 3)
 damage = 9.0
 crit_chance = 0.0
