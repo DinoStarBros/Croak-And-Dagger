@@ -1,14 +1,18 @@
-[gd_scene format=3 uid="uid://bfmvl41xfvs85"]
+[gd_scene format=4 uid="uid://dcfahjmx0ee30"]
 
-[ext_resource type="Script" uid="uid://bsmb3ir6ou4kt" path="res://entities/enemies/enemy1/enemy_1.gd" id="1_t4fes"]
-[ext_resource type="Texture2D" uid="uid://bn200tim80d5i" path="res://Art/Placeholder/Eneme.png" id="1_tdfkp"]
-[ext_resource type="Resource" uid="uid://btf7g5tbv53ae" path="res://Stats/BalancedEne1.tres" id="3_c0nl6"]
-[ext_resource type="PackedScene" uid="uid://ih821u05qh4v" path="res://Components/HealthComponent/health_component.tscn" id="3_ortin"]
-[ext_resource type="PackedScene" uid="uid://c1qobuo6afwil" path="res://Components/StatsAllocator/stats_allocator.tscn" id="3_ygu5k"]
-[ext_resource type="PackedScene" uid="uid://dqqmdp3hyac81" path="res://Components/BoxDecider/box_decider.tscn" id="4_c0nl6"]
-[ext_resource type="PackedScene" uid="uid://0uair2p0ft75" path="res://Components/StatusComponent/status_component.tscn" id="6_mm6iw"]
-[ext_resource type="PackedScene" uid="uid://j3miyhd54t2j" path="res://Components/EnemyCombatSignalsHandler/enemy_combat_signals_handler.tscn" id="6_y113a"]
-[ext_resource type="PackedScene" uid="uid://dryipx6eo8d1y" path="res://scenes/fancy_healthbar/fancy_healthbar.tscn" id="8_iaqll"]
+[ext_resource type="Script" uid="uid://bsmb3ir6ou4kt" path="res://entities/enemies/extends_enemy.gd" id="1_5ajfe"]
+[ext_resource type="PackedScene" uid="uid://c1qobuo6afwil" path="res://Components/StatsAllocator/stats_allocator.tscn" id="2_7jo6n"]
+[ext_resource type="Resource" uid="uid://dsvt1nkiovat0" path="res://Stats/EnemyStats/TankyEne1.tres" id="3_5ajfe"]
+[ext_resource type="PackedScene" uid="uid://j3miyhd54t2j" path="res://Components/EnemyCombatSignalsHandler/enemy_combat_signals_handler.tscn" id="4_voqh6"]
+[ext_resource type="PackedScene" uid="uid://ih821u05qh4v" path="res://Components/HealthComponent/health_component.tscn" id="5_6get2"]
+[ext_resource type="PackedScene" uid="uid://dqqmdp3hyac81" path="res://Components/BoxDecider/box_decider.tscn" id="6_yiq0p"]
+[ext_resource type="PackedScene" uid="uid://0uair2p0ft75" path="res://Components/StatusComponent/status_component.tscn" id="7_7437w"]
+[ext_resource type="Texture2D" uid="uid://bn200tim80d5i" path="res://Art/Placeholder/Eneme.png" id="8_ioj3l"]
+[ext_resource type="PackedScene" uid="uid://dryipx6eo8d1y" path="res://scenes/fancy_healthbar/fancy_healthbar.tscn" id="9_8c272"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_5ajfe"]
+_data = PackedByteArray("AAADAAUAAAABAAAAwAAAAIAAAADyAgAAUklGRuoCAABXRUJQVlA4TN4CAAAvv8AfEC+gKAAZSAj96/BnRzQ1bRswgdHBn1o59CMIIEkmi30G3mOG+Q8AylmI8e9bkCWBbtw2YCj/i1n+M3IPoAl8AM2IB+jG+9/FJoEHAt37EdF/B44kOU3v4WbAYY/kP9Bfxnp/epAjjzvHnkOr1hufodmu94oNn0xPjqzJyvaJt4+NHPnyRuZxfc7k6dbMInrJrm7NLsovvp4hXn09Q5z8KK2rYg5ulPsyDNNKSeTCWvo1aaUktL9UitOPAPUG3vV+1ytUCdpLsYAcnUQ/WfA9gT+2hodSLMCbPzSlqxSXtacEAlhcxzrhu4pACoNuQT9nikiKgmpR8YnxVW/0Y1FKvB3pxyZCfKMfnAAxWfHXGwVkVW2875wk24y7UkyojECNa3v8hrQAUuw8CtlxHnDbcnYd3VGxitzLPChuSdtCr9J/PnXUJTi1Rh/1McJTYxNeNbyOXj8qu0R22rKMoPcfZ2GGDNPMbxrBvmJnFmbIqD63i5Xac2AwcxZmyKhbm0S9A5l5nCGqz2aUgsychRkyaGM4ZBbMzP0MYT3sBw+zEWbIcJ4WCYWlDsDsyD5KaAD0THCxIYtu9h0L4RoNZun+noBZZMutNRiufMJ/DftMG7jxvWBoqtFQBRbCZPNn1XasImu2vFMIRuVpuYHwCUPz3MAfrUNgnvAyza3Jlllmb/4M2ob5Y1DGfMGp5vvOkhXrT1UWWMzPDW3RsmSIDYcZV1PfDfrouW4f/Z1nf25rbjMsA4lZkyVLtlFR512WdIjkHoTJ6vk2cCKSDhcqoId2FwwUxaM1Q00Qzom/yC1YdBml7xlhlfFoZaWFKTKCSGlhjowAykoLqhrQgx1AcgsSwknQe/hsDrqy0oJFnwWREV1KC5jUywx57GlfZCyjLPDGk7AL6Kujr/HBPX3IuoDcBs7JwGcbi6M7nGSpOqwKj+2AEqonngSGHE+kOqBIsZsobo1P0uDV6LezCA==")
+size_override = Vector2(192, 128)
 
 [sub_resource type="Animation" id="Animation_ygu5k"]
 length = 0.001
@@ -155,6 +159,22 @@ tracks/2/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_7jo6n"]
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Eneme/Eneme2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
 [sub_resource type="Animation" id="Animation_iaqll"]
 resource_name = "hurt"
 length = 0.15
@@ -230,42 +250,77 @@ _data = {
 &"RESET": SubResource("Animation_ygu5k"),
 &"attack": SubResource("Animation_mm6iw"),
 &"death": SubResource("Animation_y113a"),
+&"default": SubResource("Animation_7jo6n"),
 &"hurt": SubResource("Animation_iaqll"),
 &"idle": SubResource("Animation_t4fes")
 }
 
-[node name="enemy1" type="Node2D" unique_id=1657567192]
-script = ExtResource("1_t4fes")
+[node name="tanky1" type="Node2D" unique_id=1657567192]
+script = ExtResource("1_5ajfe")
 
-[node name="StatsAllocator" parent="." unique_id=437436460 node_paths=PackedStringArray("health_component", "box_decider", "combat_signals") instance=ExtResource("3_ygu5k")]
+[node name="StatsAllocator" parent="." unique_id=437436460 node_paths=PackedStringArray("health_component", "box_decider", "combat_signals") instance=ExtResource("2_7jo6n")]
 unique_name_in_owner = true
-stats = ExtResource("3_c0nl6")
+stats = ExtResource("3_5ajfe")
 health_component = NodePath("../HealthComponent")
 box_decider = NodePath("../BoxDecider")
 combat_signals = NodePath("../EnemyCombatSignalsHandler")
 
-[node name="EnemyCombatSignalsHandler" parent="." unique_id=12414593 node_paths=PackedStringArray("anim", "box_decider") instance=ExtResource("6_y113a")]
+[node name="EnemyCombatSignalsHandler" parent="." unique_id=12414593 node_paths=PackedStringArray("anim", "box_decider") instance=ExtResource("4_voqh6")]
 anim = NodePath("../anim")
 box_decider = NodePath("../BoxDecider")
 
-[node name="HealthComponent" parent="." unique_id=971455295 node_paths=PackedStringArray("health_bar") instance=ExtResource("3_ortin")]
+[node name="HealthComponent" parent="." unique_id=971455295 node_paths=PackedStringArray("health_bar") instance=ExtResource("5_6get2")]
 unique_name_in_owner = true
 health_bar = NodePath("../ui/FancyHealthbar")
 
-[node name="BoxDecider" parent="." unique_id=448822901 node_paths=PackedStringArray("final_damage_text") instance=ExtResource("4_c0nl6")]
+[node name="BoxDecider" parent="." unique_id=448822901 node_paths=PackedStringArray("final_damage_text") instance=ExtResource("6_yiq0p")]
 unique_name_in_owner = true
 final_damage_text = NodePath("../ui/stats_panel/damage_txt")
 
-[node name="DebuffsComponent" parent="." unique_id=1285624151 node_paths=PackedStringArray("health_component") instance=ExtResource("6_mm6iw")]
+[node name="DebuffsComponent" parent="." unique_id=1285624151 node_paths=PackedStringArray("health_component") instance=ExtResource("7_7437w")]
 z_index = 1
 health_component = NodePath("../HealthComponent")
 
 [node name="Eneme" type="Sprite2D" parent="." unique_id=211008156]
+self_modulate = Color(0.57, 0.6918333, 1, 1)
 scale = Vector2(4, 4)
-texture = ExtResource("1_tdfkp")
+texture = ExtResource("8_ioj3l")
 flip_h = true
 hframes = 5
 frame = 1
+
+[node name="Eneme2" type="Sprite2D" parent="Eneme" unique_id=3005260]
+self_modulate = Color(0.57, 0.6918333, 1, 1)
+texture_filter = 1
+scale = Vector2(0.2, 0.2)
+texture = SubResource("PortableCompressedTexture2D_5ajfe")
+flip_h = true
+hframes = 3
+vframes = 2
+frame = 1
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": ["Icon"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "anim",
+"scale": "1.0",
+"slice": "",
+"source": "res://Art/CrokDag/enemyDefendBoxesCrokDag.aseprite",
+"source_uid": 4937487902013996791
+}
+metadata/_aseprite_wizard_source_file_hash_ = "18f0e9edf9b4b27881341241c7caba07"
 
 [node name="anim" type="AnimationPlayer" parent="." unique_id=1538716984]
 unique_name_in_owner = true
@@ -285,7 +340,7 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "wldaudwdas"
 
-[node name="FancyHealthbar" parent="ui" unique_id=526919355 instance=ExtResource("8_iaqll")]
+[node name="FancyHealthbar" parent="ui" unique_id=526919355 instance=ExtResource("9_8c272")]
 offset_left = 880.0
 offset_top = 180.0
 offset_right = 1230.0

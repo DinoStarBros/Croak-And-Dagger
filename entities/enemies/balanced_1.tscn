@@ -1,0 +1,292 @@
+[gd_scene format=3 uid="uid://bfmvl41xfvs85"]
+
+[ext_resource type="Script" uid="uid://bsmb3ir6ou4kt" path="res://entities/enemies/extends_enemy.gd" id="1_chqpt"]
+[ext_resource type="PackedScene" uid="uid://c1qobuo6afwil" path="res://Components/StatsAllocator/stats_allocator.tscn" id="2_7os11"]
+[ext_resource type="Resource" uid="uid://btf7g5tbv53ae" path="res://Stats/EnemyStats/BalancedEne1.tres" id="3_shki8"]
+[ext_resource type="PackedScene" uid="uid://j3miyhd54t2j" path="res://Components/EnemyCombatSignalsHandler/enemy_combat_signals_handler.tscn" id="4_bptrv"]
+[ext_resource type="PackedScene" uid="uid://ih821u05qh4v" path="res://Components/HealthComponent/health_component.tscn" id="5_koqdb"]
+[ext_resource type="PackedScene" uid="uid://dqqmdp3hyac81" path="res://Components/BoxDecider/box_decider.tscn" id="6_gglhl"]
+[ext_resource type="PackedScene" uid="uid://0uair2p0ft75" path="res://Components/StatusComponent/status_component.tscn" id="7_ycfgx"]
+[ext_resource type="Texture2D" uid="uid://bn200tim80d5i" path="res://Art/Placeholder/Eneme.png" id="8_mt0y6"]
+[ext_resource type="PackedScene" uid="uid://dryipx6eo8d1y" path="res://scenes/fancy_healthbar/fancy_healthbar.tscn" id="9_6qnyt"]
+
+[sub_resource type="Animation" id="Animation_ygu5k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Eneme:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Eneme:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, 4)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Eneme:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Eneme:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Eneme:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mm6iw"]
+resource_name = "attack"
+length = 0.15
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Eneme:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.075, 0.125),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Eneme:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector2(-20, 0), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Eneme:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_y113a"]
+resource_name = "death"
+length = 0.75
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Eneme:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(100, -100)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Eneme:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [0.0, 1.2217304763960306]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Eneme:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_iaqll"]
+resource_name = "hurt"
+length = 0.15
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Eneme:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Eneme:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.075, 0.15),
+"transitions": PackedFloat32Array(0.5, 2, 1),
+"update": 0,
+"values": [Vector2(4, 4), Vector2(5, 3), Vector2(4, 4)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Eneme:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [0.34906584, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_t4fes"]
+resource_name = "idle"
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Eneme:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Eneme:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ygu5k"]
+_data = {
+&"RESET": SubResource("Animation_ygu5k"),
+&"attack": SubResource("Animation_mm6iw"),
+&"death": SubResource("Animation_y113a"),
+&"hurt": SubResource("Animation_iaqll"),
+&"idle": SubResource("Animation_t4fes")
+}
+
+[node name="balanced1" type="Node2D" unique_id=1657567192]
+script = ExtResource("1_chqpt")
+
+[node name="StatsAllocator" parent="." unique_id=437436460 node_paths=PackedStringArray("health_component", "box_decider", "combat_signals") instance=ExtResource("2_7os11")]
+unique_name_in_owner = true
+stats = ExtResource("3_shki8")
+health_component = NodePath("../HealthComponent")
+box_decider = NodePath("../BoxDecider")
+combat_signals = NodePath("../EnemyCombatSignalsHandler")
+
+[node name="EnemyCombatSignalsHandler" parent="." unique_id=12414593 node_paths=PackedStringArray("anim", "box_decider") instance=ExtResource("4_bptrv")]
+anim = NodePath("../anim")
+box_decider = NodePath("../BoxDecider")
+
+[node name="HealthComponent" parent="." unique_id=971455295 node_paths=PackedStringArray("health_bar") instance=ExtResource("5_koqdb")]
+unique_name_in_owner = true
+health_bar = NodePath("../ui/FancyHealthbar")
+
+[node name="BoxDecider" parent="." unique_id=448822901 node_paths=PackedStringArray("final_damage_text") instance=ExtResource("6_gglhl")]
+unique_name_in_owner = true
+final_damage_text = NodePath("../ui/stats_panel/damage_txt")
+
+[node name="DebuffsComponent" parent="." unique_id=1285624151 node_paths=PackedStringArray("health_component") instance=ExtResource("7_ycfgx")]
+z_index = 1
+health_component = NodePath("../HealthComponent")
+
+[node name="Eneme" type="Sprite2D" parent="." unique_id=211008156]
+scale = Vector2(4, 4)
+texture = ExtResource("8_mt0y6")
+flip_h = true
+hframes = 5
+frame = 1
+
+[node name="anim" type="AnimationPlayer" parent="." unique_id=1538716984]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_ygu5k")
+autoplay = &"idle"
+
+[node name="ui" type="CanvasLayer" parent="." unique_id=1586263448]
+
+[node name="stats_panel" type="VBoxContainer" parent="ui" unique_id=60656746]
+offset_left = 1090.0
+offset_top = 260.0
+offset_right = 1152.0
+offset_bottom = 300.0
+
+[node name="damage_txt" type="Label" parent="ui/stats_panel" unique_id=1925632547]
+unique_name_in_owner = true
+layout_mode = 2
+text = "wldaudwdas"
+
+[node name="FancyHealthbar" parent="ui" unique_id=526919355 instance=ExtResource("9_6qnyt")]
+offset_left = 880.0
+offset_top = 180.0
+offset_right = 1230.0
+offset_bottom = 215.0
