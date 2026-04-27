@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dj0y2bcorvn42" path="res://Components/AnimComponent/anim_component.tscn" id="10_6vn75"]
 [ext_resource type="Shader" uid="uid://cne6u584nd6e4" path="res://shaders/hitFlash.gdshader" id="11_voqh6"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6get2"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6vn75"]
 resource_local_to_scene = true
 shader = ExtResource("11_voqh6")
 shader_parameter/flash_color = Color(1, 1, 1, 1)
@@ -283,15 +283,18 @@ box_decider = NodePath("../BoxDecider")
 unique_name_in_owner = true
 health_bar = NodePath("../ui/FancyHealthbar")
 
-[node name="BoxDecider" parent="." unique_id=448822901 instance=ExtResource("6_yiq0p")]
+[node name="BoxDecider" parent="." unique_id=448822901 node_paths=PackedStringArray("hp_bar") instance=ExtResource("6_yiq0p")]
 unique_name_in_owner = true
+hp_bar = NodePath("../ui/FancyHealthbar")
 
 [node name="DebuffsComponent" parent="." unique_id=1285624151 node_paths=PackedStringArray("health_component") instance=ExtResource("7_7437w")]
 z_index = 1
 health_component = NodePath("../HealthComponent")
 
 [node name="AnimComponent" parent="." unique_id=1857692537 instance=ExtResource("10_6vn75")]
-material = SubResource("ShaderMaterial_6get2")
+material = SubResource("ShaderMaterial_6vn75")
+attack_frame_idx = 4
+hurt_frame_idx = 1
 
 [node name="Eneme" type="Sprite2D" parent="AnimComponent" unique_id=211008156]
 scale = Vector2(4, 4)
