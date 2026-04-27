@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://enbiwhg3tll5" path="res://scenes/fancy_healthbar/fancy_healthbar.gd" id="1_1620c"]
 [ext_resource type="Material" uid="uid://bhkdvn07xjay3" path="res://scenes/fancy_healthbar/hp_barticle.tres" id="2_l6s5o"]
 [ext_resource type="Texture2D" uid="uid://bxi1xb61q71gy" path="res://Art/CrokDag/luhCircle.png" id="2_qjbgn"]
+[ext_resource type="LabelSettings" uid="uid://cgw40kaemu4xi" path="res://stats_labelsettings.tres" id="4_w1nbx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6s5o"]
 bg_color = Color(1, 1, 1, 0)
@@ -101,3 +102,14 @@ offset_right = 117.0
 offset_bottom = -9.0
 text = "Player HP:"
 label_settings = SubResource("LabelSettings_qjbgn")
+
+[node name="dmg_txt" type="Label" parent="." unique_id=349511090]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 38.0
+offset_top = 85.0
+offset_right = 94.0
+offset_bottom = 111.0
+text = "aaaaaa"
+label_settings = ExtResource("4_w1nbx")
+horizontal_alignment = 2

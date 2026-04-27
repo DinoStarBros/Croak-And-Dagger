@@ -5,6 +5,7 @@ class_name FancyHealthbar
 @onready var hp_barticle: GPUParticles2D = %HpBarticle
 @onready var hp_text: Label = %HPText
 @onready var name_text: Label = %name_text
+@onready var dmg_txt: Label = %dmg_txt
 
 var wb_desiredVal : float
 var lerp_difference : float
@@ -18,6 +19,7 @@ var the_name : String:
 func _ready() -> void:
 	await get_tree().process_frame
 	white_bar.fill_mode = fill_mode
+	handle_damage_text()
 
 func _process(delta: float) -> void:
 	wb_desiredVal = value
@@ -42,3 +44,11 @@ func _process(delta: float) -> void:
 	hp_barticle.self_modulate = self_modulate
 	
 	hp_barticle.position.x = white_bar_end_pos
+
+func handle_damage_text() -> void:
+	if owner is Player:
+		dmg_txt.position = Vector2(38,85)
+		dmg_txt.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+	else:
+		dmg_txt.position = Vector2(200,85)
+		dmg_txt.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT

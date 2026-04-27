@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://dryipx6eo8d1y" path="res://scenes/fancy_healthbar/fancy_healthbar.tscn" id="11_t1t22"]
 [ext_resource type="Script" uid="uid://c2l0k6v21mlhb" path="res://entities/player/stat_upgrades.gd" id="12_b2kln"]
 [ext_resource type="Texture2D" uid="uid://diihmdabfwa8g" path="res://Art/Placeholder/Trail2.png" id="14_afbqv"]
+[ext_resource type="LabelSettings" uid="uid://cgw40kaemu4xi" path="res://stats_labelsettings.tres" id="15_50fht"]
 [ext_resource type="Script" uid="uid://ba4q7byfi2rvv" path="res://entities/player/inventory.gd" id="17_we0b7"]
 [ext_resource type="PackedScene" uid="uid://q4xc2vqw6hgi" path="res://scenes/item_slot/item_slot.tscn" id="18_mtric"]
 [ext_resource type="Script" uid="uid://dgggbtvfb1dl" path="res://entities/player/item_effects.gd" id="21_eyb6c"]
@@ -443,11 +444,6 @@ _data = {
 &"walk": SubResource("Animation_afbqv")
 }
 
-[sub_resource type="LabelSettings" id="LabelSettings_50fht"]
-font_size = 20
-shadow_size = 3
-shadow_color = Color(0, 0, 0, 1)
-
 [sub_resource type="LabelSettings" id="LabelSettings_we0b7"]
 font_size = 20
 outline_size = 10
@@ -467,9 +463,9 @@ box_decider = NodePath("../BoxDecider")
 unique_name_in_owner = true
 health_bar = NodePath("../ui/FancyHealthbar")
 
-[node name="BoxDecider" parent="." unique_id=448822901 node_paths=PackedStringArray("final_damage_text") instance=ExtResource("6_qiwj3")]
+[node name="BoxDecider" parent="." unique_id=448822901 node_paths=PackedStringArray("hp_bar") instance=ExtResource("6_qiwj3")]
 unique_name_in_owner = true
-final_damage_text = NodePath("../ui/stats_panel/damage_txt")
+hp_bar = NodePath("../ui/FancyHealthbar")
 
 [node name="StatusComponent" parent="." unique_id=1285624151 node_paths=PackedStringArray("health_component") instance=ExtResource("25_50fht")]
 z_index = 2
@@ -541,32 +537,30 @@ columns = 37
 [node name="stats_panel" type="VBoxContainer" parent="ui" unique_id=683005175]
 offset_left = 88.0
 offset_top = 223.0
-offset_right = 244.0
-offset_bottom = 339.0
+offset_right = 212.0
+offset_bottom = 319.0
 
 [node name="damage_txt" type="Label" parent="ui/stats_panel" unique_id=500562700]
-unique_name_in_owner = true
 layout_mode = 2
-text = "Damage: 67"
-label_settings = SubResource("LabelSettings_50fht")
+label_settings = ExtResource("15_50fht")
 
 [node name="crit_txt" type="Label" parent="ui/stats_panel" unique_id=405168453]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Crit Chance : 69"
-label_settings = SubResource("LabelSettings_50fht")
+label_settings = ExtResource("15_50fht")
 
 [node name="item_eff_txt" type="Label" parent="ui/stats_panel" unique_id=305260382]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Item Efficiency: 2"
-label_settings = SubResource("LabelSettings_50fht")
+label_settings = ExtResource("15_50fht")
 
 [node name="luck_txt" type="Label" parent="ui/stats_panel" unique_id=538254473]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Luck: 67"
-label_settings = SubResource("LabelSettings_50fht")
+label_settings = ExtResource("15_50fht")
 
 [node name="debug" type="Label" parent="ui" unique_id=65773474]
 unique_name_in_owner = true

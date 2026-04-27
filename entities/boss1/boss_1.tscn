@@ -251,9 +251,9 @@ box_decider = NodePath("../BoxDecider")
 unique_name_in_owner = true
 health_bar = NodePath("../ui/FancyHealthbar")
 
-[node name="BoxDecider" parent="." unique_id=448822901 node_paths=PackedStringArray("final_damage_text") instance=ExtResource("5_gj1dt")]
+[node name="BoxDecider" parent="." unique_id=448822901 node_paths=PackedStringArray("hp_bar") instance=ExtResource("5_gj1dt")]
 unique_name_in_owner = true
-final_damage_text = NodePath("../ui/stats_panel/damage_txt")
+hp_bar = NodePath("../ui/FancyHealthbar")
 
 [node name="DebuffsComponent" parent="." unique_id=1285624151 node_paths=PackedStringArray("health_component") instance=ExtResource("6_51nmk")]
 z_index = 1
@@ -273,15 +273,5 @@ autoplay = &"idle"
 
 [node name="ui" type="CanvasLayer" parent="." unique_id=1586263448]
 layer = 0
-
-[node name="stats_panel" type="VBoxContainer" parent="ui" unique_id=60656746]
-offset_left = 1063.0
-offset_top = 227.0
-offset_right = 1103.0
-offset_bottom = 267.0
-
-[node name="damage_txt" type="Label" parent="ui/stats_panel" unique_id=1925632547]
-unique_name_in_owner = true
-layout_mode = 2
 
 [node name="FancyHealthbar" parent="ui" unique_id=526919355 instance=ExtResource("8_l7728")]
