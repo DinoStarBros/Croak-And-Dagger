@@ -10,7 +10,8 @@ class_name StatsAllocator
 @export_category("The Entity Components")
 @export var health_component : HealthComponent
 @export var box_decider : BoxDecider
-@export var combat_signals : CombatSignalsHandler ## Just here for attendance lol
+@export var combat_signals : CombatSignalsHandler
+@export var anim_component : AnimComponent
 
 func _ready() -> void:
 	

@@ -34,4 +34,4 @@ func diminishing_returns_scaling(value: float, k: float) -> float:
 	return 1 + (value / (value+k))
 
 func linear_scaling(base_chance: float, luck:float) -> float:
-	return (1 - base_chance) * (luck / 200)
+	return (1 - base_chance) * (luck / 100)

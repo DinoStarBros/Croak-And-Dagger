@@ -8,3 +8,4 @@ const levels_arr : Array = [
 ]
 
 const enemies_def_scn : PackedScene = preload("res://juices/EnemiesDefeatedPopup/enemies_defeated_popup.tscn")
+const hitspark_scn : PackedScene = preload("res://juices/HitSpark/hitspark.tscn")
