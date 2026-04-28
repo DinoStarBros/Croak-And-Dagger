@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://b2wdj6jcb0gce" path="res://LevelResources/World1/1-1.tres" id="4_or086"]
 [ext_resource type="PackedScene" uid="uid://cio8dkdlh1ofh" path="res://scenes/belt/belt.tscn" id="4_y47bw"]
 
-[node name="Level1-1" type="Node2D" unique_id=1226450776]
+[node name="World1Lvl" type="Node2D" unique_id=1226450776]
 metadata/_edit_vertical_guides_ = [-778.0]
 
 [node name="Background1" parent="." unique_id=1646486462 instance=ExtResource("2_vxhsm")]
