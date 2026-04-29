@@ -38,8 +38,9 @@ func _upgrade_done() -> void:
 	
 	Global.current_game_state = Global.game_states.TRANSITION_NEXT_COMBAT
 	
-	await get_tree().create_timer(0).timeout
+	#await get_tree().create_timer(0).timeout
 	#await get_tree().create_timer(Global.WAIT_TIME + randf_range(-0.2, 0.5)).timeout
+	await get_tree().create_timer(Global.WAIT_TIME).timeout
 	
 	Global.current_game_state = Global.game_states.FIGHT
 	GlobalSignals.CombatStart.emit()
