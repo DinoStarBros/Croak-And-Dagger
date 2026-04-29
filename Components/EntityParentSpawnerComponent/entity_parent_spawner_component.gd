@@ -12,7 +12,7 @@ func _init() -> void:
 	match Global.current_world_idx:
 		0: # World 1
 			level_resource = References.world1_levels_res[Global.current_level_idx]
-		_: # Just load world 1 I guess lmao
+		_: # Just load world 1 level resources I guess lmao
 			level_resource = References.world1_levels_res[Global.current_level_idx]
 
 func _ready() -> void:
