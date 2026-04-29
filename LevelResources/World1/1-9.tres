@@ -1,13 +1,17 @@
 [gd_resource type="Resource" script_class="LevelResource" format=3 uid="uid://dt0ieor0onbes"]
 
 [ext_resource type="PackedScene" uid="uid://bpis22rrv0lxd" path="res://entities/boss1/boss_1.tscn" id="1_4l6u6"]
-[ext_resource type="PackedScene" uid="uid://bfmvl41xfvs85" path="res://entities/enemies/balanced_1.tscn" id="2_fddj6"]
-[ext_resource type="PackedScene" uid="uid://dcfahjmx0ee30" path="res://entities/enemies/tanky_1.tscn" id="3_rv5mx"]
+[ext_resource type="Script" uid="uid://chqad1x7kc28f" path="res://Stats/BaseEntityStatsResource.gd" id="2_4cbtm"]
+[ext_resource type="Resource" uid="uid://btf7g5tbv53ae" path="res://Stats/EnemyStats/Balanced1.tres" id="3_5v3wb"]
+[ext_resource type="Resource" uid="uid://pb2gl8slx6ww" path="res://Stats/EnemyStats/Damagey1.tres" id="4_b7eq1"]
 [ext_resource type="Script" uid="uid://cyx67cfta1dtm" path="res://LevelResources/LevelResource.gd" id="4_d1al6"]
+[ext_resource type="Resource" uid="uid://ymov7p2htmg0" path="res://Stats/EnemyStats/Speedy1.tres" id="5_8ia4h"]
+[ext_resource type="Resource" uid="uid://dsvt1nkiovat0" path="res://Stats/EnemyStats/Tanky1.tres" id="6_6m4el"]
+[ext_resource type="Resource" uid="uid://cnqswfmym8tox" path="res://Stats/EnemyStats/Tricky1.tres" id="7_cu04w"]
 
 [resource]
 script = ExtResource("4_d1al6")
-enemy_scns = Array[PackedScene]([ExtResource("2_fddj6"), ExtResource("3_rv5mx"), ExtResource("2_fddj6")])
+enemies_res = Array[ExtResource("2_4cbtm")]([ExtResource("3_5v3wb"), ExtResource("4_b7eq1"), ExtResource("5_8ia4h"), ExtResource("6_6m4el"), ExtResource("7_cu04w")])
 enemy_amount = 16
 boss_scns = Array[PackedScene]([ExtResource("1_4l6u6")])
 metadata/_custom_type_script = "uid://cyx67cfta1dtm"

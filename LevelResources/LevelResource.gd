@@ -1,8 +1,12 @@
 extends Resource
 class_name LevelResource
 
-## The scenes of the enemies that finna be in the level
-@export var enemy_scns : Array[PackedScene]
+### The scenes of the enemies that finna be in the level
+#@export var enemy_scns : Array[PackedScene]
+# I'm tryna just make it load the resource instead
+
+## The resources of what enemies finna be in the level
+@export var enemies_res : Array[BaseEntityStats]
 ## The amount of enemies that finna be in that level
 @export var enemy_amount : int = 1
 ## The boss/es that you fight as the last enemy in the level

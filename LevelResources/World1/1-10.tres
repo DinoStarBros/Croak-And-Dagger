@@ -1,16 +1,17 @@
 [gd_resource type="Resource" script_class="LevelResource" format=3 uid="uid://cj51v41svsla0"]
 
 [ext_resource type="PackedScene" uid="uid://bpis22rrv0lxd" path="res://entities/boss1/boss_1.tscn" id="1_mmli5"]
-[ext_resource type="PackedScene" uid="uid://bfmvl41xfvs85" path="res://entities/enemies/balanced_1.tscn" id="2_ubmac"]
-[ext_resource type="PackedScene" uid="uid://dcfahjmx0ee30" path="res://entities/enemies/tanky_1.tscn" id="3_76mpg"]
-[ext_resource type="PackedScene" uid="uid://d38wgp41m245i" path="res://entities/enemies/speedy_1.tscn" id="4_3n3sh"]
+[ext_resource type="Script" uid="uid://chqad1x7kc28f" path="res://Stats/BaseEntityStatsResource.gd" id="2_3n3sh"]
+[ext_resource type="Resource" uid="uid://btf7g5tbv53ae" path="res://Stats/EnemyStats/Balanced1.tres" id="3_2s46e"]
+[ext_resource type="Resource" uid="uid://pb2gl8slx6ww" path="res://Stats/EnemyStats/Damagey1.tres" id="4_ex6hu"]
 [ext_resource type="Script" uid="uid://cyx67cfta1dtm" path="res://LevelResources/LevelResource.gd" id="4_xaedi"]
-[ext_resource type="PackedScene" uid="uid://co43jm8pck5yq" path="res://entities/enemies/tricky_1.tscn" id="5_2s46e"]
-[ext_resource type="PackedScene" uid="uid://bo5ck0xru6vae" path="res://entities/enemies/damagey_1.tscn" id="6_ex6hu"]
+[ext_resource type="Resource" uid="uid://ymov7p2htmg0" path="res://Stats/EnemyStats/Speedy1.tres" id="5_1jho3"]
+[ext_resource type="Resource" uid="uid://dsvt1nkiovat0" path="res://Stats/EnemyStats/Tanky1.tres" id="6_ve328"]
+[ext_resource type="Resource" uid="uid://cnqswfmym8tox" path="res://Stats/EnemyStats/Tricky1.tres" id="7_ummpw"]
 
 [resource]
 script = ExtResource("4_xaedi")
-enemy_scns = Array[PackedScene]([ExtResource("2_ubmac"), ExtResource("3_76mpg"), ExtResource("4_3n3sh"), ExtResource("5_2s46e"), ExtResource("6_ex6hu")])
+enemies_res = Array[ExtResource("2_3n3sh")]([ExtResource("3_2s46e"), ExtResource("4_ex6hu"), ExtResource("5_1jho3"), ExtResource("6_ve328"), ExtResource("7_ummpw")])
 enemy_amount = 18
 boss_scns = Array[PackedScene]([ExtResource("1_mmli5")])
 metadata/_custom_type_script = "uid://cyx67cfta1dtm"

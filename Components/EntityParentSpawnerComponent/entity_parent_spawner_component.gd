@@ -38,8 +38,8 @@ func _upgrade_done() -> void:
 	
 	Global.current_game_state = Global.game_states.TRANSITION_NEXT_COMBAT
 	
-	#await get_tree().create_timer(0).timeout
-	await get_tree().create_timer(Global.WAIT_TIME + randf_range(-0.2, 0.5)).timeout
+	await get_tree().create_timer(0).timeout
+	#await get_tree().create_timer(Global.WAIT_TIME + randf_range(-0.2, 0.5)).timeout
 	
 	Global.current_game_state = Global.game_states.FIGHT
 	GlobalSignals.CombatStart.emit()
@@ -51,7 +51,8 @@ func _combat_start() -> void:
 		_spawn_boss()
 
 func _spawn_enemy() -> void:
-	var enemy : Enemy = level_resource.enemy_scns.pick_random().instantiate()
+	var enemy : Enemy = References.base_enemy1.instantiate()#level_resource.enemy_scns.pick_random().instantiate()
+	enemy.stats_allocator.stats = level_resource.enemies_res.pick_random()
 	add_child(enemy)
 	enemy.stat_headstart = level_resource.inherent_stat_headstart
 	enemy.global_position = Global.ESPAWN_POS

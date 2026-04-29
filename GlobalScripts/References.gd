@@ -10,6 +10,8 @@ extends Node
 
 const world_1_lvl : String = "res://Levels/World1Lvl/world1lvl.tscn"
 
+const base_enemy1 : PackedScene = preload("res://entities/base_enemy1.tscn")
+
 var world1_levels_res : Array = [
 	load("res://LevelResources/World1/1-1.tres"),
 	load("res://LevelResources/World1/1-2.tres"),

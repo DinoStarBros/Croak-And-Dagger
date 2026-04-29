@@ -1,12 +1,13 @@
 [gd_resource type="Resource" script_class="LevelResource" format=3 uid="uid://b2wdj6jcb0gce"]
 
-[ext_resource type="PackedScene" uid="uid://bfmvl41xfvs85" path="res://entities/enemies/balanced_1.tscn" id="1_43s21"]
 [ext_resource type="Script" uid="uid://cyx67cfta1dtm" path="res://LevelResources/LevelResource.gd" id="1_evnu5"]
 [ext_resource type="PackedScene" uid="uid://bpis22rrv0lxd" path="res://entities/boss1/boss_1.tscn" id="1_huj0d"]
+[ext_resource type="Script" uid="uid://chqad1x7kc28f" path="res://Stats/BaseEntityStatsResource.gd" id="2_2tb01"]
+[ext_resource type="Resource" uid="uid://btf7g5tbv53ae" path="res://Stats/EnemyStats/Balanced1.tres" id="3_mbrlf"]
 
 [resource]
 script = ExtResource("1_evnu5")
-enemy_scns = Array[PackedScene]([ExtResource("1_43s21")])
+enemies_res = Array[ExtResource("2_2tb01")]([ExtResource("3_mbrlf")])
 enemy_amount = 5
 boss_scns = Array[PackedScene]([ExtResource("1_huj0d")])
 metadata/_custom_type_script = "uid://cyx67cfta1dtm"

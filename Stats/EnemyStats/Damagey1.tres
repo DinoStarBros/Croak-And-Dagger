@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="BaseEntityStats" format=3 uid="uid://pb2gl8slx6ww"]
 
 [ext_resource type="PackedScene" uid="uid://dolxx7718k6xh" path="res://EnemyBoxes/BaseDefendBox/base_defend_box.tscn" id="1_dokdd"]
-[ext_resource type="Script" uid="uid://chqad1x7kc28f" path="res://Stats/EntityStatsResource.gd" id="2_6xrik"]
+[ext_resource type="Script" uid="uid://chqad1x7kc28f" path="res://Stats/BaseEntityStatsResource.gd" id="2_6xrik"]
 
 [resource]
 script = ExtResource("2_6xrik")

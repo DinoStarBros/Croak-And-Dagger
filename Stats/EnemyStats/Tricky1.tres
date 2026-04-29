@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dolxx7718k6xh" path="res://EnemyBoxes/BaseDefendBox/base_defend_box.tscn" id="1_oilt3"]
 [ext_resource type="PackedScene" uid="uid://ck85ku5ckb68t" path="res://EnemyBoxes/TrapDefendBox/trap_defend_box.tscn" id="2_oilt3"]
-[ext_resource type="Script" uid="uid://chqad1x7kc28f" path="res://Stats/EntityStatsResource.gd" id="3_6uo0l"]
+[ext_resource type="Script" uid="uid://chqad1x7kc28f" path="res://Stats/BaseEntityStatsResource.gd" id="3_6uo0l"]
 
 [resource]
 script = ExtResource("3_6uo0l")

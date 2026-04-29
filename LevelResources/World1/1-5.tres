@@ -1,13 +1,14 @@
 [gd_resource type="Resource" script_class="LevelResource" format=3 uid="uid://da43w1c5gpv5y"]
 
 [ext_resource type="PackedScene" uid="uid://bpis22rrv0lxd" path="res://entities/boss1/boss_1.tscn" id="1_6ghq2"]
-[ext_resource type="PackedScene" uid="uid://bfmvl41xfvs85" path="res://entities/enemies/balanced_1.tscn" id="2_5wpur"]
-[ext_resource type="PackedScene" uid="uid://dcfahjmx0ee30" path="res://entities/enemies/tanky_1.tscn" id="3_3j80l"]
+[ext_resource type="Script" uid="uid://chqad1x7kc28f" path="res://Stats/BaseEntityStatsResource.gd" id="2_3j80l"]
 [ext_resource type="Script" uid="uid://cyx67cfta1dtm" path="res://LevelResources/LevelResource.gd" id="4_q8ipe"]
+[ext_resource type="Resource" uid="uid://dsvt1nkiovat0" path="res://Stats/EnemyStats/Tanky1.tres" id="4_xpsyx"]
+[ext_resource type="Resource" uid="uid://pb2gl8slx6ww" path="res://Stats/EnemyStats/Damagey1.tres" id="5_4uyjr"]
 
 [resource]
 script = ExtResource("4_q8ipe")
-enemy_scns = Array[PackedScene]([ExtResource("2_5wpur"), ExtResource("3_3j80l"), ExtResource("2_5wpur")])
+enemies_res = Array[ExtResource("2_3j80l")]([ExtResource("4_xpsyx"), ExtResource("5_4uyjr"), ExtResource("5_4uyjr")])
 enemy_amount = 9
 boss_scns = Array[PackedScene]([ExtResource("1_6ghq2")])
 metadata/_custom_type_script = "uid://cyx67cfta1dtm"
