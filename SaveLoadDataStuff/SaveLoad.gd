@@ -3,6 +3,8 @@ extends Node
 const save_location : String = "user://SaveFile.tres"
 
 var SaveFileData : SaveDataResource = SaveDataResource.new()
+var settings : SettingsData = SettingsData.new()
+var tools_shop_data : ToolsShopData = ToolsShopData.new()
 
 func _ready()->void:
 	_load()
@@ -18,7 +20,6 @@ func _reset_save_file()->void:
 	SaveFileData = SaveDataResource.new()
 	_save()
 
-var settings : SettingsData = SettingsData.new()
 func save_settings_stuff() -> void: ## Saves only the data used in the settings menu
 	SaveFileData.master_volume = settings.master_volume
 	SaveFileData.music_volume = settings.music_volume

@@ -8,6 +8,6 @@
 [resource]
 script = ExtResource("1_evnu5")
 enemies_res = Array[ExtResource("2_2tb01")]([ExtResource("3_mbrlf")])
-enemy_amount = 5
+enemy_amount = 500
 boss_scns = Array[PackedScene]([ExtResource("1_huj0d")])
 metadata/_custom_type_script = "uid://cyx67cfta1dtm"
