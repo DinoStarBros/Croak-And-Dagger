@@ -391,6 +391,7 @@ loop = true
 
 [node name="page5" type="MarginContainer" parent="PanelContainer" unique_id=1777105211]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
 [node name="label" type="Label" parent="PanelContainer/page5" unique_id=49140214]
