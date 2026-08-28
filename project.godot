@@ -15,8 +15,8 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="CroakAndDagger"
-run/main_scene="uid://dyeso24q5ge74"
-config/features=PackedStringArray("4.6", "GL Compatibility")
+run/main_scene="uid://c3ve8vvmwrk3x"
+config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [audio]
@@ -198,7 +198,7 @@ pointing/emulate_touch_from_mouse=true
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://CDLocalization/CDLoc.english.translation", "res://CDLocalization/CDLoc.filipino.translation")
+locale/translations=PackedStringArray("res://CDLocalization/CDLoc.English.translation", "res://CDLocalization/CDLoc.Filipino.translation")
 
 [layer_names]
 

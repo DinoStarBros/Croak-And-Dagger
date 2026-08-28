@@ -25,7 +25,7 @@ func _credits_pressed() -> void:
 
 func _quit_pressed() -> void:
 	get_tree().quit()
-	SaveLoad.save_everything()
+	SaveLoad._save()
 
 func _close_pressed() -> void:
 	_settings_pressed()

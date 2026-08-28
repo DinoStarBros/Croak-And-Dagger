@@ -74,3 +74,7 @@ func _ready() -> void:
 	%Quit.pressed.connect(func():
 		SceneManager.change_scene("res://Screens/title_screen/title_screen.tscn")
 		)
+	
+	%tool_shop_btn.pressed.connect(func():
+		%ToolShop.show()
+	)

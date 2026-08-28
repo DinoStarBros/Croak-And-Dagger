@@ -105,7 +105,7 @@ offset_right = 119.32413
 offset_bottom = 78.251
 text = "Quit"
 
-[node name="Tools Shop" type="Button" parent="." unique_id=562730254]
+[node name="tool_shop_btn" type="Button" parent="." unique_id=562730254]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 1
@@ -121,5 +121,6 @@ text = "Tools Shop"
 [node name="screen_unpauser" parent="." unique_id=518566030 instance=ExtResource("3_lqllq")]
 
 [node name="ToolShop" parent="." unique_id=1317889739 instance=ExtResource("4_emk17")]
+unique_name_in_owner = true
 visible = false
 layout_mode = 1

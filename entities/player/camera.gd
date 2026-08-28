@@ -23,7 +23,7 @@ func _physics_process(delta:float) -> void:
 		shake_time += delta * shake_time_speed
 		active_shake_time -= delta
 		
-		if SaveLoad.settings.screen_shake_value:
+		if SaveLoad.SaveFileData.screen_shake:
 			offset = Vector2(
 				noise.get_noise_2d(shake_time, 0) * shake_intensity,
 				noise.get_noise_2d(0, shake_time) * shake_intensity,

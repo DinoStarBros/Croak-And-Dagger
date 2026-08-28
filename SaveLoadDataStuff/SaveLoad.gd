@@ -3,7 +3,7 @@ extends Node
 const save_location : String = "user://SaveFile.tres"
 
 var SaveFileData : SaveDataResource = SaveDataResource.new()
-var settings : SettingsData = SettingsData.new()
+#var settings : SettingsData = SettingsData.new()
 var tools_shop_data : ToolsShopData = ToolsShopData.new()
 
 func _ready()->void:
@@ -20,36 +20,38 @@ func _reset_save_file()->void:
 	SaveFileData = SaveDataResource.new()
 	_save()
 
-func save_settings_stuff() -> void: ## Saves only the data used in the settings menu
-	SaveFileData.master_volume = settings.master_volume
-	SaveFileData.music_volume = settings.music_volume
-	SaveFileData.sfx_volume = settings.sfx_volume
-	
-	SaveFileData.frame_freeze = settings.frame_freeze_value
-	SaveFileData.screen_shake = settings.screen_shake_value
-	SaveFileData.crt_effect_value = settings.crt_effect_value
-	
-	SaveFileData.resolutuion_index = settings.resolution_index
-	SaveFileData.language_idx = settings.language_idx
-	
-	_save()
-
-func load_settings_stuff() -> void: ## Loads settings variables and data
-	_load()
-	
-	settings.master_volume = SaveFileData.master_volume
-	settings.music_volume = SaveFileData.music_volume
-	settings.sfx_volume = SaveFileData.sfx_volume
-	
-	settings.frame_freeze_value = SaveFileData.frame_freeze
-	settings.screen_shake_value = SaveFileData.screen_shake
-	settings.crt_effect_value = SaveFileData.crt_effect_value
-	
-	settings.resolution_index = SaveFileData.resolutuion_index
-	settings.language_idx = SaveFileData.language_idx
+#func save_settings_stuff() -> void: ## Saves only the data used in the settings menu
+	#SaveFileData.master_volume = settings.master_volume
+	#SaveFileData.music_volume = settings.music_volume
+	#SaveFileData.sfx_volume = settings.sfx_volume
+	#
+	#SaveFileData.frame_freeze = settings.frame_freeze_value
+	#SaveFileData.screen_shake = settings.screen_shake_value
+	#SaveFileData.crt_effect_value = settings.crt_effect_value
+	#
+	#SaveFileData.resolutuion_index = settings.resolution_index
+	#SaveFileData.language_idx = settings.language_idx
+	#
+	#_save()
+#
+#func load_settings_stuff() -> void: ## Loads settings variables and data
+	#_load()
+	#
+	#settings.master_volume = SaveFileData.master_volume
+	#settings.music_volume = SaveFileData.music_volume
+	#settings.sfx_volume = SaveFileData.sfx_volume
+	#
+	#settings.frame_freeze_value = SaveFileData.frame_freeze
+	#settings.screen_shake_value = SaveFileData.screen_shake
+	#settings.crt_effect_value = SaveFileData.crt_effect_value
+	#
+	#settings.resolution_index = SaveFileData.resolutuion_index
+	#settings.language_idx = SaveFileData.language_idx
 
 func save_everything() -> void: ## Saves all the SaveFileData according to their current values in the game
-	save_settings_stuff()
+	#save_settings_stuff()
+	pass
 
 func load_everything() -> void: ## Loads all the SaveFileData
-	load_settings_stuff()
+	#load_settings_stuff()
+	pass
