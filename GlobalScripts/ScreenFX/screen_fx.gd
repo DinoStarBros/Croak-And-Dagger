@@ -6,9 +6,10 @@ func _ready() -> void:
 	update_crt()
 
 func _process(delta: float) -> void:
-	print(
-		SaveLoad.SaveFileData.crt_effect_value_changed.is_connected(update_crt)
-		)
+	#print(
+		#SaveLoad.SaveFileData.crt_effect_value_changed.is_connected(update_crt)
+		#)
+	pass
 
 func update_crt() -> void:
 	%crt.visible = SaveLoad.SaveFileData.crt_effect_value
