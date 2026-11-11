@@ -15,10 +15,10 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="CroakAndDagger"
+config/tags=PackedStringArray("important")
 run/main_scene="uid://c3ve8vvmwrk3x"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
-config/tags=PackedStringArray("important")
 
 [audio]
 
